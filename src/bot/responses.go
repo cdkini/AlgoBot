@@ -1,4 +1,4 @@
-package main
+package bot
 
 // This is a struct that gets only what
 // we need from the incoming JSON payload

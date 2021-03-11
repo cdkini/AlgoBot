@@ -1,4 +1,4 @@
-package main
+package bot
 
 import (
 	"context"
@@ -20,7 +20,7 @@ import (
 	"google.golang.org/grpc/codes"
 )
 
-var botMessages = InitMessenger("messages.json")
+var botMessages = InitMessenger("src/bot/messages.json")
 
 const botEmailAddress = "mockinterview-bot@recurse.zulipchat.com"
 const zulipAPIURL = "https://recurse.zulipchat.com/api/v1/messages"
@@ -248,7 +248,7 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 	return response, err
 }
 
-func handle(w http.ResponseWriter, r *http.Request) {
+func Handle(w http.ResponseWriter, r *http.Request) {
 	responder := json.NewEncoder(w)
 	ctx := context.Background()
 	client, err := firestore.NewClient(ctx, "mock-interview-bot-307121")
@@ -296,10 +296,10 @@ func handle(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func config(w http.ResponseWriter, r *http.Request) {
+func Config(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
-		http.ServeFile(w, r, "config.html")
+		http.ServeFile(w, r, "static/config.html")
 	case "POST":
 		// Call ParseForm() to parse the raw query and update r.PostForm and r.Form.
 		if err := r.ParseForm(); err != nil {
@@ -390,13 +390,13 @@ func parseCmd(cmdStr string) (string, []string, error) {
 	}
 }
 
-func nope(w http.ResponseWriter, r *http.Request) {
+func Nope(w http.ResponseWriter, r *http.Request) {
 	http.NotFound(w, r)
 }
 
-// cron makes matches for pairing, and messages those people to notify them of their match
-// it runs once per day at 8am (it's triggered with app engine's cron service)
-func cron(w http.ResponseWriter, r *http.Request) {
+// Cron makes matches for pairing, and messages those people to notify them of their match
+// it runs once per day at 8am (it's triggered with app engine's Cron service)
+func Cron(w http.ResponseWriter, r *http.Request) {
 	// Check that the request is originating from within app engine
 	// https://cloud.google.com/appengine/docs/flexible/go/scheduling-jobs-with-cron-yaml#validating_cron_requests
 	if r.Header.Get("X-Appengine-Cron") != "true" {

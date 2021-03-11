@@ -1,4 +1,4 @@
-module github.com/thwidge/pairing-bot
+module github.com/cdkini/recurse-mock-interview-bot
 
 go 1.14
 

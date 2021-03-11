@@ -5,16 +5,18 @@ import (
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/cdkini/recurse-mock-interview-bot/src/bot"
 )
 
 // It's alive! The application starts here.
 func main() {
-	http.HandleFunc("/", nope)
-	http.HandleFunc("/webhooks", handle)
-	http.HandleFunc("/cron", cron)
-	http.HandleFunc("/config", config)
+	http.HandleFunc("/", bot.Nope)
+	http.HandleFunc("/webhooks", bot.Handle)
+	http.HandleFunc("/cron", bot.Cron)
+	http.HandleFunc("/config", bot.Config)
 
-	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("./css"))))
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
 	port := os.Getenv("PORT")
 	if port == "" {
