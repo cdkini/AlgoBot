@@ -299,7 +299,7 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 func Config(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
-		http.ServeFile(w, r, "static/config.html")
+		http.ServeFile(w, r, "static/templates/config.html")
 	case "POST":
 		// Call ParseForm() to parse the raw query and update r.PostForm and r.Form.
 		if err := r.ParseForm(); err != nil {
