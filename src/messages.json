@@ -1,0 +1,10 @@
+{
+  "help": "**How to use Mock Interview Bot:**\n* `subscribe` to start getting matched with other Mock Interview Bot users for pair programming\n* `schedule monday wednesday friday` to set your weekly pairing schedule\n  * In this example, I've been set to find pairing partners for you on every Monday, Wednesday, and Friday\n  * You can schedule pairing for any combination of days in the week\n* `skip tomorrow` to skip pairing tomorrow\n  * This is valid until matches go out at 04:00 UTC\n* `unskip tomorrow` to undo skipping tomorrow\n* `status` to show your current schedule, skip status, and name\n* `unsubscribe` to stop getting matched entirely\n\nIf you've found a bug, please PM `@**Chetan Kini (he) (W2'21)**` or [submit an issue on github](https://github.com/cdkini/recurse-mock-interview-bot/issues)!",
+  "subscribe": "Yay! You're now subscribed to Mock Interview Bot!\nCurrently, I'm set to find pair programming partners for you on **Mondays**, **Tuesdays**, **Wednesdays**, **Thursdays**, and **Fridays**.\nYou can customize your schedule any time with `schedule`.\n\nThanks for signing up :)",
+  "unsubscribe": "You're unsubscribed!\nI won't find pairing partners for you unless you `subscribe`.\n\nBe well :)",
+  "notSubscribed": "You're not subscribed to Mock Interview Bot <3",
+  "oddOneOut": "OK this is awkward.\nThere were an odd number of people in the match-set today, which means that one person couldn't get paired. Unfortunately, it was you -- I'm really sorry :(\nI promise it's not personal, it was very much random. Hopefully this doesn't happen again too soon. Enjoy your day! <3",
+  "matched": "Hi you two! You've been matched for pairing :)\n\nHave fun!",
+  "writeError": "Something went sideways while writing to the database. You should probably ping `@**Chetan Kini (he) (W2'21)**`",
+  "readError": "Something went sideways while reading from the database. You should probably ping `@**Chetan Kini (he) (W2'21)**`"
+}
