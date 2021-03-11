@@ -1,0 +1,457 @@
+
+
+logo
+Explore
+Problems
+Mock
+Contest
+Discuss
+Store
+🎁 Limited time event to win giveaway! 🎁
+0
+Hash Table
+
+Subscribe to see which companies asked this question
+
+You have solved 8 / 143 problems.
+Show problem tags
+ 	#	Title	Acceptance	Difficulty	Frequency
+	1	
+Two Sum
+	46.5%	Easy	
+	3	
+Longest Substring Without Repeating Characters
+	31.5%	Medium	
+	18	
+4Sum
+	34.9%	Medium	
+	30	
+Substring with Concatenation of All Words
+	26.2%	Hard	
+	36	
+Valid Sudoku
+	50.7%	Medium	
+	37	
+Sudoku Solver
+	46.7%	Hard	
+	49	
+Group Anagrams
+	59.4%	Medium	
+	76	
+Minimum Window Substring
+	36.0%	Hard	
+	85	
+Maximal Rectangle
+	39.5%	Hard	
+	94	
+Binary Tree Inorder Traversal
+	66.0%	Medium	
+	136	
+Single Number
+	66.6%	Easy	
+	138	
+Copy List with Random Pointer
+	41.0%	Medium	
+	149	
+Max Points on a Line
+	17.5%	Hard	
+	159	
+Longest Substring with At Most Two Distinct Characters
+	50.5%	Medium	
+	166	
+Fraction to Recurring Decimal
+	22.3%	Medium	
+	170	
+Two Sum III - Data structure design
+	34.9%	Easy	
+	187	
+Repeated DNA Sequences
+	41.5%	Medium	
+	202	
+Happy Number
+	51.3%	Easy	
+	204	
+Count Primes
+	32.3%	Easy	
+	205	
+Isomorphic Strings
+	40.5%	Easy	
+	217	
+Contains Duplicate
+	56.7%	Easy	
+	219	
+Contains Duplicate II
+	38.7%	Easy	
+	242	
+Valid Anagram
+	58.6%	Easy	
+	244	
+Shortest Word Distance II
+	54.1%	Medium	
+	246	
+Strobogrammatic Number
+	46.3%	Easy	
+	249	
+Group Shifted Strings
+	58.2%	Medium	
+	266	
+Palindrome Permutation
+	62.5%	Easy	
+	274	
+H-Index
+	36.4%	Medium	
+	288	
+Unique Word Abbreviation
+	23.1%	Medium	
+	290	
+Word Pattern
+	38.4%	Easy	
+	299	
+Bulls and Cows
+	44.5%	Medium	
+	311	
+Sparse Matrix Multiplication
+	64.0%	Medium	
+	325	
+Maximum Size Subarray Sum Equals k
+	47.4%	Medium	
+	336	
+Palindrome Pairs
+	34.7%	Hard	
+	340	
+Longest Substring with At Most K Distinct Characters
+	45.6%	Medium	
+	347	
+Top K Frequent Elements
+	62.5%	Medium	
+	349	
+Intersection of Two Arrays
+	64.9%	Easy	
+	350	
+Intersection of Two Arrays II
+	52.0%	Easy	
+	355	
+Design Twitter
+	31.5%	Medium	
+	356	
+Line Reflection
+	32.9%	Medium	
+	358	
+Rearrange String k Distance Apart
+	35.7%	Hard	
+	359	
+Logger Rate Limiter
+	72.3%	Easy	
+	380	
+Insert Delete GetRandom O(1)
+	48.9%	Medium	
+	381	
+Insert Delete GetRandom O(1) - Duplicates allowed
+	34.9%	Hard	
+	387	
+First Unique Character in a String
+	53.8%	Easy	
+	389	
+Find the Difference
+	57.8%	Easy	
+	409	
+Longest Palindrome
+	52.2%	Easy	
+	438	
+Find All Anagrams in a String
+	45.0%	Medium	
+	447	
+Number of Boomerangs
+	52.5%	Medium	
+	451	
+Sort Characters By Frequency
+	64.4%	Medium	
+	454	
+4Sum II
+	54.6%	Medium	
+	463	
+Island Perimeter
+	66.7%	Easy	
+	500	
+Keyboard Row
+	65.7%	Easy	
+	508	
+Most Frequent Subtree Sum
+	59.1%	Medium	
+	525	
+Contiguous Array
+	43.5%	Medium	
+	535	
+Encode and Decode TinyURL
+	81.0%	Medium	
+	554	
+Brick Wall
+	50.7%	Medium	
+	560	
+Subarray Sum Equals K
+	43.7%	Medium	
+	575	
+Distribute Candies
+	64.6%	Easy	
+	594	
+Longest Harmonious Subsequence
+	51.2%	Easy	
+	599	
+Minimum Index Sum of Two Lists
+	51.8%	Easy	
+	609	
+Find Duplicate File in System
+	61.1%	Medium	
+	624	
+Maximum Distance in Arrays
+	39.6%	Medium	
+	632	
+Smallest Range Covering Elements from K Lists
+	54.3%	Hard	
+	645	
+Set Mismatch
+	42.0%	Easy	
+	648	
+Replace Words
+	58.7%	Medium	
+	676	
+Implement Magic Dictionary
+	55.3%	Medium	
+	690	
+Employee Importance
+	58.8%	Easy	
+	692	
+Top K Frequent Words
+	53.1%	Medium	
+	694	
+Number of Distinct Islands
+	57.9%	Medium	
+	711	
+Number of Distinct Islands II
+	49.3%	Hard	
+	718	
+Maximum Length of Repeated Subarray
+	50.4%	Medium	
+	720	
+Longest Word in Dictionary
+	49.3%	Easy	
+	726	
+Number of Atoms
+	51.0%	Hard	
+	734	
+Sentence Similarity
+	42.4%	Easy	
+	739	
+Daily Temperatures
+	64.7%	Medium	
+	748	
+Shortest Completing Word
+	57.6%	Easy	
+	760	
+Find Anagram Mappings
+	81.9%	Easy	
+	770	
+Basic Calculator IV
+	54.2%	Hard	
+	771	
+Jewels and Stones
+	86.9%	Easy	
+	781	
+Rabbits in Forest
+	55.6%	Medium	
+	705	
+Design HashSet
+	64.6%	Easy	
+	706	
+Design HashMap
+	64.3%	Easy	
+	811	
+Subdomain Visit Count
+	71.6%	Easy	
+	710	
+Random Pick with Blacklist
+	32.9%	Hard	
+	884	
+Uncommon Words from Two Sentences
+	64.2%	Easy	
+	895	
+Maximum Frequency Stack
+	63.1%	Hard	
+	930	
+Binary Subarrays With Sum
+	44.6%	Medium	
+	939	
+Minimum Area Rectangle
+	52.0%	Medium	
+	953	
+Verifying an Alien Dictionary
+	52.0%	Easy	
+	954	
+Array of Doubled Pairs
+	35.1%	Medium	
+	957	
+Prison Cells After N Days
+	40.1%	Medium	
+	961	
+N-Repeated Element in Size 2N Array
+	74.5%	Easy	
+	966	
+Vowel Spellchecker
+	47.9%	Medium	
+	970	
+Powerful Integers
+	40.0%	Medium	
+	974	
+Subarray Sums Divisible by K
+	50.9%	Medium	
+	981	
+Time Based Key-Value Store
+	54.1%	Medium	
+	987	
+Vertical Order Traversal of a Binary Tree
+	38.9%	Hard	
+	992	
+Subarrays with K Different Integers
+	50.7%	Hard	
+	1001	
+Grid Illumination
+	36.5%	Hard	
+	1002	
+Find Common Characters
+	68.6%	Easy	
+	1086	
+High Five
+	77.7%	Easy	
+	1133	
+Largest Unique Number
+	67.2%	Easy	
+	1152	
+Analyze User Website Visit Pattern
+	43.2%	Medium	
+	1160	
+Find Words That Can Be Formed by Characters
+	67.9%	Easy	
+	1044	
+Longest Duplicate Substring
+	31.4%	Hard	
+	1166	
+Design File System
+	58.5%	Medium	
+	1048	
+Longest String Chain
+	55.5%	Medium	
+	1198	
+Find Smallest Common Element in All Rows
+	75.3%	Medium	
+	1072	
+Flip Columns For Maximum Number of Equal Rows
+	61.5%	Medium	
+	1213	
+Intersection of Three Sorted Arrays
+	79.4%	Easy	
+	1078	
+Occurrences After Bigram
+	64.9%	Easy	
+	1090	
+Largest Values From Labels
+	60.1%	Medium	
+	1244	
+Design A Leaderboard
+	66.1%	Medium	
+	1138	
+Alphabet Board Path
+	51.1%	Medium	
+	1178	
+Number of Valid Words for Each Puzzle
+	39.4%	Hard	
+	1189	
+Maximum Number of Balloons
+	61.9%	Easy	
+	1207	
+Unique Number of Occurrences
+	71.8%	Easy	
+	1218	
+Longest Arithmetic Subsequence of Given Difference
+	46.7%	Medium	
+	1224	
+Maximum Equal Frequency
+	35.0%	Hard	
+	1726	
+Tuple with Same Product
+	56.1%	Medium	
+	1429	
+First Unique Number
+	49.7%	Medium	
+	1261	
+Find Elements in a Contaminated Binary Tree
+	74.5%	Medium	
+	1311	
+Get Watched Videos by Your Friends
+	44.2%	Medium	
+	1365	
+How Many Numbers Are Smaller Than the Current Number
+	86.0%	Easy	
+	1418	
+Display Table of Food Orders in a Restaurant
+	69.0%	Medium	
+	1487	
+Making File Names Unique
+	30.7%	Medium	
+	1488	
+Avoid Flood in The City
+	24.5%	Medium	
+	1485	
+Clone Binary Tree With Random Pointer
+	79.2%	Medium	
+	1490	
+Clone N-ary Tree
+	83.5%	Medium	
+	1512	
+Number of Good Pairs
+	87.7%	Easy	
+	1539	
+Kth Missing Positive Number
+	55.0%	Easy	
+	1590	
+Make Sum Divisible by P
+	27.0%	Medium	
+	1577	
+Number of Ways Where Square of Number Is Equal to Product of Two Numbers
+	37.5%	Medium	
+	1570	
+Dot Product of Two Sparse Vectors
+	91.2%	Medium	
+	1638	
+Count Substrings That Differ by One Character
+	69.5%	Medium	
+	1612	
+Check If Two Expression Trees are Equivalent
+	69.8%	Medium	
+	1640	
+Check Array Formation Through Concatenation
+	60.0%	Easy	
+	1679	
+Max Number of K-Sum Pairs
+	54.0%	Medium	
+	1711	
+Count Good Meals
+	26.0%	Medium	
+	1748	
+Sum of Unique Elements
+	75.5%	Easy	
+	1781	
+Sum of Beauty of All Substrings
+	46.7%	Medium	
+	1772	
+Sort Features by Popularity
+	66.3%	Medium	
+Copyright © 2021 LeetCode
+
+    Help Center
+    Jobs
+    Bug Bounty
+    Students
+    Terms
+    Privacy Policy
+
+United StatesUnited States

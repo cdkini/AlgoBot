@@ -1,0 +1,634 @@
+
+
+logo
+Explore
+Problems
+Mock
+Contest
+Discuss
+Store
+🎁 Limited time event to win giveaway! 🎁
+0
+Math
+
+Subscribe to see which companies asked this question
+
+You have solved 3 / 202 problems.
+Show problem tags
+ 	#	Title	Acceptance	Difficulty	Frequency
+	2	
+Add Two Numbers
+	35.5%	Medium	
+	7	
+Reverse Integer
+	25.9%	Easy	
+	8	
+String to Integer (atoi)
+	15.7%	Medium	
+	9	
+Palindrome Number
+	49.8%	Easy	
+	12	
+Integer to Roman
+	56.8%	Medium	
+	13	
+Roman to Integer
+	56.9%	Easy	
+	29	
+Divide Two Integers
+	16.9%	Medium	
+	43	
+Multiply Strings
+	35.0%	Medium	
+	50	
+Pow(x, n)
+	31.0%	Medium	
+	60	
+Permutation Sequence
+	39.4%	Hard	
+	65	
+Valid Number
+	15.9%	Hard	
+	67	
+Add Binary
+	47.0%	Easy	
+	69	
+Sqrt(x)
+	35.1%	Easy	
+	149	
+Max Points on a Line
+	17.5%	Hard	
+	166	
+Fraction to Recurring Decimal
+	22.3%	Medium	
+	168	
+Excel Sheet Column Title
+	31.8%	Easy	
+	171	
+Excel Sheet Column Number
+	57.0%	Easy	
+	172	
+Factorial Trailing Zeroes
+	38.6%	Easy	
+	202	
+Happy Number
+	51.3%	Easy	
+	204	
+Count Primes
+	32.3%	Easy	
+	223	
+Rectangle Area
+	38.3%	Medium	
+	224	
+Basic Calculator
+	38.2%	Hard	
+	231	
+Power of Two
+	43.8%	Easy	
+	233	
+Number of Digit One
+	31.8%	Hard	
+	246	
+Strobogrammatic Number
+	46.3%	Easy	
+	247	
+Strobogrammatic Number II
+	48.6%	Medium	
+	248	
+Strobogrammatic Number III
+	40.2%	Hard	
+	258	
+Add Digits
+	58.5%	Easy	
+	263	
+Ugly Number
+	41.7%	Easy	
+	264	
+Ugly Number II
+	42.9%	Medium	
+	268	
+Missing Number
+	54.9%	Easy	
+	273	
+Integer to English Words
+	28.2%	Hard	
+	279	
+Perfect Squares
+	49.0%	Medium	
+	296	
+Best Meeting Point
+	58.1%	Hard	
+	313	
+Super Ugly Number
+	46.2%	Medium	
+	319	
+Bulb Switcher
+	45.4%	Medium	
+	326	
+Power of Three
+	42.1%	Easy	
+	335	
+Self Crossing
+	28.7%	Hard	
+	343	
+Integer Break
+	51.2%	Medium	
+	356	
+Line Reflection
+	32.9%	Medium	
+	357	
+Count Numbers with Unique Digits
+	48.9%	Medium	
+	360	
+Sort Transformed Array
+	49.7%	Medium	
+	365	
+Water and Jug Problem
+	31.1%	Medium	
+	367	
+Valid Perfect Square
+	42.0%	Easy	
+	368	
+Largest Divisible Subset
+	38.3%	Medium	
+	372	
+Super Pow
+	36.8%	Medium	
+	396	
+Rotate Function
+	36.8%	Medium	
+	397	
+Integer Replacement
+	33.5%	Medium	
+	400	
+Nth Digit
+	32.4%	Medium	
+	413	
+Arithmetic Slices
+	59.9%	Medium	
+	423	
+Reconstruct Original Digits from English
+	47.5%	Medium	
+	441	
+Arranging Coins
+	42.4%	Easy	
+	447	
+Number of Boomerangs
+	52.5%	Medium	
+	453	
+Minimum Moves to Equal Array Elements
+	50.8%	Easy	
+	458	
+Poor Pigs
+	54.5%	Hard	
+	462	
+Minimum Moves to Equal Array Elements II
+	54.4%	Medium	
+	469	
+Convex Polygon
+	37.5%	Medium	
+	483	
+Smallest Good Base
+	36.4%	Hard	
+	492	
+Construct the Rectangle
+	50.4%	Easy	
+	507	
+Perfect Number
+	36.2%	Easy	
+	517	
+Super Washing Machines
+	38.6%	Hard	
+	523	
+Continuous Subarray Sum
+	24.7%	Medium	
+	535	
+Encode and Decode TinyURL
+	81.0%	Medium	
+	537	
+Complex Number Multiplication
+	68.3%	Medium	
+	553	
+Optimal Division
+	57.5%	Medium	
+	573	
+Squirrel Simulation
+	54.1%	Medium	
+	592	
+Fraction Addition and Subtraction
+	50.2%	Medium	
+	593	
+Valid Square
+	43.3%	Medium	
+	598	
+Range Addition II
+	50.1%	Easy	
+	625	
+Minimum Factorization
+	33.0%	Medium	
+	628	
+Maximum Product of Three Numbers
+	46.9%	Easy	
+	633	
+Sum of Square Numbers
+	32.6%	Medium	
+	634	
+Find the Derangement of An Array
+	40.6%	Medium	
+	640	
+Solve the Equation
+	42.8%	Medium	
+	645	
+Set Mismatch
+	42.0%	Easy	
+	651	
+4 Keys Keyboard
+	53.1%	Medium	
+	660	
+Remove 9
+	54.2%	Hard	
+	670	
+Maximum Swap
+	45.2%	Medium	
+	672	
+Bulb Switcher II
+	51.1%	Medium	
+	728	
+Self Dividing Numbers
+	75.5%	Easy	
+	753	
+Cracking the Safe
+	52.4%	Hard	
+	754	
+Reach a Number
+	40.5%	Medium	
+	775	
+Global and Local Inversions
+	42.6%	Medium	
+	780	
+Reaching Points
+	30.3%	Hard	
+	781	
+Rabbits in Forest
+	55.6%	Medium	
+	782	
+Transform to Chessboard
+	47.0%	Hard	
+	789	
+Escape The Ghosts
+	58.4%	Medium	
+	794	
+Valid Tic-Tac-Toe State
+	33.7%	Medium	
+	800	
+Similar RGB Color
+	62.4%	Easy	
+	805	
+Split Array With Same Average
+	26.9%	Hard	
+	810	
+Chalkboard XOR Game
+	49.7%	Hard	
+	812	
+Largest Triangle Area
+	59.0%	Easy	
+	829	
+Consecutive Numbers Sum
+	39.3%	Hard	
+	836	
+Rectangle Overlap
+	44.2%	Easy	
+	858	
+Mirror Reflection
+	59.6%	Medium	
+	866	
+Prime Palindrome
+	25.1%	Medium	
+	868	
+Binary Gap
+	61.0%	Easy	
+	869	
+Reordered Power of 2
+	54.3%	Medium	
+	877	
+Stone Game
+	66.9%	Medium	
+	878	
+Nth Magical Number
+	28.8%	Hard	
+	478	
+Generate Random Point in a Circle
+	38.9%	Medium	
+	883	
+Projection Area of 3D Shapes
+	68.3%	Easy	
+	885	
+Spiral Matrix III
+	70.9%	Medium	
+	887	
+Super Egg Drop
+	27.0%	Hard	
+	891	
+Sum of Subsequence Widths
+	33.1%	Hard	
+	892	
+Surface Area of 3D Shapes
+	59.8%	Easy	
+	899	
+Orderly Queue
+	53.1%	Hard	
+	902	
+Numbers At Most N Given Digit Set
+	36.1%	Hard	
+	906	
+Super Palindromes
+	32.8%	Hard	
+	908	
+Smallest Range I
+	66.4%	Easy	
+	910	
+Smallest Range II
+	31.2%	Medium	
+	914	
+X of a Kind in a Deck of Cards
+	34.1%	Easy	
+	927	
+Three Equal Parts
+	34.6%	Hard	
+	942	
+DI String Match
+	73.6%	Easy	
+	949	
+Largest Time for Given Digits
+	36.2%	Medium	
+	952	
+Largest Component Size by Common Factor
+	36.2%	Hard	
+	963	
+Minimum Area Rectangle II
+	51.9%	Medium	
+	964	
+Least Operators to Express Number
+	45.1%	Hard	
+	970	
+Powerful Integers
+	40.0%	Medium	
+	972	
+Equal Rational Numbers
+	42.1%	Hard	
+	976	
+Largest Perimeter Triangle
+	58.6%	Easy	
+	991	
+Broken Calculator
+	49.7%	Medium	
+	996	
+Number of Squareful Arrays
+	48.5%	Hard	
+	1006	
+Clumsy Factorial
+	53.6%	Medium	
+	1058	
+Minimize Rounding Error to Meet Target
+	43.3%	Medium	
+	1009	
+Complement of Base 10 Integer
+	61.5%	Easy	
+	1012	
+Numbers With Repeated Digits
+	37.8%	Hard	
+	1015	
+Smallest Integer Divisible by K
+	41.9%	Medium	
+	1067	
+Digit Count in Range
+	41.7%	Hard	
+	1056	
+Confusing Number
+	47.0%	Easy	
+	1017	
+Convert to Base -2
+	59.8%	Medium	
+	1088	
+Confusing Number II
+	45.5%	Hard	
+	1025	
+Divisor Game
+	66.1%	Easy	
+	1134	
+Armstrong Number
+	78.2%	Easy	
+	1037	
+Valid Boomerang
+	37.8%	Easy	
+	1121	
+Divide Array Into Increasing Sequences
+	58.2%	Hard	
+	1041	
+Robot Bounded In Circle
+	55.1%	Medium	
+	1180	
+Count Substrings with Only One Distinct Letter
+	77.7%	Easy	
+	1073	
+Adding Two Negabinary Numbers
+	34.9%	Medium	
+	1183	
+Maximum Number of Ones
+	57.6%	Hard	
+	1228	
+Missing Number In Arithmetic Progression
+	51.2%	Easy	
+	1230	
+Toss Strange Coins
+	50.2%	Medium	
+	1199	
+Minimum Time to Build Blocks
+	38.6%	Hard	
+	1093	
+Statistics from a Large Sample
+	49.4%	Medium	
+	1256	
+Encode Number
+	67.9%	Medium	
+	1104	
+Path In Zigzag Labelled Binary Tree
+	73.1%	Medium	
+	1103	
+Distribute Candies to People
+	63.5%	Easy	
+	1271	
+Hexspeak
+	55.4%	Easy	
+	1272	
+Remove Interval
+	58.0%	Medium	
+	1109	
+Corporate Flight Bookings
+	54.3%	Medium	
+	1259	
+Handshakes That Don't Cross
+	54.2%	Hard	
+	1627	
+Graph Connectivity With Threshold
+	39.1%	Hard	
+	1131	
+Maximum of Absolute Value Expression
+	51.8%	Medium	
+	1330	
+Reverse Subarray To Maximize Array Value
+	36.7%	Hard	
+	1154	
+Day of the Year
+	49.2%	Easy	
+	1362	
+Closest Divisors
+	57.7%	Medium	
+	1363	
+Largest Multiple of Three
+	34.1%	Hard	
+	1175	
+Prime Arrangements
+	52.0%	Easy	
+	1390	
+Four Divisors
+	39.2%	Medium	
+	1201	
+Ugly Number III
+	26.4%	Medium	
+	1217	
+Minimum Cost to Move Chips to The Same Position
+	71.1%	Easy	
+	1218	
+Longest Arithmetic Subsequence of Given Difference
+	46.7%	Medium	
+	1427	
+Perform String Shifts
+	53.5%	Easy	
+	1232	
+Check If It Is a Straight Line
+	43.5%	Easy	
+	1237	
+Find Positive Integer Solution for a Given Equation
+	69.5%	Medium	
+	1238	
+Circular Permutation in Binary Representation
+	66.2%	Medium	
+	1227	
+Airplane Seat Assignment Probability
+	62.2%	Medium	
+	1250	
+Check If It Is a Good Array
+	56.1%	Hard	
+	1253	
+Reconstruct a 2-Row Binary Matrix
+	41.6%	Medium	
+	1276	
+Number of Burgers with No Waste of Ingredients
+	50.1%	Medium	
+	1281	
+Subtract the Product and Sum of Digits of an Integer
+	85.6%	Easy	
+	1307	
+Verbal Arithmetic Puzzle
+	36.8%	Hard	
+	1317	
+Convert Integer to the Sum of Two No-Zero Integers
+	56.7%	Easy	
+	1344	
+Angle Between Hands of a Clock
+	61.3%	Medium	
+	1323	
+Maximum 69 Number
+	77.9%	Easy	
+	1359	
+Count All Valid Pickup and Delivery Options
+	56.4%	Hard	
+	1447	
+Simplified Fractions
+	62.1%	Medium	
+	1442	
+Count Triplets That Can Form Two Arrays of Equal XOR
+	71.4%	Medium	
+	1478	
+Allocate Mailboxes
+	54.0%	Hard	
+	1467	
+Probability of a Two Boxes Having The Same Number of Distinct Balls
+	60.9%	Hard	
+	1492	
+The kth Factor of n
+	63.3%	Medium	
+	1497	
+Check If Array Pairs Are Divisible by k
+	40.3%	Medium	
+	1523	
+Count Odd Numbers in an Interval Range
+	54.5%	Easy	
+	1524	
+Number of Sub-arrays With Odd Sum
+	39.9%	Medium	
+	1512	
+Number of Good Pairs
+	87.7%	Easy	
+	1513	
+Number of Substrings With Only 1s
+	41.9%	Medium	
+	1551	
+Minimum Operations to Make Array Equal
+	77.9%	Medium	
+	1590	
+Make Sum Divisible by P
+	27.0%	Medium	
+	1577	
+Number of Ways Where Square of Number Is Equal to Product of Two Numbers
+	37.5%	Medium	
+	1622	
+Fancy Sequence
+	15.1%	Hard	
+	1641	
+Count Sorted Vowel Strings
+	76.3%	Medium	
+	1648	
+Sell Diminishing-Valued Colored Balls
+	30.6%	Medium	
+	1685	
+Sum of Absolute Differences in a Sorted Array
+	62.9%	Medium	
+	1680	
+Concatenation of Consecutive Binary Numbers
+	52.3%	Medium	
+	1716	
+Calculate Money in Leetcode Bank
+	66.5%	Easy	
+	1735	
+Count Ways to Make Array With Product
+	48.3%	Hard	
+	1739	
+Building Boxes
+	49.7%	Hard	
+	1744	
+Can You Eat Your Favorite Candy on Your Favorite Day?
+	30.4%	Medium	
+	1766	
+Tree of Coprimes
+	36.7%	Hard	
+	1753	
+Maximum Score From Removing Stones
+	61.2%	Medium	
+	1780	
+Check if Number is a Sum of Powers of Three
+	62.9%	Medium	
+	1776	
+Car Fleet II
+	44.0%	Hard	
+Copyright © 2021 LeetCode
+
+    Help Center
+    Jobs
+    Bug Bounty
+    Students
+    Terms
+    Privacy Policy
+
+United StatesUnited States

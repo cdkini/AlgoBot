@@ -1,0 +1,208 @@
+
+
+logo
+Explore
+Problems
+Mock
+Contest
+Discuss
+Store
+🎁 Limited time event to win giveaway! 🎁
+0
+Design
+
+Subscribe to see which companies asked this question
+
+You have solved 0 / 60 problems.
+Show problem tags
+ 	#	Title	Acceptance	Difficulty	Frequency
+	146	
+LRU Cache
+	35.9%	Medium	
+	155	
+Min Stack
+	46.5%	Easy	
+	170	
+Two Sum III - Data structure design
+	34.9%	Easy	
+	173	
+Binary Search Tree Iterator
+	60.3%	Medium	
+	208	
+Implement Trie (Prefix Tree)
+	52.2%	Medium	
+	211	
+Design Add and Search Words Data Structure
+	40.3%	Medium	
+	225	
+Implement Stack using Queues
+	47.6%	Easy	
+	232	
+Implement Queue using Stacks
+	52.4%	Easy	
+	244	
+Shortest Word Distance II
+	54.1%	Medium	
+	251	
+Flatten 2D Vector
+	46.4%	Medium	
+	281	
+Zigzag Iterator
+	59.5%	Medium	
+	284	
+Peeking Iterator
+	50.7%	Medium	
+	288	
+Unique Word Abbreviation
+	23.1%	Medium	
+	295	
+Find Median from Data Stream
+	47.1%	Hard	
+	297	
+Serialize and Deserialize Binary Tree
+	49.9%	Hard	
+	341	
+Flatten Nested List Iterator
+	54.6%	Medium	
+	346	
+Moving Average from Data Stream
+	73.4%	Easy	
+	348	
+Design Tic-Tac-Toe
+	55.6%	Medium	
+	353	
+Design Snake Game
+	35.9%	Medium	
+	355	
+Design Twitter
+	31.5%	Medium	
+	359	
+Logger Rate Limiter
+	72.3%	Easy	
+	362	
+Design Hit Counter
+	65.3%	Medium	
+	379	
+Design Phone Directory
+	48.3%	Medium	
+	380	
+Insert Delete GetRandom O(1)
+	48.9%	Medium	
+	381	
+Insert Delete GetRandom O(1) - Duplicates allowed
+	34.9%	Hard	
+	432	
+All O`one Data Structure
+	33.2%	Hard	
+	460	
+LFU Cache
+	36.2%	Hard	
+	588	
+Design In-Memory File System
+	46.6%	Hard	
+	604	
+Design Compressed String Iterator
+	38.2%	Easy	
+	631	
+Design Excel Sum Formula
+	32.1%	Hard	
+	635	
+Design Log Storage System
+	59.9%	Medium	
+	642	
+Design Search Autocomplete System
+	46.3%	Hard	
+	716	
+Max Stack
+	43.1%	Easy	
+	703	
+Kth Largest Element in a Stream
+	50.7%	Easy	
+	705	
+Design HashSet
+	64.6%	Easy	
+	706	
+Design HashMap
+	64.3%	Easy	
+	707	
+Design Linked List
+	25.9%	Medium	
+	641	
+Design Circular Deque
+	56.1%	Medium	
+	622	
+Design Circular Queue
+	45.8%	Medium	
+	1166	
+Design File System
+	58.5%	Medium	
+	1244	
+Design A Leaderboard
+	66.1%	Medium	
+	1286	
+Iterator for Combination
+	70.9%	Medium	
+	1172	
+Dinner Plate Stacks
+	37.7%	Hard	
+	1206	
+Design Skiplist
+	58.9%	Hard	
+	1429	
+First Unique Number
+	49.7%	Medium	
+	1357	
+Apply Discount Every n Orders
+	66.8%	Medium	
+	1348	
+Tweet Counts Per Frequency
+	36.2%	Medium	
+	1352	
+Product of the Last K Numbers
+	44.7%	Medium	
+	1381	
+Design a Stack With Increment Operation
+	76.2%	Medium	
+	1396	
+Design Underground System
+	69.7%	Medium	
+	1472	
+Design Browser History
+	71.5%	Medium	
+	1500	
+Design a File Sharing System
+	46.3%	Medium	
+	1603	
+Design Parking System
+	86.3%	Easy	
+	1600	
+Throne Inheritance
+	60.5%	Medium	
+	1622	
+Fancy Sequence
+	15.1%	Hard	
+	1586	
+Binary Search Tree Iterator II
+	66.6%	Medium	
+	1670	
+Design Front Middle Back Queue
+	54.3%	Medium	
+	1628	
+Design an Expression Tree With Evaluate Function
+	80.5%	Medium	
+	1656	
+Design an Ordered Stream
+	82.1%	Easy	
+	1756	
+Design Most Recently Used Queue
+	77.9%	Medium	
+Copyright © 2021 LeetCode
+
+    Help Center
+    Jobs
+    Bug Bounty
+    Students
+    Terms
+    Privacy Policy
+
+United StatesUnited States

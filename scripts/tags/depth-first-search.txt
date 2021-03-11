@@ -1,0 +1,496 @@
+
+
+logo
+Explore
+Problems
+Mock
+Contest
+Discuss
+Store
+🎁 Limited time event to win giveaway! 🎁
+0
+Depth-first Search
+
+Subscribe to see which companies asked this question
+
+You have solved 14 / 156 problems.
+Show problem tags
+ 	#	Title	Acceptance	Difficulty	Frequency
+	17	
+Letter Combinations of a Phone Number
+	49.2%	Medium	
+	98	
+Validate Binary Search Tree
+	28.8%	Medium	
+	99	
+Recover Binary Search Tree
+	42.5%	Hard	
+	100	
+Same Tree
+	54.2%	Easy	
+	101	
+Symmetric Tree
+	48.2%	Easy	
+	104	
+Maximum Depth of Binary Tree
+	68.1%	Easy	
+	105	
+Construct Binary Tree from Preorder and Inorder Traversal
+	52.0%	Medium	
+	106	
+Construct Binary Tree from Inorder and Postorder Traversal
+	49.8%	Medium	
+	108	
+Convert Sorted Array to Binary Search Tree
+	60.6%	Easy	
+	109	
+Convert Sorted List to Binary Search Tree
+	50.3%	Medium	
+	110	
+Balanced Binary Tree
+	44.7%	Easy	
+	111	
+Minimum Depth of Binary Tree
+	39.6%	Easy	
+	112	
+Path Sum
+	42.5%	Easy	
+	113	
+Path Sum II
+	49.2%	Medium	
+	114	
+Flatten Binary Tree to Linked List
+	52.1%	Medium	
+	116	
+Populating Next Right Pointers in Each Node
+	49.2%	Medium	
+	117	
+Populating Next Right Pointers in Each Node II
+	42.2%	Medium	
+	124	
+Binary Tree Maximum Path Sum
+	35.5%	Hard	
+	129	
+Sum Root to Leaf Numbers
+	51.0%	Medium	
+	130	
+Surrounded Regions
+	29.5%	Medium	
+	131	
+Palindrome Partitioning
+	52.2%	Medium	
+	133	
+Clone Graph
+	39.4%	Medium	
+	199	
+Binary Tree Right Side View
+	56.4%	Medium	
+	200	
+Number of Islands
+	49.2%	Medium	
+	207	
+Course Schedule
+	44.3%	Medium	
+	210	
+Course Schedule II
+	42.7%	Medium	
+	211	
+Design Add and Search Words Data Structure
+	40.3%	Medium	
+	257	
+Binary Tree Paths
+	53.7%	Easy	
+	261	
+Graph Valid Tree
+	43.2%	Medium	
+	301	
+Remove Invalid Parentheses
+	44.7%	Hard	
+	314	
+Binary Tree Vertical Order Traversal
+	47.1%	Medium	
+	323	
+Number of Connected Components in an Undirected Graph
+	57.9%	Medium	
+	329	
+Longest Increasing Path in a Matrix
+	45.0%	Hard	
+	332	
+Reconstruct Itinerary
+	37.9%	Medium	
+	337	
+House Robber III
+	51.9%	Medium	
+	339	
+Nested List Weight Sum
+	76.6%	Medium	
+	364	
+Nested List Weight Sum II
+	63.7%	Medium	
+	366	
+Find Leaves of Binary Tree
+	71.9%	Medium	
+	394	
+Decode String
+	52.8%	Medium	
+	417	
+Pacific Atlantic Water Flow
+	42.6%	Medium	
+	439	
+Ternary Expression Parser
+	56.8%	Medium	
+	472	
+Concatenated Words
+	44.0%	Hard	
+	473	
+Matchsticks to Square
+	38.3%	Medium	
+	488	
+Zuma Game
+	38.3%	Hard	
+	490	
+The Maze
+	52.8%	Medium	
+	491	
+Increasing Subsequences
+	47.5%	Medium	
+	494	
+Target Sum
+	45.7%	Medium	
+	499	
+The Maze III
+	42.5%	Hard	
+	505	
+The Maze II
+	48.6%	Medium	
+	1059	
+All Paths from Source Lead to Destination
+	43.0%	Medium	
+	513	
+Find Bottom Left Tree Value
+	62.7%	Medium	
+	514	
+Freedom Trail
+	45.0%	Hard	
+	515	
+Find Largest Value in Each Tree Row
+	62.3%	Medium	
+	526	
+Beautiful Arrangement
+	61.9%	Medium	
+	529	
+Minesweeper
+	61.2%	Medium	
+	531	
+Lonely Pixel I
+	59.6%	Medium	
+	538	
+Convert BST to Greater Tree
+	59.5%	Medium	
+	542	
+01 Matrix
+	41.0%	Medium	
+	546	
+Remove Boxes
+	44.1%	Hard	
+	547	
+Number of Provinces
+	60.5%	Medium	
+	1730	
+Shortest Path to Get Food
+	57.3%	Medium	
+	563	
+Binary Tree Tilt
+	53.0%	Easy	
+	576	
+Out of Boundary Paths
+	36.0%	Medium	
+	638	
+Shopping Offers
+	52.9%	Medium	
+	664	
+Strange Printer
+	41.5%	Hard	
+	679	
+24 Game
+	47.2%	Hard	
+	685	
+Redundant Connection II
+	33.0%	Hard	
+	690	
+Employee Importance
+	58.8%	Easy	
+	694	
+Number of Distinct Islands
+	57.9%	Medium	
+	695	
+Max Area of Island
+	64.9%	Medium	
+	711	
+Number of Distinct Islands II
+	49.3%	Hard	
+	721	
+Accounts Merge
+	51.9%	Medium	
+	733	
+Flood Fill
+	55.9%	Easy	
+	737	
+Sentence Similarity II
+	46.6%	Medium	
+	743	
+Network Delay Time
+	45.6%	Medium	
+	749	
+Contain Virus
+	48.3%	Hard	
+	753	
+Cracking the Safe
+	52.4%	Hard	
+	756	
+Pyramid Transition Matrix
+	55.6%	Medium	
+	430	
+Flatten a Multilevel Doubly Linked List
+	56.9%	Medium	
+	559	
+Maximum Depth of N-ary Tree
+	69.6%	Easy	
+	778	
+Swim in Rising Water
+	54.7%	Hard	
+	783	
+Minimum Distance Between BST Nodes
+	53.9%	Easy	
+	785	
+Is Graph Bipartite?
+	48.6%	Medium	
+	797	
+All Paths From Source to Target
+	78.5%	Medium	
+	802	
+Find Eventual Safe States
+	49.9%	Medium	
+	827	
+Making A Large Island
+	47.4%	Hard	
+	834	
+Sum of Distances in Tree
+	46.2%	Hard	
+	489	
+Robot Room Cleaner
+	72.6%	Hard	
+	839	
+Similar String Groups
+	41.0%	Hard	
+	841	
+Keys and Rooms
+	65.4%	Medium	
+	851	
+Loud and Rich
+	52.7%	Medium	
+	863	
+All Nodes Distance K in Binary Tree
+	58.0%	Medium	
+	865	
+Smallest Subtree with all the Deepest Nodes
+	64.8%	Medium	
+	872	
+Leaf-Similar Trees
+	64.5%	Easy	
+	886	
+Possible Bipartition
+	45.1%	Medium	
+	897	
+Increasing Order Search Tree
+	74.6%	Easy	
+	924	
+Minimize Malware Spread
+	41.9%	Hard	
+	928	
+Minimize Malware Spread II
+	41.4%	Hard	
+	934	
+Shortest Bridge
+	49.7%	Medium	
+	938	
+Range Sum of BST
+	83.1%	Easy	
+	947	
+Most Stones Removed with Same Row or Column
+	55.4%	Medium	
+	959	
+Regions Cut By Slashes
+	67.2%	Medium	
+	967	
+Numbers With Same Consecutive Differences
+	44.9%	Medium	
+	968	
+Binary Tree Cameras
+	38.8%	Hard	
+	971	
+Flip Binary Tree To Match Preorder Traversal
+	46.1%	Medium	
+	979	
+Distribute Coins in Binary Tree
+	69.8%	Medium	
+	980	
+Unique Paths III
+	77.1%	Hard	
+	987	
+Vertical Order Traversal of a Binary Tree
+	38.9%	Hard	
+	988	
+Smallest String Starting From Leaf
+	46.7%	Medium	
+	1061	
+Lexicographically Smallest Equivalent String
+	66.7%	Medium	
+	1020	
+Number of Enclaves
+	59.1%	Medium	
+	1026	
+Maximum Difference Between Node and Ancestor
+	69.5%	Medium	
+	1028	
+Recover a Tree From Preorder Traversal
+	71.0%	Hard	
+	1102	
+Path With Maximum Minimum Value
+	50.6%	Medium	
+	1136	
+Parallel Courses
+	60.8%	Medium	
+	1034	
+Coloring A Border
+	45.7%	Medium	
+	1038	
+Binary Search Tree to Greater Sum Tree
+	82.4%	Medium	
+	1080	
+Insufficient Nodes in Root to Leaf Paths
+	49.9%	Medium	
+	1245	
+Tree Diameter
+	61.1%	Medium	
+	1273	
+Delete Tree Nodes
+	62.2%	Medium	
+	1110	
+Delete Nodes And Return Forest
+	67.8%	Medium	
+	1123	
+Lowest Common Ancestor of Deepest Leaves
+	68.0%	Medium	
+	1315	
+Sum of Nodes with Even-Valued Grandparent
+	84.3%	Medium	
+	1145	
+Binary Tree Coloring Game
+	51.3%	Medium	
+	1302	
+Deepest Leaves Sum
+	84.2%	Medium	
+	1236	
+Web Crawler
+	64.7%	Medium	
+	1192	
+Critical Connections in a Network
+	50.1%	Hard	
+	1203	
+Sort Items by Groups Respecting Dependencies
+	48.3%	Hard	
+	1242	
+Web Crawler Multithreaded
+	47.6%	Medium	
+	1254	
+Number of Closed Islands
+	61.7%	Medium	
+	1306	
+Jump Game III
+	62.4%	Medium	
+	1319	
+Number of Operations to Make Network Connected
+	55.5%	Medium	
+	1339	
+Maximum Product of Splitted Binary Tree
+	38.3%	Medium	
+	1376	
+Time Needed to Inform All Employees
+	56.5%	Medium	
+	1377	
+Frog Position After T Seconds
+	35.2%	Hard	
+	1379	
+Find a Corresponding Node of a Binary Tree in a Clone of That Tree
+	84.7%	Medium	
+	1391	
+Check if There is a Valid Path in a Grid
+	44.9%	Medium	
+	1448	
+Count Good Nodes in Binary Tree
+	70.9%	Medium	
+	1443	
+Minimum Time to Collect All Apples in a Tree
+	54.6%	Medium	
+	1457	
+Pseudo-Palindromic Paths in a Binary Tree
+	70.5%	Medium	
+	1466	
+Reorder Routes to Make All Paths Lead to the City Zero
+	61.8%	Medium	
+	1469	
+Find All The Lonely Nodes
+	80.4%	Easy	
+	1489	
+Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree
+	51.4%	Hard	
+	1485	
+Clone Binary Tree With Random Pointer
+	79.2%	Medium	
+	1490	
+Clone N-ary Tree
+	83.5%	Medium	
+	1519	
+Number of Nodes in the Sub-Tree With the Same Label
+	37.1%	Medium	
+	1530	
+Number of Good Leaf Nodes Pairs
+	56.2%	Medium	
+	1559	
+Detect Cycles in 2D Grid
+	44.5%	Hard	
+	1625	
+Lexicographically Smallest String After Applying Operations
+	64.2%	Medium	
+	1631	
+Path With Minimum Effort
+	50.1%	Medium	
+	1666	
+Change the Root of a Binary Tree
+	67.5%	Medium	
+	1676	
+Lowest Common Ancestor of a Binary Tree IV
+	79.2%	Medium	
+	1722	
+Minimize Hamming Distance After Swap Operations
+	54.5%	Medium	
+	1766	
+Tree of Coprimes
+	36.7%	Hard	
+	1740	
+Find Distance in a Binary Tree
+	69.3%	Medium	
+	1778	
+Shortest Path in a Hidden Grid
+	45.0%	Medium	
+Copyright © 2021 LeetCode
+
+    Help Center
+    Jobs
+    Bug Bounty
+    Students
+    Terms
+    Privacy Policy
+
+United StatesUnited States

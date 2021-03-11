@@ -1,0 +1,88 @@
+
+
+logo
+Explore
+Problems
+Mock
+Contest
+Discuss
+Store
+🎁 Limited time event to win giveaway! 🎁
+0
+Trie
+
+Subscribe to see which companies asked this question
+
+You have solved 0 / 20 problems.
+Show problem tags
+ 	#	Title	Acceptance	Difficulty	Frequency
+	208	
+Implement Trie (Prefix Tree)
+	52.2%	Medium	
+	211	
+Design Add and Search Words Data Structure
+	40.3%	Medium	
+	212	
+Word Search II
+	37.2%	Hard	
+	336	
+Palindrome Pairs
+	34.7%	Hard	
+	421	
+Maximum XOR of Two Numbers in an Array
+	54.1%	Medium	
+	425	
+Word Squares
+	50.1%	Hard	
+	472	
+Concatenated Words
+	44.0%	Hard	
+	642	
+Design Search Autocomplete System
+	46.3%	Hard	
+	648	
+Replace Words
+	58.7%	Medium	
+	676	
+Implement Magic Dictionary
+	55.3%	Medium	
+	677	
+Map Sum Pairs
+	54.0%	Medium	
+	692	
+Top K Frequent Words
+	53.1%	Medium	
+	720	
+Longest Word in Dictionary
+	49.3%	Easy	
+	745	
+Prefix and Suffix Search
+	35.4%	Hard	
+	1065	
+Index Pairs of a String
+	61.0%	Easy	
+	1023	
+Camelcase Matching
+	57.5%	Medium	
+	1032	
+Stream of Characters
+	48.6%	Hard	
+	1638	
+Count Substrings That Differ by One Character
+	69.5%	Medium	
+	1707	
+Maximum XOR With an Element From Array
+	46.9%	Hard	
+	1698	
+Number of Distinct Substrings in a String
+	59.8%	Medium	
+Copyright © 2021 LeetCode
+
+    Help Center
+    Jobs
+    Bug Bounty
+    Students
+    Terms
+    Privacy Policy
+
+United StatesUnited States

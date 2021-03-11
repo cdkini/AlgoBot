@@ -1,0 +1,196 @@
+
+
+logo
+Explore
+Problems
+Mock
+Contest
+Discuss
+Store
+🎁 Limited time event to win giveaway! 🎁
+0
+Graph
+
+Subscribe to see which companies asked this question
+
+You have solved 1 / 56 problems.
+Show problem tags
+ 	#	Title	Acceptance	Difficulty	Frequency
+	133	
+Clone Graph
+	39.4%	Medium	
+	207	
+Course Schedule
+	44.3%	Medium	
+	210	
+Course Schedule II
+	42.7%	Medium	
+	261	
+Graph Valid Tree
+	43.2%	Medium	
+	269	
+Alien Dictionary
+	33.7%	Hard	
+	310	
+Minimum Height Trees
+	34.7%	Medium	
+	323	
+Number of Connected Components in an Undirected Graph
+	57.9%	Medium	
+	332	
+Reconstruct Itinerary
+	37.9%	Medium	
+	399	
+Evaluate Division
+	54.4%	Medium	
+	444	
+Sequence Reconstruction
+	23.6%	Medium	
+	1059	
+All Paths from Source Lead to Destination
+	43.0%	Medium	
+	1730	
+Shortest Path to Get Food
+	57.3%	Medium	
+	684	
+Redundant Connection
+	59.0%	Medium	
+	685	
+Redundant Connection II
+	33.0%	Hard	
+	743	
+Network Delay Time
+	45.6%	Medium	
+	765	
+Couples Holding Hands
+	55.5%	Hard	
+	785	
+Is Graph Bipartite?
+	48.6%	Medium	
+	797	
+All Paths From Source to Target
+	78.5%	Medium	
+	802	
+Find Eventual Safe States
+	49.9%	Medium	
+	839	
+Similar String Groups
+	41.0%	Hard	
+	841	
+Keys and Rooms
+	65.4%	Medium	
+	854	
+K-Similar Strings
+	38.7%	Hard	
+	886	
+Possible Bipartition
+	45.1%	Medium	
+	928	
+Minimize Malware Spread II
+	41.4%	Hard	
+	959	
+Regions Cut By Slashes
+	67.2%	Medium	
+	990	
+Satisfiability of Equality Equations
+	46.9%	Medium	
+	996	
+Number of Squareful Arrays
+	48.5%	Hard	
+	997	
+Find the Town Judge
+	49.8%	Easy	
+	1102	
+Path With Maximum Minimum Value
+	50.6%	Medium	
+	1135	
+Connecting Cities With Minimum Cost
+	59.4%	Medium	
+	1136	
+Parallel Courses
+	60.8%	Medium	
+	1162	
+As Far from Land as Possible
+	45.4%	Medium	
+	1042	
+Flower Planting With No Adjacent
+	48.8%	Medium	
+	1153	
+String Transforms Into Another String
+	35.8%	Hard	
+	1168	
+Optimize Water Distribution in a Village
+	61.2%	Hard	
+	1129	
+Shortest Path with Alternating Colors
+	40.2%	Medium	
+	1361	
+Validate Binary Tree Nodes
+	43.7%	Medium	
+	1203	
+Sort Items by Groups Respecting Dependencies
+	48.3%	Hard	
+	1514	
+Path with Maximum Probability
+	40.6%	Medium	
+	1267	
+Count Servers that Communicate
+	57.7%	Medium	
+	1334	
+Find the City With the Smallest Number of Neighbors at a Threshold Distance
+	47.1%	Medium	
+	1387	
+Sort Integers by The Power Value
+	70.5%	Medium	
+	1462	
+Course Schedule IV
+	44.7%	Medium	
+	1494	
+Parallel Courses II
+	31.2%	Hard	
+	1557	
+Minimum Number of Vertices to Reach All Nodes
+	75.5%	Medium	
+	1548	
+The Most Similar Path in a Graph
+	54.2%	Hard	
+	1595	
+Minimum Cost to Connect Two Groups of Points
+	43.3%	Hard	
+	1615	
+Maximal Network Rank
+	52.3%	Medium	
+	1631	
+Path With Minimum Effort
+	50.1%	Medium	
+	1719	
+Number Of Ways To Reconstruct A Tree
+	39.4%	Hard	
+	1724	
+Checking Existence of Edge Length Limited Paths II
+	56.5%	Hard	
+	1765	
+Map of Highest Peak
+	54.4%	Medium	
+	1761	
+Minimum Degree of a Connected Trio in a Graph
+	37.2%	Hard	
+	1782	
+Count Pairs Of Nodes
+	30.0%	Hard	
+	1786	
+Number of Restricted Paths From First to Last Node
+	35.5%	Medium	
+	1778	
+Shortest Path in a Hidden Grid
+	45.0%	Medium	
+Copyright © 2021 LeetCode
+
+    Help Center
+    Jobs
+    Bug Bounty
+    Students
+    Terms
+    Privacy Policy
+
+United StatesUnited States

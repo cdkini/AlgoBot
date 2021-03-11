@@ -1,0 +1,151 @@
+
+
+logo
+Explore
+Problems
+Mock
+Contest
+Discuss
+Store
+🎁 Limited time event to win giveaway! 🎁
+0
+Heap
+
+Subscribe to see which companies asked this question
+
+You have solved 1 / 41 problems.
+Show problem tags
+ 	#	Title	Acceptance	Difficulty	Frequency
+	23	
+Merge k Sorted Lists
+	42.8%	Hard	
+	215	
+Kth Largest Element in an Array
+	58.5%	Medium	
+	218	
+The Skyline Problem
+	36.4%	Hard	
+	239	
+Sliding Window Maximum
+	44.7%	Hard	
+	253	
+Meeting Rooms II
+	46.9%	Medium	
+	264	
+Ugly Number II
+	42.9%	Medium	
+	295	
+Find Median from Data Stream
+	47.1%	Hard	
+	313	
+Super Ugly Number
+	46.2%	Medium	
+	347	
+Top K Frequent Elements
+	62.5%	Medium	
+	355	
+Design Twitter
+	31.5%	Medium	
+	358	
+Rearrange String k Distance Apart
+	35.7%	Hard	
+	373	
+Find K Pairs with Smallest Sums
+	37.8%	Medium	
+	378	
+Kth Smallest Element in a Sorted Matrix
+	56.2%	Medium	
+	407	
+Trapping Rain Water II
+	44.3%	Hard	
+	451	
+Sort Characters By Frequency
+	64.4%	Medium	
+	502	
+IPO
+	41.6%	Hard	
+	659	
+Split Array into Consecutive Subsequences
+	44.4%	Medium	
+	692	
+Top K Frequent Words
+	53.1%	Medium	
+	719	
+Find K-th Smallest Pair Distance
+	32.6%	Hard	
+	743	
+Network Delay Time
+	45.6%	Medium	
+	759	
+Employee Free Time
+	68.3%	Hard	
+	767	
+Reorganize String
+	50.2%	Medium	
+	703	
+Kth Largest Element in a Stream
+	50.7%	Easy	
+	778	
+Swim in Rising Water
+	54.7%	Hard	
+	786	
+K-th Smallest Prime Fraction
+	42.8%	Hard	
+	787	
+Cheapest Flights Within K Stops
+	39.6%	Medium	
+	818	
+Race Car
+	40.0%	Hard	
+	857	
+Minimum Cost to Hire K Workers
+	50.5%	Hard	
+	864	
+Shortest Path to Get All Keys
+	42.1%	Hard	
+	871	
+Minimum Number of Refueling Stops
+	32.4%	Hard	
+	882	
+Reachable Nodes In Subdivided Graph
+	42.9%	Hard	
+	973	
+K Closest Points to Origin
+	64.6%	Medium	
+	1046	
+Last Stone Weight
+	62.4%	Easy	
+	1054	
+Distant Barcodes
+	44.3%	Medium	
+	1439	
+Find the Kth Smallest Sum of a Matrix With Sorted Rows
+	60.1%	Hard	
+	1642	
+Furthest Building You Can Reach
+	50.3%	Medium	
+	1673	
+Find the Most Competitive Subsequence
+	45.4%	Medium	
+	1675	
+Minimize Deviation in Array
+	48.4%	Hard	
+	1705	
+Maximum Number of Eaten Apples
+	42.0%	Medium	
+	1753	
+Maximum Score From Removing Stones
+	61.2%	Medium	
+	1760	
+Minimum Limit of Balls in a Bag
+	52.1%	Medium	
+Copyright © 2021 LeetCode
+
+    Help Center
+    Jobs
+    Bug Bounty
+    Students
+    Terms
+    Privacy Policy
+
+United StatesUnited States

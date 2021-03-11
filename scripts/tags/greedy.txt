@@ -1,0 +1,460 @@
+
+
+logo
+Explore
+Problems
+Mock
+Contest
+Discuss
+Store
+🎁 Limited time event to win giveaway! 🎁
+0
+Greedy
+
+Subscribe to see which companies asked this question
+
+You have solved 3 / 144 problems.
+Show problem tags
+ 	#	Title	Acceptance	Difficulty	Frequency
+	44	
+Wildcard Matching
+	25.4%	Hard	
+	45	
+Jump Game II
+	31.4%	Medium	
+	55	
+Jump Game
+	35.2%	Medium	
+	122	
+Best Time to Buy and Sell Stock II
+	58.6%	Easy	
+	134	
+Gas Station
+	41.3%	Medium	
+	135	
+Candy
+	33.1%	Hard	
+	253	
+Meeting Rooms II
+	46.9%	Medium	
+	316	
+Remove Duplicate Letters
+	39.2%	Medium	
+	321	
+Create Maximum Number
+	27.6%	Hard	
+	330	
+Patching Array
+	35.0%	Hard	
+	358	
+Rearrange String k Distance Apart
+	35.7%	Hard	
+	376	
+Wiggle Subsequence
+	40.2%	Medium	
+	392	
+Is Subsequence
+	49.5%	Easy	
+	402	
+Remove K Digits
+	28.7%	Medium	
+	406	
+Queue Reconstruction by Height
+	68.4%	Medium	
+	435	
+Non-overlapping Intervals
+	43.9%	Medium	
+	452	
+Minimum Number of Arrows to Burst Balloons
+	49.8%	Medium	
+	455	
+Assign Cookies
+	50.4%	Easy	
+	484	
+Find Permutation
+	64.2%	Medium	
+	502	
+IPO
+	41.6%	Hard	
+	605	
+Can Place Flowers
+	31.8%	Easy	
+	621	
+Task Scheduler
+	52.0%	Medium	
+	630	
+Course Schedule III
+	33.8%	Hard	
+	649	
+Dota2 Senate
+	39.4%	Medium	
+	651	
+4 Keys Keyboard
+	53.1%	Medium	
+	659	
+Split Array into Consecutive Subsequences
+	44.4%	Medium	
+	714	
+Best Time to Buy and Sell Stock with Transaction Fee
+	56.2%	Medium	
+	738	
+Monotone Increasing Digits
+	45.7%	Medium	
+	757	
+Set Intersection Size At Least Two
+	42.5%	Hard	
+	759	
+Employee Free Time
+	68.3%	Hard	
+	763	
+Partition Labels
+	78.1%	Medium	
+	765	
+Couples Holding Hands
+	55.5%	Hard	
+	767	
+Reorganize String
+	50.2%	Medium	
+	842	
+Split Array into Fibonacci Sequence
+	36.9%	Medium	
+	860	
+Lemonade Change
+	51.8%	Easy	
+	861	
+Score After Flipping Matrix
+	73.7%	Medium	
+	870	
+Advantage Shuffle
+	46.9%	Medium	
+	874	
+Walking Robot Simulation
+	36.8%	Easy	
+	881	
+Boats to Save People
+	49.0%	Medium	
+	910	
+Smallest Range II
+	31.2%	Medium	
+	921	
+Minimum Add to Make Parentheses Valid
+	74.9%	Medium	
+	927	
+Three Equal Parts
+	34.6%	Hard	
+	936	
+Stamping The Sequence
+	47.5%	Hard	
+	944	
+Delete Columns to Make Sorted
+	70.9%	Easy	
+	948	
+Bag of Tokens
+	46.1%	Medium	
+	955	
+Delete Columns to Make Sorted II
+	33.8%	Medium	
+	984	
+String Without AAA or BBB
+	38.7%	Medium	
+	991	
+Broken Calculator
+	49.7%	Medium	
+	995	
+Minimum Number of K Consecutive Bit Flips
+	49.9%	Hard	
+	1005	
+Maximize Sum Of Array After K Negations
+	52.3%	Easy	
+	1007	
+Minimum Domino Rotations For Equal Row
+	50.9%	Medium	
+	1055	
+Shortest Way to Form String
+	57.2%	Medium	
+	1057	
+Campus Bikes
+	57.7%	Medium	
+	1058	
+Minimize Rounding Error to Meet Target
+	43.3%	Medium	
+	1029	
+Two City Scheduling
+	58.1%	Medium	
+	1167	
+Minimum Cost to Connect Sticks
+	64.5%	Medium	
+	1046	
+Last Stone Weight
+	62.4%	Easy	
+	1053	
+Previous Permutation With One Swap
+	51.1%	Medium	
+	1196	
+How Many Apples Can You Put into the Basket
+	68.1%	Easy	
+	1081	
+Smallest Subsequence of Distinct Characters
+	53.5%	Medium	
+	1090	
+Largest Values From Labels
+	60.1%	Medium	
+	1094	
+Car Pooling
+	59.7%	Medium	
+	1231	
+Divide Chocolate
+	53.6%	Hard	
+	1111	
+Maximum Nesting Depth of Two Valid Parentheses Strings
+	72.6%	Medium	
+	1288	
+Remove Covered Intervals
+	57.3%	Medium	
+	1632	
+Rank Transform of a Matrix
+	30.8%	Hard	
+	1405	
+Longest Happy String
+	52.4%	Medium	
+	1217	
+Minimum Cost to Move Chips to The Same Position
+	71.1%	Easy	
+	1221	
+Split a String in Balanced Strings
+	84.3%	Easy	
+	1247	
+Minimum Swaps to Make Strings Equal
+	62.8%	Medium	
+	1253	
+Reconstruct a 2-Row Binary Matrix
+	41.6%	Medium	
+	1276	
+Number of Burgers with No Waste of Ingredients
+	50.1%	Medium	
+	1282	
+Group the People Given the Group Size They Belong To
+	84.3%	Medium	
+	1296	
+Divide Array in Sets of K Consecutive Numbers
+	55.6%	Medium	
+	1326	
+Minimum Number of Taps to Open to Water a Garden
+	47.6%	Hard	
+	1338	
+Reduce Array Size to The Half
+	67.7%	Medium	
+	1353	
+Maximum Number of Events That Can Be Attended
+	30.5%	Medium	
+	1354	
+Construct Target Array With Multiple Sums
+	31.4%	Hard	
+	1386	
+Cinema Seat Allocation
+	35.8%	Medium	
+	1383	
+Maximum Performance of a Team
+	35.8%	Hard	
+	1400	
+Construct K Palindrome Strings
+	63.0%	Medium	
+	1414	
+Find the Minimum Number of Fibonacci Numbers Whose Sum Is K
+	63.2%	Medium	
+	1403	
+Minimum Subsequence in Non-Increasing Order
+	71.0%	Easy	
+	1433	
+Check If a String Can Break Another String
+	67.3%	Medium	
+	1497	
+Check If Array Pairs Are Divisible by k
+	40.3%	Medium	
+	1505	
+Minimum Possible Integer After at Most K Adjacent Swaps On Digits
+	36.7%	Hard	
+	1518	
+Water Bottles
+	60.5%	Easy	
+	1520	
+Maximum Number of Non-Overlapping Substrings
+	36.3%	Hard	
+	1540	
+Can Convert String in K Moves
+	31.0%	Medium	
+	1536	
+Minimum Swaps to Arrange a Binary Grid
+	43.4%	Medium	
+	1558	
+Minimum Numbers of Function Calls to Make Target Array
+	63.4%	Medium	
+	1567	
+Maximum Length of Subarray With Positive Product
+	36.7%	Medium	
+	1568	
+Minimum Number of Days to Disconnect Island
+	50.2%	Hard	
+	1589	
+Maximum Sum Obtained of Any Permutation
+	34.8%	Medium	
+	1591	
+Strange Printer II
+	55.0%	Hard	
+	1578	
+Minimum Deletion Cost to Avoid Repeating Letters
+	60.5%	Medium	
+	1564	
+Put Boxes Into the Warehouse I
+	66.0%	Medium	
+	1585	
+Check If String Is Transformable With Substring Sort Operations
+	48.3%	Hard	
+	1605	
+Find Valid Matrix Given Row and Column Sums
+	77.2%	Medium	
+	1594	
+Maximum Non Negative Product in a Matrix
+	31.8%	Medium	
+	1580	
+Put Boxes Into the Warehouse II
+	62.3%	Medium	
+	1599	
+Maximum Profit of Operating a Centennial Wheel
+	43.7%	Medium	
+	1620	
+Coordinate With Maximum Network Quality
+	37.1%	Medium	
+	1616	
+Split Two Strings to Make Palindrome
+	36.2%	Medium	
+	1653	
+Minimum Deletions to Make String Balanced
+	51.4%	Medium	
+	1647	
+Minimum Deletions to Make Character Frequencies Unique
+	54.6%	Medium	
+	1648	
+Sell Diminishing-Valued Colored Balls
+	30.6%	Medium	
+	1658	
+Minimum Operations to Reduce X to Zero
+	33.4%	Medium	
+	1657	
+Determine if Two Strings Are Close
+	55.4%	Medium	
+	1663	
+Smallest String With A Given Numeric Value
+	64.3%	Medium	
+	1664	
+Ways to Make a Fair Array
+	62.1%	Medium	
+	1665	
+Minimum Initial Energy to Finish Tasks
+	66.0%	Hard	
+	1685	
+Sum of Absolute Differences in a Sorted Array
+	62.9%	Medium	
+	1686	
+Stone Game VI
+	49.5%	Medium	
+	1673	
+Find the Most Competitive Subsequence
+	45.4%	Medium	
+	1674	
+Minimum Moves to Make Array Complementary
+	34.9%	Medium	
+	1681	
+Minimum Incompatibility
+	35.6%	Hard	
+	1702	
+Maximum Binary String After Change
+	59.9%	Medium	
+	1689	
+Partitioning Into Minimum Number Of Deci-Binary Numbers
+	87.2%	Medium	
+	1716	
+Calculate Money in Leetcode Bank
+	66.5%	Easy	
+	1717	
+Maximum Score From Removing Substrings
+	40.4%	Medium	
+	1705	
+Maximum Number of Eaten Apples
+	42.0%	Medium	
+	1710	
+Maximum Units on a Truck
+	70.3%	Easy	
+	1713	
+Minimum Operations to Make a Subsequence
+	45.5%	Hard	
+	1733	
+Minimum Number of People to Teach
+	37.2%	Medium	
+	1722	
+Minimize Hamming Distance After Swap Operations
+	54.5%	Medium	
+	1725	
+Number Of Rectangles That Can Form The Largest Square
+	77.9%	Easy	
+	1727	
+Largest Submatrix With Rearrangements
+	58.5%	Medium	
+	1708	
+Largest Subarray Length K
+	62.8%	Easy	
+	1749	
+Maximum Absolute Sum of Any Subarray
+	51.6%	Medium	
+	1736	
+Latest Time by Replacing Hidden Digits
+	41.1%	Easy	
+	1737	
+Change Minimum Characters to Satisfy One of Three Conditions
+	29.6%	Medium	
+	1743	
+Restore the Array From Adjacent Pairs
+	63.0%	Medium	
+	1764	
+Form Array by Concatenating Subarrays of Another Array
+	55.7%	Medium	
+	1754	
+Largest Merge Of Two Strings
+	40.0%	Medium	
+	1758	
+Minimum Changes To Make Alternating Binary String
+	58.9%	Easy	
+	1759	
+Count Number of Homogenous Substrings
+	41.9%	Medium	
+	1769	
+Minimum Number of Operations to Move All Balls to Each Box
+	87.6%	Medium	
+	1774	
+Closest Dessert Cost
+	60.1%	Medium	
+	1775	
+Equal Sum Arrays With Minimum Number of Operations
+	50.6%	Medium	
+	1762	
+Buildings With an Ocean View
+	81.6%	Medium	
+	1784	
+Check if Binary String Has at Most One Segment of Ones
+	42.6%	Easy	
+	1785	
+Minimum Elements to Add to Form a Given Sum
+	38.6%	Medium	
+	1788	
+Maximize the Beauty of the Garden
+	N/A	Hard	
+Copyright © 2021 LeetCode
+
+    Help Center
+    Jobs
+    Bug Bounty
+    Students
+    Terms
+    Privacy Policy
+
+United StatesUnited States

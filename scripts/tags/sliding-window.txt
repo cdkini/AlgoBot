@@ -1,0 +1,109 @@
+
+
+logo
+Explore
+Problems
+Mock
+Contest
+Discuss
+Store
+🎁 Limited time event to win giveaway! 🎁
+0
+Sliding Window
+
+Subscribe to see which companies asked this question
+
+You have solved 3 / 27 problems.
+Show problem tags
+ 	#	Title	Acceptance	Difficulty	Frequency
+	3	
+Longest Substring Without Repeating Characters
+	31.5%	Medium	
+	76	
+Minimum Window Substring
+	36.0%	Hard	
+	159	
+Longest Substring with At Most Two Distinct Characters
+	50.5%	Medium	
+	239	
+Sliding Window Maximum
+	44.7%	Hard	
+	340	
+Longest Substring with At Most K Distinct Characters
+	45.6%	Medium	
+	395	
+Longest Substring with At Least K Repeating Characters
+	43.6%	Medium	
+	424	
+Longest Repeating Character Replacement
+	48.2%	Medium	
+	480	
+Sliding Window Median
+	38.8%	Hard	
+	567	
+Permutation in String
+	44.6%	Medium	
+	727	
+Minimum Window Subsequence
+	42.3%	Hard	
+	978	
+Longest Turbulent Subarray
+	46.7%	Medium	
+	992	
+Subarrays with K Different Integers
+	50.7%	Hard	
+	995	
+Minimum Number of K Consecutive Bit Flips
+	49.9%	Hard	
+	1004	
+Max Consecutive Ones III
+	60.9%	Medium	
+	1100	
+Find K-Length Substrings With No Repeated Characters
+	73.1%	Medium	
+	1151	
+Minimum Swaps to Group All 1's Together
+	58.7%	Medium	
+	1040	
+Moving Stones Until Consecutive II
+	54.1%	Medium	
+	1052	
+Grumpy Bookstore Owner
+	55.8%	Medium	
+	1074	
+Number of Submatrices That Sum to Target
+	61.8%	Hard	
+	1176	
+Diet Plan Performance
+	53.8%	Easy	
+	1208	
+Get Equal Substrings Within Budget
+	44.0%	Medium	
+	1423	
+Maximum Points You Can Obtain from Cards
+	46.7%	Medium	
+	1438	
+Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit
+	44.4%	Medium	
+	1456	
+Maximum Number of Vowels in a Substring of Given Length
+	54.7%	Medium	
+	1498	
+Number of Subsequences That Satisfy the Given Sum Condition
+	38.5%	Medium	
+	1499	
+Max Value of Equation
+	45.0%	Hard	
+	1658	
+Minimum Operations to Reduce X to Zero
+	33.4%	Medium	
+Copyright © 2021 LeetCode
+
+    Help Center
+    Jobs
+    Bug Bounty
+    Students
+    Terms
+    Privacy Policy
+
+United StatesUnited States

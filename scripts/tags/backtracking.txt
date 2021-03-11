@@ -1,0 +1,229 @@
+
+
+logo
+Explore
+Problems
+Mock
+Contest
+Discuss
+Store
+🎁 Limited time event to win giveaway! 🎁
+0
+Backtracking
+
+Subscribe to see which companies asked this question
+
+You have solved 8 / 67 problems.
+Show problem tags
+ 	#	Title	Acceptance	Difficulty	Frequency
+	10	
+Regular Expression Matching
+	27.4%	Hard	
+	17	
+Letter Combinations of a Phone Number
+	49.2%	Medium	
+	22	
+Generate Parentheses
+	65.4%	Medium	
+	37	
+Sudoku Solver
+	46.7%	Hard	
+	39	
+Combination Sum
+	59.4%	Medium	
+	40	
+Combination Sum II
+	50.2%	Medium	
+	44	
+Wildcard Matching
+	25.4%	Hard	
+	46	
+Permutations
+	66.7%	Medium	
+	47	
+Permutations II
+	49.5%	Medium	
+	51	
+N-Queens
+	49.8%	Hard	
+	52	
+N-Queens II
+	60.3%	Hard	
+	60	
+Permutation Sequence
+	39.4%	Hard	
+	77	
+Combinations
+	57.6%	Medium	
+	78	
+Subsets
+	65.3%	Medium	
+	79	
+Word Search
+	36.9%	Medium	
+	89	
+Gray Code
+	50.5%	Medium	
+	90	
+Subsets II
+	48.9%	Medium	
+	93	
+Restore IP Addresses
+	37.7%	Medium	
+	126	
+Word Ladder II
+	23.8%	Hard	
+	131	
+Palindrome Partitioning
+	52.2%	Medium	
+	140	
+Word Break II
+	34.8%	Hard	
+	211	
+Design Add and Search Words Data Structure
+	40.3%	Medium	
+	212	
+Word Search II
+	37.2%	Hard	
+	216	
+Combination Sum III
+	60.4%	Medium	
+	254	
+Factor Combinations
+	47.4%	Medium	
+	267	
+Palindrome Permutation II
+	37.4%	Medium	
+	291	
+Word Pattern II
+	44.3%	Medium	
+	294	
+Flip Game II
+	50.7%	Medium	
+	306	
+Additive Number
+	29.7%	Medium	
+	320	
+Generalized Abbreviation
+	53.8%	Medium	
+	351	
+Android Unlock Patterns
+	49.7%	Medium	
+	357	
+Count Numbers with Unique Digits
+	48.9%	Medium	
+	401	
+Binary Watch
+	48.5%	Easy	
+	411	
+Minimum Unique Word Abbreviation
+	37.3%	Hard	
+	425	
+Word Squares
+	50.1%	Hard	
+	526	
+Beautiful Arrangement
+	61.9%	Medium	
+	691	
+Stickers to Spell Word
+	44.8%	Hard	
+	784	
+Letter Case Permutation
+	68.6%	Medium	
+	797	
+All Paths From Source to Target
+	78.5%	Medium	
+	842	
+Split Array into Fibonacci Sequence
+	36.9%	Medium	
+	967	
+Numbers With Same Consecutive Differences
+	44.9%	Medium	
+	980	
+Unique Paths III
+	77.1%	Hard	
+	996	
+Number of Squareful Arrays
+	48.5%	Hard	
+	1066	
+Campus Bikes II
+	54.2%	Medium	
+	1087	
+Brace Expansion
+	63.1%	Medium	
+	1088	
+Confusing Number II
+	45.5%	Hard	
+	1215	
+Stepping Numbers
+	43.6%	Medium	
+	1079	
+Letter Tile Possibilities
+	75.9%	Medium	
+	1258	
+Synonymous Sentences
+	63.1%	Medium	
+	1286	
+Iterator for Combination
+	70.9%	Medium	
+	1291	
+Sequential Digits
+	57.4%	Medium	
+	1219	
+Path with Maximum Gold
+	65.8%	Medium	
+	1239	
+Maximum Length of a Concatenated String with Unique Characters
+	49.7%	Medium	
+	1240	
+Tiling a Rectangle with the Fewest Squares
+	52.6%	Hard	
+	1307	
+Verbal Arithmetic Puzzle
+	36.8%	Hard	
+	1415	
+The k-th Lexicographical String of All Happy Strings of Length n
+	69.9%	Medium	
+	1467	
+Probability of a Two Boxes Having The Same Number of Distinct Balls
+	60.9%	Hard	
+	1593	
+Split a String Into the Max Number of Unique Substrings
+	49.3%	Medium	
+	1617	
+Count Subtrees With Max Distance Between Cities
+	63.2%	Hard	
+	1655	
+Distribute Repeating Integers
+	39.9%	Hard	
+	1641	
+Count Sorted Vowel Strings
+	76.3%	Medium	
+	1659	
+Maximize Grid Happiness
+	35.6%	Hard	
+	1681	
+Minimum Incompatibility
+	35.6%	Hard	
+	1688	
+Count of Matches in Tournament
+	81.6%	Easy	
+	1718	
+Construct the Lexicographically Largest Valid Sequence
+	46.3%	Medium	
+	1723	
+Find Minimum Time to Finish All Jobs
+	43.9%	Hard	
+	1780	
+Check if Number is a Sum of Powers of Three
+	62.9%	Medium	
+Copyright © 2021 LeetCode
+
+    Help Center
+    Jobs
+    Bug Bounty
+    Students
+    Terms
+    Privacy Policy
+
+United StatesUnited States

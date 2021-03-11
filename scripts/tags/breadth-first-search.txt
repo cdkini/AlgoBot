@@ -1,0 +1,295 @@
+
+
+logo
+Explore
+Problems
+Mock
+Contest
+Discuss
+Store
+🎁 Limited time event to win giveaway! 🎁
+0
+Breadth-first Search
+
+Subscribe to see which companies asked this question
+
+You have solved 8 / 89 problems.
+Show problem tags
+ 	#	Title	Acceptance	Difficulty	Frequency
+	101	
+Symmetric Tree
+	48.2%	Easy	
+	102	
+Binary Tree Level Order Traversal
+	56.7%	Medium	
+	103	
+Binary Tree Zigzag Level Order Traversal
+	50.2%	Medium	
+	107	
+Binary Tree Level Order Traversal II
+	55.3%	Medium	
+	111	
+Minimum Depth of Binary Tree
+	39.6%	Easy	
+	116	
+Populating Next Right Pointers in Each Node
+	49.2%	Medium	
+	126	
+Word Ladder II
+	23.8%	Hard	
+	127	
+Word Ladder
+	31.9%	Hard	
+	130	
+Surrounded Regions
+	29.5%	Medium	
+	133	
+Clone Graph
+	39.4%	Medium	
+	199	
+Binary Tree Right Side View
+	56.4%	Medium	
+	200	
+Number of Islands
+	49.2%	Medium	
+	207	
+Course Schedule
+	44.3%	Medium	
+	210	
+Course Schedule II
+	42.7%	Medium	
+	261	
+Graph Valid Tree
+	43.2%	Medium	
+	279	
+Perfect Squares
+	49.0%	Medium	
+	286	
+Walls and Gates
+	56.6%	Medium	
+	301	
+Remove Invalid Parentheses
+	44.7%	Hard	
+	310	
+Minimum Height Trees
+	34.7%	Medium	
+	314	
+Binary Tree Vertical Order Traversal
+	47.1%	Medium	
+	317	
+Shortest Distance from All Buildings
+	42.8%	Hard	
+	323	
+Number of Connected Components in an Undirected Graph
+	57.9%	Medium	
+	339	
+Nested List Weight Sum
+	76.6%	Medium	
+	407	
+Trapping Rain Water II
+	44.3%	Hard	
+	417	
+Pacific Atlantic Water Flow
+	42.6%	Medium	
+	490	
+The Maze
+	52.8%	Medium	
+	499	
+The Maze III
+	42.5%	Hard	
+	505	
+The Maze II
+	48.6%	Medium	
+	513	
+Find Bottom Left Tree Value
+	62.7%	Medium	
+	515	
+Find Largest Value in Each Tree Row
+	62.3%	Medium	
+	529	
+Minesweeper
+	61.2%	Medium	
+	542	
+01 Matrix
+	41.0%	Medium	
+	1730	
+Shortest Path to Get Food
+	57.3%	Medium	
+	675	
+Cut Off Trees for Golf Event
+	35.3%	Hard	
+	690	
+Employee Importance
+	58.8%	Easy	
+	694	
+Number of Distinct Islands
+	57.9%	Medium	
+	743	
+Network Delay Time
+	45.6%	Medium	
+	752	
+Open the Lock
+	52.9%	Medium	
+	429	
+N-ary Tree Level Order Traversal
+	66.7%	Medium	
+	559	
+Maximum Depth of N-ary Tree
+	69.6%	Easy	
+	773	
+Sliding Puzzle
+	60.9%	Hard	
+	785	
+Is Graph Bipartite?
+	48.6%	Medium	
+	787	
+Cheapest Flights Within K Stops
+	39.6%	Medium	
+	815	
+Bus Routes
+	43.4%	Hard	
+	827	
+Making A Large Island
+	47.4%	Hard	
+	847	
+Shortest Path Visiting All Nodes
+	53.9%	Hard	
+	854	
+K-Similar Strings
+	38.7%	Hard	
+	863	
+All Nodes Distance K in Binary Tree
+	58.0%	Medium	
+	864	
+Shortest Path to Get All Keys
+	42.1%	Hard	
+	865	
+Smallest Subtree with all the Deepest Nodes
+	64.8%	Medium	
+	882	
+Reachable Nodes In Subdivided Graph
+	42.9%	Hard	
+	909	
+Snakes and Ladders
+	39.3%	Medium	
+	913	
+Cat and Mouse
+	34.8%	Hard	
+	934	
+Shortest Bridge
+	49.7%	Medium	
+	967	
+Numbers With Same Consecutive Differences
+	44.9%	Medium	
+	987	
+Vertical Order Traversal of a Binary Tree
+	38.9%	Hard	
+	993	
+Cousins in Binary Tree
+	52.3%	Easy	
+	994	
+Rotting Oranges
+	49.6%	Medium	
+	1036	
+Escape a Large Maze
+	34.4%	Hard	
+	1161	
+Maximum Level Sum of a Binary Tree
+	69.4%	Medium	
+	1162	
+As Far from Land as Possible
+	45.4%	Medium	
+	1197	
+Minimum Knight Moves
+	37.3%	Medium	
+	1091	
+Shortest Path in Binary Matrix
+	40.0%	Medium	
+	1245	
+Tree Diameter
+	61.1%	Medium	
+	1129	
+Shortest Path with Alternating Colors
+	40.2%	Medium	
+	1236	
+Web Crawler
+	64.7%	Medium	
+	1210	
+Minimum Moves to Reach Target with Rotations
+	46.4%	Hard	
+	1242	
+Web Crawler Multithreaded
+	47.6%	Medium	
+	1263	
+Minimum Moves to Move a Box to Their Target Location
+	43.3%	Hard	
+	1284	
+Minimum Number of Flips to Convert Binary Matrix to Zero Matrix
+	70.1%	Hard	
+	1293	
+Shortest Path in a Grid with Obstacles Elimination
+	43.1%	Hard	
+	1298	
+Maximum Candies You Can Get from Boxes
+	59.7%	Hard	
+	1306	
+Jump Game III
+	62.4%	Medium	
+	1311	
+Get Watched Videos by Your Friends
+	44.2%	Medium	
+	1319	
+Number of Operations to Make Network Connected
+	55.5%	Medium	
+	1345	
+Jump Game IV
+	42.0%	Hard	
+	1368	
+Minimum Cost to Make at Least One Valid Path in a Grid
+	57.4%	Hard	
+	1379	
+Find a Corresponding Node of a Binary Tree in a Clone of That Tree
+	84.7%	Medium	
+	1391	
+Check if There is a Valid Path in a Grid
+	44.9%	Medium	
+	1485	
+Clone Binary Tree With Random Pointer
+	79.2%	Medium	
+	1490	
+Clone N-ary Tree
+	83.5%	Medium	
+	1519	
+Number of Nodes in the Sub-Tree With the Same Label
+	37.1%	Medium	
+	1602	
+Find Nearest Right Node in Binary Tree
+	73.8%	Medium	
+	1625	
+Lexicographically Smallest String After Applying Operations
+	64.2%	Medium	
+	1654	
+Minimum Jumps to Reach Home
+	25.6%	Medium	
+	1766	
+Tree of Coprimes
+	36.7%	Hard	
+	1765	
+Map of Highest Peak
+	54.4%	Medium	
+	1740	
+Find Distance in a Binary Tree
+	69.3%	Medium	
+	1778	
+Shortest Path in a Hidden Grid
+	45.0%	Medium	
+Copyright © 2021 LeetCode
+
+    Help Center
+    Jobs
+    Bug Bounty
+    Students
+    Terms
+    Privacy Policy
+
+United StatesUnited States

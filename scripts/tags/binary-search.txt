@@ -1,0 +1,334 @@
+
+
+logo
+Explore
+Problems
+Mock
+Contest
+Discuss
+Store
+🎁 Limited time event to win giveaway! 🎁
+0
+Binary Search
+
+Subscribe to see which companies asked this question
+
+You have solved 14 / 102 problems.
+Show problem tags
+ 	#	Title	Acceptance	Difficulty	Frequency
+	4	
+Median of Two Sorted Arrays
+	31.1%	Hard	
+	29	
+Divide Two Integers
+	16.9%	Medium	
+	33	
+Search in Rotated Sorted Array
+	35.9%	Medium	
+	34	
+Find First and Last Position of Element in Sorted Array
+	37.3%	Medium	
+	35	
+Search Insert Position
+	42.8%	Easy	
+	50	
+Pow(x, n)
+	31.0%	Medium	
+	69	
+Sqrt(x)
+	35.1%	Easy	
+	74	
+Search a 2D Matrix
+	37.9%	Medium	
+	81	
+Search in Rotated Sorted Array II
+	33.6%	Medium	
+	153	
+Find Minimum in Rotated Sorted Array
+	46.2%	Medium	
+	154	
+Find Minimum in Rotated Sorted Array II
+	42.0%	Hard	
+	162	
+Find Peak Element
+	44.0%	Medium	
+	167	
+Two Sum II - Input array is sorted
+	55.7%	Easy	
+	174	
+Dungeon Game
+	33.3%	Hard	
+	209	
+Minimum Size Subarray Sum
+	39.6%	Medium	
+	222	
+Count Complete Tree Nodes
+	49.4%	Medium	
+	230	
+Kth Smallest Element in a BST
+	62.7%	Medium	
+	240	
+Search a 2D Matrix II
+	45.2%	Medium	
+	270	
+Closest Binary Search Tree Value
+	50.0%	Easy	
+	275	
+H-Index II
+	36.3%	Medium	
+	278	
+First Bad Version
+	37.5%	Easy	
+	287	
+Find the Duplicate Number
+	57.6%	Medium	
+	300	
+Longest Increasing Subsequence
+	44.2%	Medium	
+	302	
+Smallest Rectangle Enclosing Black Pixels
+	52.5%	Hard	
+	315	
+Count of Smaller Numbers After Self
+	42.5%	Hard	
+	327	
+Count of Range Sum
+	36.1%	Hard	
+	349	
+Intersection of Two Arrays
+	64.9%	Easy	
+	350	
+Intersection of Two Arrays II
+	52.0%	Easy	
+	352	
+Data Stream as Disjoint Intervals
+	48.7%	Hard	
+	354	
+Russian Doll Envelopes
+	36.4%	Hard	
+	363	
+Max Sum of Rectangle No Larger Than K
+	38.4%	Hard	
+	367	
+Valid Perfect Square
+	42.0%	Easy	
+	374	
+Guess Number Higher or Lower
+	44.7%	Easy	
+	378	
+Kth Smallest Element in a Sorted Matrix
+	56.2%	Medium	
+	392	
+Is Subsequence
+	49.5%	Easy	
+	410	
+Split Array Largest Sum
+	46.4%	Hard	
+	436	
+Find Right Interval
+	48.5%	Medium	
+	441	
+Arranging Coins
+	42.4%	Easy	
+	454	
+4Sum II
+	54.6%	Medium	
+	475	
+Heaters
+	33.7%	Medium	
+	483	
+Smallest Good Base
+	36.4%	Hard	
+	493	
+Reverse Pairs
+	26.9%	Hard	
+	540	
+Single Element in a Sorted Array
+	57.9%	Medium	
+	644	
+Maximum Average Subarray II
+	34.1%	Hard	
+	658	
+Find K Closest Elements
+	42.0%	Medium	
+	668	
+Kth Smallest Number in Multiplication Table
+	47.8%	Hard	
+	718	
+Maximum Length of Repeated Subarray
+	50.4%	Medium	
+	719	
+Find K-th Smallest Pair Distance
+	32.6%	Hard	
+	744	
+Find Smallest Letter Greater Than Target
+	45.6%	Easy	
+	702	
+Search in a Sorted Array of Unknown Size
+	68.9%	Medium	
+	774	
+Minimize Max Distance to Gas Station
+	48.3%	Hard	
+	704	
+Binary Search
+	54.1%	Easy	
+	778	
+Swim in Rising Water
+	54.7%	Hard	
+	786	
+K-th Smallest Prime Fraction
+	42.8%	Hard	
+	793	
+Preimage Size of Factorial Zeroes Function
+	40.6%	Hard	
+	852	
+Peak Index in a Mountain Array
+	71.7%	Easy	
+	862	
+Shortest Subarray with Sum at Least K
+	25.2%	Hard	
+	710	
+Random Pick with Blacklist
+	32.9%	Hard	
+	875	
+Koko Eating Bananas
+	53.5%	Medium	
+	878	
+Nth Magical Number
+	28.8%	Hard	
+	528	
+Random Pick with Weight
+	44.7%	Medium	
+	497	
+Random Point in Non-overlapping Rectangles
+	39.1%	Medium	
+	887	
+Super Egg Drop
+	27.0%	Hard	
+	911	
+Online Election
+	51.4%	Medium	
+	927	
+Three Equal Parts
+	34.6%	Hard	
+	981	
+Time Based Key-Value Store
+	54.1%	Medium	
+	1011	
+Capacity To Ship Packages Within D Days
+	59.8%	Medium	
+	1060	
+Missing Element in Sorted Array
+	54.8%	Medium	
+	1064	
+Fixed Point
+	65.0%	Easy	
+	1150	
+Check If a Number Is Majority Element in a Sorted Array
+	57.4%	Easy	
+	1044	
+Longest Duplicate Substring
+	31.4%	Hard	
+	1182	
+Shortest Distance to Target Color
+	53.4%	Medium	
+	1198	
+Find Smallest Common Element in All Rows
+	75.3%	Medium	
+	1095	
+Find in Mountain Array
+	36.1%	Hard	
+	1231	
+Divide Chocolate
+	53.6%	Hard	
+	1111	
+Maximum Nesting Depth of Two Valid Parentheses Strings
+	72.6%	Medium	
+	1300	
+Sum of Mutated Array Closest to Target
+	43.0%	Medium	
+	1157	
+Online Majority Element In Subarray
+	39.8%	Hard	
+	1170	
+Compare Strings by Frequency of the Smallest Character
+	59.8%	Medium	
+	1201	
+Ugly Number III
+	26.4%	Medium	
+	1235	
+Maximum Profit in Job Scheduling
+	47.5%	Hard	
+	1237	
+Find Positive Integer Solution for a Given Equation
+	69.5%	Medium	
+	1618	
+Maximum Font to Fit a Sentence in a Screen
+	56.2%	Medium	
+	1283	
+Find the Smallest Divisor Given a Threshold
+	49.6%	Medium	
+	1292	
+Maximum Side Length of a Square with Sum Less than or Equal to Threshold
+	50.8%	Medium	
+	1337	
+The K Weakest Rows in a Matrix
+	72.0%	Easy	
+	1351	
+Count Negative Numbers in a Sorted Matrix
+	75.9%	Easy	
+	1482	
+Minimum Number of Days to Make m Bouquets
+	50.3%	Medium	
+	1521	
+Find a Value of a Mysterious Function Closest to Target
+	44.3%	Hard	
+	1533	
+Find the Index of the Large Integer
+	54.7%	Medium	
+	1552	
+Magnetic Force Between Two Balls
+	48.9%	Medium	
+	1574	
+Shortest Subarray to be Removed to Make Array Sorted
+	33.5%	Medium	
+	1562	
+Find Latest Group of Size M
+	39.5%	Medium	
+	1590	
+Make Sum Divisible by P
+	27.0%	Medium	
+	1631	
+Path With Minimum Effort
+	50.1%	Medium	
+	1642	
+Furthest Building You Can Reach
+	50.3%	Medium	
+	1649	
+Create Sorted Array through Instructions
+	36.4%	Hard	
+	1658	
+Minimum Operations to Reduce X to Zero
+	33.4%	Medium	
+	1712	
+Ways to Split Array Into Three Subarrays
+	29.5%	Medium	
+	1751	
+Maximum Number of Events That Can Be Attended II
+	47.5%	Hard	
+	1739	
+Building Boxes
+	49.7%	Hard	
+	1760	
+Minimum Limit of Balls in a Bag
+	52.1%	Medium	
+Copyright © 2021 LeetCode
+
+    Help Center
+    Jobs
+    Bug Bounty
+    Students
+    Terms
+    Privacy Policy
+
+United StatesUnited States

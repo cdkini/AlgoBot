@@ -1,0 +1,220 @@
+
+
+logo
+Explore
+Problems
+Mock
+Contest
+Discuss
+Store
+🎁 Limited time event to win giveaway! 🎁
+0
+Stack
+
+Subscribe to see which companies asked this question
+
+You have solved 3 / 64 problems.
+Show problem tags
+ 	#	Title	Acceptance	Difficulty	Frequency
+	20	
+Valid Parentheses
+	39.9%	Easy	
+	42	
+Trapping Rain Water
+	51.3%	Hard	
+	71	
+Simplify Path
+	34.7%	Medium	
+	84	
+Largest Rectangle in Histogram
+	37.2%	Hard	
+	85	
+Maximal Rectangle
+	39.5%	Hard	
+	94	
+Binary Tree Inorder Traversal
+	66.0%	Medium	
+	103	
+Binary Tree Zigzag Level Order Traversal
+	50.2%	Medium	
+	144	
+Binary Tree Preorder Traversal
+	57.6%	Medium	
+	145	
+Binary Tree Postorder Traversal
+	57.7%	Medium	
+	150	
+Evaluate Reverse Polish Notation
+	38.0%	Medium	
+	155	
+Min Stack
+	46.5%	Easy	
+	173	
+Binary Search Tree Iterator
+	60.3%	Medium	
+	224	
+Basic Calculator
+	38.2%	Hard	
+	225	
+Implement Stack using Queues
+	47.6%	Easy	
+	227	
+Basic Calculator II
+	38.6%	Medium	
+	232	
+Implement Queue using Stacks
+	52.4%	Easy	
+	255	
+Verify Preorder Sequence in Binary Search Tree
+	46.2%	Medium	
+	272	
+Closest Binary Search Tree Value II
+	52.4%	Hard	
+	316	
+Remove Duplicate Letters
+	39.2%	Medium	
+	331	
+Verify Preorder Serialization of a Binary Tree
+	41.0%	Medium	
+	341	
+Flatten Nested List Iterator
+	54.6%	Medium	
+	385	
+Mini Parser
+	34.5%	Medium	
+	394	
+Decode String
+	52.8%	Medium	
+	402	
+Remove K Digits
+	28.7%	Medium	
+	439	
+Ternary Expression Parser
+	56.8%	Medium	
+	456	
+132 Pattern
+	30.6%	Medium	
+	496	
+Next Greater Element I
+	65.7%	Easy	
+	503	
+Next Greater Element II
+	58.5%	Medium	
+	591	
+Tag Validator
+	34.7%	Hard	
+	636	
+Exclusive Time of Functions
+	54.6%	Medium	
+	682	
+Baseball Game
+	67.2%	Easy	
+	726	
+Number of Atoms
+	51.0%	Hard	
+	735	
+Asteroid Collision
+	43.2%	Medium	
+	739	
+Daily Temperatures
+	64.7%	Medium	
+	770	
+Basic Calculator IV
+	54.2%	Hard	
+	772	
+Basic Calculator III
+	43.7%	Hard	
+	844	
+Backspace String Compare
+	47.1%	Easy	
+	856	
+Score of Parentheses
+	64.8%	Medium	
+	880	
+Decoded String at Index
+	28.2%	Medium	
+	895	
+Maximum Frequency Stack
+	63.1%	Hard	
+	901	
+Online Stock Span
+	61.4%	Medium	
+	907	
+Sum of Subarray Minimums
+	33.1%	Medium	
+	921	
+Minimum Add to Make Parentheses Valid
+	74.9%	Medium	
+	946	
+Validate Stack Sequences
+	64.4%	Medium	
+	975	
+Odd Even Jump
+	41.5%	Hard	
+	1003	
+Check If Word Is Valid After Substitutions
+	56.5%	Medium	
+	1063	
+Number of Valid Subarrays
+	72.1%	Hard	
+	1019	
+Next Greater Node In Linked List
+	58.3%	Medium	
+	1021	
+Remove Outermost Parentheses
+	79.1%	Easy	
+	1047	
+Remove All Adjacent Duplicates In String
+	70.9%	Easy	
+	1081	
+Smallest Subsequence of Distinct Characters
+	53.5%	Medium	
+	1124	
+Longest Well-Performing Interval
+	33.3%	Medium	
+	1130	
+Minimum Cost Tree From Leaf Values
+	67.3%	Medium	
+	1190	
+Reverse Substrings Between Each Pair of Parentheses
+	64.1%	Medium	
+	1209	
+Remove All Adjacent Duplicates in String II
+	57.6%	Medium	
+	1249	
+Minimum Remove to Make Valid Parentheses
+	64.2%	Medium	
+	1381	
+Design a Stack With Increment Operation
+	76.2%	Medium	
+	1410	
+HTML Entity Parser
+	54.2%	Medium	
+	1441	
+Build an Array With Stack Operations
+	70.3%	Easy	
+	1541	
+Minimum Insertions to Balance a Parentheses String
+	42.8%	Medium	
+	1544	
+Make The String Great
+	55.5%	Easy	
+	1598	
+Crawler Log Folder
+	63.9%	Easy	
+	1673	
+Find the Most Competitive Subsequence
+	45.4%	Medium	
+	1703	
+Minimum Adjacent Swaps for K Consecutive Ones
+	39.7%	Hard	
+Copyright © 2021 LeetCode
+
+    Help Center
+    Jobs
+    Bug Bounty
+    Students
+    Terms
+    Privacy Policy
+
+United StatesUnited States

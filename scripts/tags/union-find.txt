@@ -1,0 +1,142 @@
+
+
+logo
+Explore
+Problems
+Mock
+Contest
+Discuss
+Store
+🎁 Limited time event to win giveaway! 🎁
+0
+Union Find
+
+Subscribe to see which companies asked this question
+
+You have solved 1 / 38 problems.
+Show problem tags
+ 	#	Title	Acceptance	Difficulty	Frequency
+	128	
+Longest Consecutive Sequence
+	46.3%	Hard	
+	130	
+Surrounded Regions
+	29.5%	Medium	
+	200	
+Number of Islands
+	49.2%	Medium	
+	261	
+Graph Valid Tree
+	43.2%	Medium	
+	305	
+Number of Islands II
+	39.6%	Hard	
+	323	
+Number of Connected Components in an Undirected Graph
+	57.9%	Medium	
+	399	
+Evaluate Division
+	54.4%	Medium	
+	547	
+Number of Provinces
+	60.5%	Medium	
+	684	
+Redundant Connection
+	59.0%	Medium	
+	685	
+Redundant Connection II
+	33.0%	Hard	
+	721	
+Accounts Merge
+	51.9%	Medium	
+	737	
+Sentence Similarity II
+	46.6%	Medium	
+	765	
+Couples Holding Hands
+	55.5%	Hard	
+	778	
+Swim in Rising Water
+	54.7%	Hard	
+	803	
+Bricks Falling When Hit
+	31.5%	Hard	
+	839	
+Similar String Groups
+	41.0%	Hard	
+	924	
+Minimize Malware Spread
+	41.9%	Hard	
+	928	
+Minimize Malware Spread II
+	41.4%	Hard	
+	947	
+Most Stones Removed with Same Row or Column
+	55.4%	Medium	
+	952	
+Largest Component Size by Common Factor
+	36.2%	Hard	
+	959	
+Regions Cut By Slashes
+	67.2%	Medium	
+	990	
+Satisfiability of Equality Equations
+	46.9%	Medium	
+	1061	
+Lexicographically Smallest Equivalent String
+	66.7%	Medium	
+	1101	
+The Earliest Moment When Everyone Become Friends
+	67.8%	Medium	
+	1102	
+Path With Maximum Minimum Value
+	50.6%	Medium	
+	1135	
+Connecting Cities With Minimum Cost
+	59.4%	Medium	
+	1168	
+Optimize Water Distribution in a Village
+	61.2%	Hard	
+	1627	
+Graph Connectivity With Threshold
+	39.1%	Hard	
+	1632	
+Rank Transform of a Matrix
+	30.8%	Hard	
+	1202	
+Smallest String With Swaps
+	48.8%	Medium	
+	1319	
+Number of Operations to Make Network Connected
+	55.5%	Medium	
+	1489	
+Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree
+	51.4%	Hard	
+	1579	
+Remove Max Number of Edges to Keep Graph Fully Traversable
+	46.2%	Hard	
+	1584	
+Min Cost to Connect All Points
+	52.2%	Medium	
+	1631	
+Path With Minimum Effort
+	50.1%	Medium	
+	1697	
+Checking Existence of Edge Length Limited Paths
+	54.6%	Hard	
+	1722	
+Minimize Hamming Distance After Swap Operations
+	54.5%	Medium	
+	1724	
+Checking Existence of Edge Length Limited Paths II
+	56.5%	Hard	
+Copyright © 2021 LeetCode
+
+    Help Center
+    Jobs
+    Bug Bounty
+    Students
+    Terms
+    Privacy Policy
+
+United StatesUnited States
