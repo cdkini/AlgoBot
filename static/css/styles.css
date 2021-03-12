@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  background-color: mediumseagreen;
+}
+
+form {
+  padding: 30px;
+  background-color: white;
+  margin: 0 auto;
+  width: 750px;
+}
+hr.thick {
+  border-top: 8px solid #bbb;
+}
+
+#header {
+  text-align: center;
+  font-weight: bold;
+}

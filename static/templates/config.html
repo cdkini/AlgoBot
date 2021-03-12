@@ -1,294 +1,881 @@
-<!-- <head> -->
-<!--   <link rel="stylesheet" href="styles.css" /> -->
-<!-- </head> -->
-<!-- <body> -->
-<!--   <h1>Config - Chetan Kini</h1> -->
-<!--   <form method="POST"> -->
-<!--     <label for="interviewee">I want a problem of this difficulty: </label> -->
-<!--     <select name="interviewee" id="interviewee"> -->
-<!--       <option value="leetcode">Easy</option> -->
-<!--       <option value="replit">Medium</option> -->
-<!--       <option value="googledocs">Hard</option> -->
-<!--     </select> -->
-<!--     <br /> -->
-<!--     <label for="interviewer" -->
-<!--       >I am comfortable conducting an interview of this difficulty (and below): -->
-<!--     </label> -->
-<!--     <select name="interviewer" id="interviewer"> -->
-<!--       <option value="leetcode">Easy</option> -->
-<!--       <option value="replit">Medium</option> -->
-<!--       <option value="googledocs">Hard</option> -->
-<!--     </select> -->
-<!--     <br /> -->
-<!--     <label for="environment" -->
-<!--       >I want Mock Interview Bot to select a problem for me: -->
-<!--     </label> -->
-<!--     <input type="checkbox" checked /> -->
-<!--     <br /> -->
-<!--     <label for="questionlist">I would like a problem to be picked from: </label> -->
-<!--     <select name="questionlist" id="questionlist"> -->
-<!--       <option value="top100liked">Top 100 Liked Questions</option> -->
-<!--       <option value="topinterview">Top Interview Questions</option> -->
-<!--       <option value="blind75">Blind 75</option> -->
-<!--       <option value="leetcodepatterns">LeetCode Patterns</option> -->
-<!--       <option value="random">Random</option> -->
-<!--     </select> -->
-<!--     <br /> -->
-<!--     <label>Topics I'd like to work on: </label> -->
-<!--     <ul class="checkbox-grid"> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="array" value="array" />Array<label -->
-<!--           for="array" -->
-<!--         ></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input -->
-<!--           type="checkbox" -->
-<!--           name="backtracking" -->
-<!--           value="backtracking" -->
-<!--         />Backtracking<label for="backtracking"></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--       <li> -->
-<!--         <input type="checkbox" name="" value="" />Temp<label for=""></label> -->
-<!--       </li> -->
-<!--     </ul> -->
-
-<!--     <select name="questionlist" id="questionlist" multiple> -->
-<!--       <option id="Array">Array</option> -->
-<!--       <option id="Backtracking">Backtracking</option> -->
-<!--       <option id="Binary Search">Binary Search</option> -->
-<!--       <option id="Bit Manipulation">Bit Manipulation</option> -->
-<!--       <option id="Breadth-first Search">Breadth-first Search</option> -->
-<!--       <option id="Depth-first Search">Depth-first Search</option> -->
-<!--       <option id="Design">Design</option> -->
-<!--       <option id="Divide and Conquer">Divide and Conquer</option> -->
-<!--       <option id="Dynamic Programming">Dynamic Programming</option> -->
-<!--       <option id="Graph">Graph</option> -->
-<!--       <option id="Greedy">Greedy</option> -->
-<!--       <option id="Hash Table">Hash Table</option> -->
-<!--       <option id="Heap">Heap</option> -->
-<!--       <option id="Linked List">Linked List</option> -->
-<!--       <option id="Math">Math</option> -->
-<!--       <option id="Recursion">Recursion</option> -->
-<!--       <option id="Sliding Window">Sliding Window</option> -->
-<!--       <option id="Sort">Sort</option> -->
-<!--       <option id="Stack">Stack</option> -->
-<!--       <option id="String">String</option> -->
-<!--       <option id="Tree">Tree</option> -->
-<!--       <option id="Trie">Trie</option> -->
-<!--       <option id="Two Pointers">Two Pointers</option> -->
-<!--       <option id="Union Find">Union Find</option> -->
-<!--     </select> -->
-<!--     <br /> -->
-<!--     <label for="environment">Preferred environment:</label> -->
-<!--     <select name="environment" id="environment"> -->
-<!--       <option value="leetcode">LeetCode</option> -->
-<!--       <option value="replit">Repl.it</option> -->
-<!--       <option value="googledocs">Google Docs</option> -->
-<!--     </select> -->
-<!--     <br /> -->
-<!--     <label>Additional Notes:</label><br /> -->
-<!--     <textarea name="notes"></textarea><br /> -->
-<!--     <input value="Save" type="submit" /> -->
-<!--   </form> -->
-<!-- </body> -->
-
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up Form</title>
-    <link rel="stylesheet" href="static/css/normalize.css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
       rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="static/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="static/css/styles.css" />
   </head>
-  <body>
-    <form action="index.html" method="post">
-      <h2>Config for Chetan Kini</h2>
+  <form action="/config" method="POST">
+    <h2 id="header">Mock Interview Bot Configuration</h2>
+    <p>
+      The below configuration options are integral to the proper operation of
+      Mock Interview Bot! Please take the time to fill out ALL options,
+      regardless of how you wish to use the tool. You are free to change these
+      options at any time by using the
+      <code>config</code> cmd in the Zulip chat.
+    </p>
+    <p>
+      Please check the official documentation and repository for further
+      information and don't hesistate to reach out to Chetan Kini with any
+      questions or concerns.
+    </p>
+    <hr class="thick" />
+    <h3>General Settings</h3>
+    <hr />
+    <div class="form-group">
+      <label
+        >1. I am reasonably comfortable solving or understanding this level of
+        problem:</label
+      >
+      <div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input
+            name="experience"
+            id="experience_0"
+            type="radio"
+            aria-describedby="experienceHelpBlock"
+            required="required"
+            class="custom-control-input"
+            value="easy"
+          />
+          <label for="experience_0" class="custom-control-label">Easy</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input
+            name="experience"
+            id="experience_1"
+            type="radio"
+            aria-describedby="experienceHelpBlock"
+            required="required"
+            class="custom-control-input"
+            value="medium"
+          />
+          <label for="experience_1" class="custom-control-label">Medium</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input
+            name="experience"
+            id="experience_2"
+            type="radio"
+            aria-describedby="experienceHelpBlock"
+            required="required"
+            class="custom-control-input"
+            value="hard"
+          />
+          <label for="experience_2" class="custom-control-label">Hard</label>
+        </div>
+        <span id="experienceHelpBlock" class="form-text text-muted"
+          >Used to make the best possible match (when a pairing session is set
+          up)</span
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <label>2. I would like my questions to come from:</label>
+      <div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-radio">
+            <input
+              name="question_list"
+              id="question_list_0"
+              type="radio"
+              aria-describedby="question_listHelpBlock"
+              required="required"
+              class="custom-control-input"
+              value="top_100_liked"
+            />
+            <label for="question_list_0" class="custom-control-label"
+              >Top 100 Liked Questions</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-radio">
+            <input
+              name="question_list"
+              id="question_list_1"
+              type="radio"
+              aria-describedby="question_listHelpBlock"
+              required="required"
+              class="custom-control-input"
+              value="top_interview_questions"
+            />
+            <label for="question_list_1" class="custom-control-label"
+              >Top Interview Questions</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-radio">
+            <input
+              name="question_list"
+              id="question_list_2"
+              type="radio"
+              aria-describedby="question_listHelpBlock"
+              required="required"
+              class="custom-control-input"
+              value="blind_75"
+            />
+            <label for="question_list_2" class="custom-control-label"
+              >Blind 75</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-radio">
+            <input
+              name="question_list"
+              id="question_list_3"
+              type="radio"
+              aria-describedby="question_listHelpBlock"
+              required="required"
+              class="custom-control-input"
+              value="leetcode_patterns"
+            />
+            <label for="question_list_3" class="custom-control-label"
+              >LeetCode Patterns</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-radio">
+            <input
+              name="question_list"
+              id="question_list_4"
+              type="radio"
+              aria-describedby="question_listHelpBlock"
+              required="required"
+              class="custom-control-input"
+              value="random"
+            />
+            <label for="question_list_4" class="custom-control-label"
+              >Random / All Questions</label
+            >
+          </div>
+        </div>
+        <span id="question_listHelpBlock" class="form-text text-muted"
+          >Please see github.com/recurse-mock-interview-bot/README.md for
+          information on these psets</span
+        >
+      </div>
+    </div>
 
-      <label for="name">Name</label>
-      <input type="text" id="name" name="student_name" />
+    <div class="form-group">
+      <label>3. I would like to be tested on:</label>
+      <div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input
+            name="topic_selection"
+            id="topic_selection_0"
+            type="radio"
+            class="custom-control-input"
+            value="random_topic"
+            aria-describedby="topic_selectionHelpBlock"
+            required="required"
+          />
+          <label for="topic_selection_0" class="custom-control-label"
+            >All topics</label
+          >
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input
+            name="topic_selection"
+            id="topic_selection_1"
+            type="radio"
+            class="custom-control-input"
+            value="manual_topic"
+            aria-describedby="topic_selectionHelpBlock"
+            required="required"
+          />
+          <label for="topic_selection_1" class="custom-control-label"
+            >Specific topics of my choosing</label
+          >
+        </div>
+        <span id="topic_selectionHelpBlock" class="form-text text-muted"
+          >All topics more closely resembles a real interview but feel free to
+          work on particular weak points</span
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <label
+        >4. I would like to review (leave blank if the selection should be
+        random):</label
+      >
+      <div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_0"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="array"
+            />
+            <label for="topics_0" class="custom-control-label"
+              >Array (312)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_1"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="backtracking"
+            />
+            <label for="topics_1" class="custom-control-label"
+              >Backtracking (67)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_2"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="binary_search"
+            />
+            <label for="topics_2" class="custom-control-label"
+              >Binary Search (102)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_3"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="bit_manipulation"
+            />
+            <label for="topics_3" class="custom-control-label"
+              >Bit Manipulation (57)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_4"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="breadth-first_search"
+            />
+            <label for="topics_4" class="custom-control-label"
+              >Breadth-first Search (89)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_5"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="depth-first_search"
+            />
+            <label for="topics_5" class="custom-control-label"
+              >Depth-first Search (156)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_6"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="design"
+            />
+            <label for="topics_6" class="custom-control-label"
+              >Design (60)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_7"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="divide_and_conquer"
+            />
+            <label for="topics_7" class="custom-control-label"
+              >Divide and Conquer (21)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_8"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="dynamic_programming"
+            />
+            <label for="topics_8" class="custom-control-label"
+              >Dynamic Programming (251)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_9"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="graph"
+            />
+            <label for="topics_9" class="custom-control-label"
+              >Graph (56)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_10"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="greedy"
+            />
+            <label for="topics_10" class="custom-control-label"
+              >Greedy (144)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_11"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="hash_table"
+            />
+            <label for="topics_11" class="custom-control-label"
+              >Hash Table (143)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_12"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="heap"
+            />
+            <label for="topics_12" class="custom-control-label"
+              >Heap (41)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_13"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="linked_list"
+            />
+            <label for="topics_13" class="custom-control-label"
+              >Linked List (43)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_14"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="math"
+            />
+            <label for="topics_14" class="custom-control-label"
+              >Math (202)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_15"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="recursion"
+            />
+            <label for="topics_15" class="custom-control-label"
+              >Recursion (38)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_16"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="sliding_window"
+            />
+            <label for="topics_16" class="custom-control-label"
+              >Sliding Window (27)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_17"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="sort"
+            />
+            <label for="topics_17" class="custom-control-label"
+              >Sort (77)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_18"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="stack"
+            />
+            <label for="topics_18" class="custom-control-label"
+              >Stack (64)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_19"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="string"
+            />
+            <label for="topics_19" class="custom-control-label"
+              >String (221)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_20"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="tree"
+            />
+            <label for="topics_20" class="custom-control-label"
+              >Tree (158)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_21"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="trie"
+            />
+            <label for="topics_21" class="custom-control-label"
+              >Trie (20)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_22"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="two_pointers"
+            />
+            <label for="topics_22" class="custom-control-label"
+              >Two Pointers (73)</label
+            >
+          </div>
+        </div>
+        <div class="custom-controls-stacked">
+          <div class="custom-control custom-checkbox">
+            <input
+              name="topics"
+              id="topics_23"
+              type="checkbox"
+              aria-describedby="topicsHelpBlock"
+              class="custom-control-input"
+              value="union_find"
+            />
+            <label for="topics_23" class="custom-control-label"
+              >Union Find (38)</label
+            >
+          </div>
+        </div>
+        <span id="topicsHelpBlock" class="form-text text-muted"
+          >Number represents available questions per LeetCode
+        </span>
+      </div>
+    </div>
 
-      <label for="mail">Email</label>
-      <input type="email" id="mail" name="student_email" />
+    <hr class="thick" />
+    <h3>Solo Settings</h3>
+    <hr />
+    <div class="form-group">
+      <label>5. I would like to get daily questions on these days:</label>
+      <div>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            name="solo_days"
+            id="solo_days_0"
+            type="checkbox"
+            aria-describedby="solo_daysHelpBlock"
+            class="custom-control-input"
+            value="sun"
+          />
+          <label for="solo_days_0" class="custom-control-label">Sun</label>
+        </div>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            name="solo_days"
+            id="solo_days_1"
+            type="checkbox"
+            aria-describedby="solo_daysHelpBlock"
+            class="custom-control-input"
+            value="mon"
+          />
+          <label for="solo_days_1" class="custom-control-label">Mon</label>
+        </div>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            name="solo_days"
+            id="solo_days_2"
+            type="checkbox"
+            aria-describedby="solo_daysHelpBlock"
+            class="custom-control-input"
+            value="tue"
+          />
+          <label for="solo_days_2" class="custom-control-label">Tue</label>
+        </div>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            name="solo_days"
+            id="solo_days_3"
+            type="checkbox"
+            aria-describedby="solo_daysHelpBlock"
+            class="custom-control-input"
+            value="wed"
+          />
+          <label for="solo_days_3" class="custom-control-label">Wed</label>
+        </div>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            name="solo_days"
+            id="solo_days_4"
+            type="checkbox"
+            aria-describedby="solo_daysHelpBlock"
+            class="custom-control-input"
+            value="thu"
+          />
+          <label for="solo_days_4" class="custom-control-label">Thu</label>
+        </div>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            name="solo_days"
+            id="solo_days_5"
+            type="checkbox"
+            aria-describedby="solo_daysHelpBlock"
+            class="custom-control-input"
+            value="fri"
+          />
+          <label for="solo_days_5" class="custom-control-label">Fri</label>
+        </div>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            name="solo_days"
+            id="solo_days_6"
+            type="checkbox"
+            aria-describedby="solo_daysHelpBlock"
+            class="custom-control-input"
+            value="sat"
+          />
+          <label for="solo_days_6" class="custom-control-label">Sat</label>
+        </div>
+        <span id="solo_daysHelpBlock" class="form-text text-muted"
+          >Leave empty or use the <code>cancel solo</code> cmd to stop daily
+          questions</span
+        >
+      </div>
+    </div>
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="student_password" />
+    <div class="form-group">
+      <label
+        >6. I would like my questions to be of this difficulty level or from
+        this range:</label
+      >
+      <div>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            name="solo_difficulty"
+            id="solo_difficulty_0"
+            type="checkbox"
+            aria-describedby="difficultyHelpBlock"
+            class="custom-control-input"
+            value="easy"
+          />
+          <label for="solo_difficulty_0" class="custom-control-label"
+            >Easy</label
+          >
+        </div>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            name="solo_difficulty"
+            id="solo_difficulty_1"
+            type="checkbox"
+            aria-describedby="difficultyHelpBlock"
+            class="custom-control-input"
+            value="medium"
+          />
+          <label for="solo_difficulty_1" class="custom-control-label"
+            >Medium</label
+          >
+        </div>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            name="solo_difficulty"
+            id="solo_difficulty_2"
+            type="checkbox"
+            aria-describedby="difficultyHelpBlock"
+            class="custom-control-input"
+            value="hard"
+          />
+          <label for="solo_difficulty_2" class="custom-control-label"
+            >Hard</label
+          >
+        </div>
+        <span id="difficultyHelpBlock" class="form-text text-muted"
+          >You can pick more than one if you'd like some variability (will
+          randomly choose each session)</span
+        >
+      </div>
+    </div>
+    <hr class="thick" />
+    <h3>Pairing Settings</h3>
+    <hr />
+    <div class="form-group">
+      <label>7. I would like my problem to be selected by:</label>
+      <div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input
+            name="question_selection"
+            id="question_selection_0"
+            type="radio"
+            aria-describedby="question_selectionHelpBlock"
+            class="custom-control-input"
+            value="random_question"
+            required="required"
+          />
+          <label for="question_selection_0" class="custom-control-label"
+            >Mock Interview Bot</label
+          >
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input
+            name="question_selection"
+            id="question_selection_1"
+            type="radio"
+            aria-describedby="question_selectionHelpBlock"
+            class="custom-control-input"
+            value="manual_question"
+            required="required"
+          />
+          <label for="question_selection_1" class="custom-control-label"
+            >Myself</label
+          >
+        </div>
+        <span id="question_selectionHelpBlock" class="form-text text-muted"
+          >If not done through MIB, please communicate your question to your
+          interviewer in advance</span
+        >
+      </div>
+    </div>
 
-      <label>Interview Question</label>
-      <input
-        type="radio"
-        id="under_16"
-        value="under_16"
-        name="user_age"
-      /><label for="under_16" class="light"
-        >I'll have Mock Interview Bot select one for me</label
-      ><br />
-      <input type="radio" id="over_16" value="over_16" name="user_age" /><label
-        for="over_16"
-        class="light"
-        >I'll select a question and disuss it with my interviewer
-      </label>
-      <br />
-
-      <label>Interview Question</label>
-      <input
-        type="radio"
-        id="under_16"
-        value="under_16"
-        name="user_age"
-      /><label for="under_16" class="light"
-        >I'll have Mock Interview Bot select one for me</label
-      ><br />
-      <input type="radio" id="over_16" value="over_16" name="user_age" /><label
-        for="over_16"
-        class="light"
-        >I'll select a question and disuss it with my interviewer
-      </label>
-      <br />
-
-      <label for="bio">Additional Notes for Interviewer</label>
-      <textarea id="bio" name="student_bio"></textarea>
-
-      <label for="courses">Select Courses</label>
-      <select id="courses" name="student_courses">
-        <optgroup label="Common Topics">
-          <option id="Array">Array (312)</option>
-          <option id="Backtracking">Backtracking (67)</option>
-          <option id="Binary Search">Binary Search (102)</option>
-          <option id="Breadth-first Search">Breadth-first Search (89)</option>
-          <option id="Depth-first Search">Depth-first Search (156)</option>
-          <option id="Divide and Conquer">Divide and Conquer</option>
-          <option id="Dynamic Programming">Dynamic Programming</option>
-          <option id="Graph">Graph</option>
-          <option id="Greedy">Greedy</option>
-          <option id="Hash Table">Hash Table</option>
-          <option id="Heap">Heap</option>
-          <option id="Linked List">Linked List</option>
-          <option id="Recursion">Recursion</option>
-          <option id="Sliding Window">Sliding Window</option>
-          <option id="Sort">Sort</option>
-          <option id="Stack">Stack</option>
-          <option id="String">String</option>
-          <option id="Tree">Tree</option>
-          <option id="Two Pointers">Two Pointers</option>
-          <option id="Queue">Queue</option>
-          <option id="Binary Search Tree">Binary Search Tree</option>
-          <option id="Dequeue">Dequeue</option>
-          <option id="Memoization">Memoization</option>
-        </optgroup>
-        <optgroup label="Niche Topics">
-          <option id="Binary Indexed Tree">Binary Indexed Tree</option>
-          <option id="Bit Manipulation">Bit Manipulation</option>
-          <option id="Brainteaser">Brainteaser</option>
-          <option id="Design">Design</option>
-          <option id="Geometry">Geometry</option>
-          <option id="Line Sweep">Line Sweep</option>
-          <option id="Math">Math</option>
-          <option id="Meet in the Middle">Meet in the Middle</option>
-          <option id="Minimax">Minimax</option>
-          <option id="OOP">OOP</option>
-          <option id="Ordered Map">Ordered Map</option>
-          <option id="Random">Random</option>
-          <option id="Rejection Sampling">Rejection Sampling</option>
-          <option id="Reservoir Sampling">Reservoir Sampling</option>
-          <option id="Rolling Hash">Rolling Hash</option>
-          <option id="Segment Tree">Segment Tree</option>
-          <option id="Suffix Array">Suffix Array</option>
-          <option id="Topological Sort">Topological Sort</option>
-          <option id="Trie">Trie</option>
-          <option id="Union Find">Union Find</option>
-        </optgroup>
-      </select>
-
-      <label>Interests:</label>
-      <input
-        type="checkbox"
-        id="engineering"
-        value="interest_engineering"
-        name="user_interest"
-      /><label class="light" for="engineering">Engineering</label><br />
-      <input
-        type="checkbox"
-        id="business"
-        value="interest_business"
-        name="user_interest"
-      /><label class="light" for="business">Business</label><br />
-      <input
-        type="checkbox"
-        id="law"
-        value="interest_law"
-        name="user_interest"
-      /><label class="light" for="law">Law</label>
-
-      <button type="submit">Submit</button>
-    </form>
-  </body>
+    <div class="form-group">
+      <label
+        >8. I would like my questions to be of this difficulty level or from
+        this range:</label
+      >
+      <div>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            name="pairing_difficulty"
+            id="pairing_difficulty_0"
+            type="checkbox"
+            aria-describedby="difficultyHelpBlock"
+            class="custom-control-input"
+            value="easy"
+          />
+          <label for="pairing_difficulty_0" class="custom-control-label"
+            >Easy</label
+          >
+        </div>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            name="pairing_difficulty"
+            id="pairing_difficulty_1"
+            type="checkbox"
+            aria-describedby="difficultyHelpBlock"
+            class="custom-control-input"
+            value="medium"
+          />
+          <label for="pairing_difficulty_1" class="custom-control-label"
+            >Medium</label
+          >
+        </div>
+        <div class="custom-control custom-checkbox custom-control-inline">
+          <input
+            name="pairing_difficulty"
+            id="pairing_difficulty_2"
+            type="checkbox"
+            aria-describedby="difficultyHelpBlock"
+            class="custom-control-input"
+            value="hard"
+          />
+          <label for="pairing_difficulty_2" class="custom-control-label"
+            >Hard</label
+          >
+        </div>
+        <span id="difficultyHelpBlock" class="form-text text-muted"
+          >You can pick more than one if you'd like some variability (will
+          randomly choose each session)</span
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <label>9. I would like to use the following environment:</label>
+      <div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input
+            name="environment"
+            id="environment_0"
+            type="radio"
+            class="custom-control-input"
+            value="leetcode"
+            aria-describedby="environmentHelpBlock"
+            required="required"
+          />
+          <label for="environment_0" class="custom-control-label"
+            >LeetCode</label
+          >
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input
+            name="environment"
+            id="environment_1"
+            type="radio"
+            class="custom-control-input"
+            value="replit"
+            aria-describedby="environmentHelpBlock"
+            required="required"
+          />
+          <label for="environment_1" class="custom-control-label"
+            >Repl.it</label
+          >
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input
+            name="environment"
+            id="environment_2"
+            type="radio"
+            class="custom-control-input"
+            value="google_docs"
+            aria-describedby="environmentHelpBlock"
+            required="required"
+          />
+          <label for="environment_2" class="custom-control-label"
+            >Google Docs</label
+          >
+        </div>
+        <span id="environmentHelpBlock" class="form-text text-muted"
+          >How closely you want to replicate a traditional phone screen
+          environment</span
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="comments">10. Comments</label>
+      <textarea
+        id="comments"
+        name="comments"
+        cols="40"
+        rows="5"
+        aria-describedby="commentsHelpBlock"
+        class="form-control"
+      ></textarea>
+      <span id="commentsHelpBlock" class="form-text text-muted"
+        >Anything else you'd like your interviewer to know</span
+      >
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Save Settings</button>
+    </div>
+  </form>
+  <body></body>
 </html>
