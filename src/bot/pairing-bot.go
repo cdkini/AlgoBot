@@ -54,21 +54,7 @@ func sanityCheck(ctx context.Context, client *firestore.Client, w http.ResponseW
 func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs []string, userID string, userEmail string, userName string) (string, error) {
 	var response string
 	var err error
-	var recurser = map[string]interface{}{
-		"id":                 "string",
-		"name":               "string",
-		"email":              "string",
-		"isSkippingTomorrow": false,
-		"schedule": map[string]interface{}{
-			"monday":    false,
-			"tuesday":   false,
-			"wednesday": false,
-			"thursday":  false,
-			"friday":    false,
-			"saturday":  false,
-			"sunday":    false,
-		},
-	}
+	recurser := Recurser{}
 
 	// get the users "document" (database entry) out of firestore
 	// we temporarily keep it in 'doc'
@@ -82,13 +68,13 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 	// if there's not, they were not subscribed
 	isSubscribed := doc.Exists()
 
-	// if the user is in the database, get their current state into this map
+	// if the user is in the database, get their current state in a struct
 	// also assign their zulip name to the name field, just in case it changed
 	// also assign their email, for the same reason
 	if isSubscribed {
-		recurser = doc.Data()
-		recurser["name"] = userName
-		recurser["email"] = userEmail
+		if err = doc.DataTo(&recurser); err != nil {
+			log.Fatal(err)
+		}
 	}
 	// here's the actual actions. command input from
 	// the user has already been sanitized, so we can
@@ -108,21 +94,22 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 			break
 		}
 		// create a new blank schedule
-		var newSchedule = map[string]interface{}{
-			"monday":    false,
-			"tuesday":   false,
-			"wednesday": false,
-			"thursday":  false,
-			"friday":    false,
-			"saturday":  false,
-			"sunday":    false,
-		}
+		newSchedule := Schedule{}
+		// var newSchedule = map[string]interface{}{
+		// 	"monday":    false,
+		// 	"tuesday":   false,
+		// 	"wednesday": false,
+		// 	"thursday":  false,
+		// 	"friday":    false,
+		// 	"saturday":  false,
+		// 	"sunday":    false,
+		// }
 		// populate it with the new days they want to pair on
-		for _, day := range cmdArgs {
-			newSchedule[day] = true
-		}
+		// for _, day := range cmdArgs {
+		// 	newSchedule[day] = true
+		// }
 		// put it in the database
-		recurser["schedule"] = newSchedule
+		recurser.schedule = newSchedule
 		_, err = client.Collection("recursers").Doc(userID).Set(ctx, recurser, firestore.MergeAll)
 		if err != nil {
 			response = botMessages.WriteError
@@ -139,21 +126,22 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 		// recurser isn't really a type, because we're using maps
 		// and not struct. but we're using it *as* a type,
 		// and this is the closest thing to a definition that occurs
-		recurser = map[string]interface{}{
-			"id":                 userID,
-			"name":               userName,
-			"email":              userEmail,
-			"isSkippingTomorrow": false,
-			"schedule": map[string]interface{}{
-				"monday":    true,
-				"tuesday":   true,
-				"wednesday": true,
-				"thursday":  true,
-				"friday":    true,
-				"saturday":  false,
-				"sunday":    false,
-			},
-		}
+		// recurser = map[string]interface{}{
+		// 	"id":                 userID,
+		// 	"name":               userName,
+		// 	"email":              userEmail,
+		// 	"isSkippingTomorrow": false,
+		// 	"schedule": map[string]interface{}{
+		// 		"monday":    true,
+		// 		"tuesday":   true,
+		// 		"wednesday": true,
+		// 		"thursday":  true,
+		// 		"friday":    true,
+		// 		"saturday":  false,
+		// 		"sunday":    false,
+		// 	},
+		// }
+		recurser = Recurser{}
 		_, err = client.Collection("recursers").Doc(userID).Set(ctx, recurser)
 		if err != nil {
 			response = botMessages.WriteError
@@ -178,7 +166,7 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 			response = botMessages.NotSubscribed
 			break
 		}
-		recurser["isSkippingTomorrow"] = true
+		recurser.isSkippingTomorrow = true
 		_, err = client.Collection("recursers").Doc(userID).Set(ctx, recurser, firestore.MergeAll)
 		if err != nil {
 			response = botMessages.WriteError
@@ -191,7 +179,7 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 			response = botMessages.NotSubscribed
 			break
 		}
-		recurser["isSkippingTomorrow"] = false
+		recurser.isSkippingTomorrow = false
 		_, err = client.Collection("recursers").Doc(userID).Set(ctx, recurser, firestore.MergeAll)
 		if err != nil {
 			response = botMessages.WriteError
@@ -199,54 +187,54 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 		}
 		response = "Tomorrow: uncancelled! Heckin *yes*! **I will match you** for pairing tomorrow :)"
 
-	case "status":
-		if isSubscribed == false {
-			response = botMessages.NotSubscribed
-			break
-		}
-		// this particular days list is for sorting and printing the
-		// schedule correctly, since it's stored in a map in all lowercase
-		var daysList = []string{
-			"Monday",
-			"Tuesday",
-			"Wednesday",
-			"Thursday",
-			"Friday",
-			"Saturday",
-			"Sunday"}
+	// case "status":
+	// 	if isSubscribed == false {
+	// 		response = botMessages.NotSubscribed
+	// 		break
+	// 	}
+	// 	// this particular days list is for sorting and printing the
+	// 	// schedule correctly, since it's stored in a map in all lowercase
+	// 	var daysList = []string{
+	// 		"Monday",
+	// 		"Tuesday",
+	// 		"Wednesday",
+	// 		"Thursday",
+	// 		"Friday",
+	// 		"Saturday",
+	// 		"Sunday"}
 
-		// get their current name
-		whoami := recurser["name"]
+	// 	// get their current name
+	// 	whoami := recurser.name
 
-		// get skip status and prepare to write a sentence with it
-		var skipStr string
-		if recurser["isSkippingTomorrow"].(bool) {
-			skipStr = " "
-		} else {
-			skipStr = " not "
-		}
+	// 	// get skip status and prepare to write a sentence with it
+	// 	var skipStr string
+	// 	if recurser.isSkippingTomorrow {
+	// 		skipStr = " "
+	// 	} else {
+	// 		skipStr = " not "
+	// 	}
 
-		// make a sorted list of their schedule
-		var schedule []string
-		for _, day := range daysList {
-			// this line is a little wild, sorry. it looks so weird because we
-			// have to do type assertion on both interface types
-			if recurser["schedule"].(map[string]interface{})[strings.ToLower(day)].(bool) {
-				schedule = append(schedule, day)
-			}
-		}
-		// make a lil nice-lookin schedule string
-		var scheduleStr string
-		for i := range schedule[:len(schedule)-1] {
-			scheduleStr += schedule[i] + "s, "
-		}
-		if len(schedule) > 1 {
-			scheduleStr += "and " + schedule[len(schedule)-1] + "s"
-		} else if len(schedule) == 1 {
-			scheduleStr += schedule[0] + "s"
-		}
+	// 	// make a sorted list of their schedule
+	// 	var schedule []string
+	// 	for _, day := range daysList {
+	// 		// this line is a little wild, sorry. it looks so weird because we
+	// 		// have to do type assertion on both interface types
+	// 		if recurser["schedule"].(map[string]interface{})[strings.ToLower(day)].(bool) {
+	// 			schedule = append(schedule, day)
+	// 		}
+	// 	}
+	// 	// make a lil nice-lookin schedule string
+	// 	var scheduleStr string
+	// 	for i := range schedule[:len(schedule)-1] {
+	// 		scheduleStr += schedule[i] + "s, "
+	// 	}
+	// 	if len(schedule) > 1 {
+	// 		scheduleStr += "and " + schedule[len(schedule)-1] + "s"
+	// 	} else if len(schedule) == 1 {
+	// 		scheduleStr += schedule[0] + "s"
+	// 	}
 
-		response = fmt.Sprintf("* You're %v\n* You're scheduled for pairing on **%v**\n* **You're%vset to skip** pairing tomorrow", whoami, scheduleStr, skipStr)
+	// 	response = fmt.Sprintf("* You're %v\n* You're scheduled for pairing on **%v**\n* **You're%vset to skip** pairing tomorrow", whoami, scheduleStr, skipStr)
 
 	case "help":
 		response = botMessages.Help

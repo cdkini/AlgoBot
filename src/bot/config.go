@@ -13,12 +13,12 @@ import (
 )
 
 type Recurser struct {
-	id                 string
-	name               string
-	email              string
-	isSkippingTomorrow bool
-	schedule           Schedule
-	config             UserConfig
+	id                 string     `firestore:"id"`
+	name               string     `firestore:"name"`
+	email              string     `firestore:"email"`
+	isSkippingTomorrow bool       `firestore:"isSkippingTomorrow"`
+	schedule           Schedule   `firestore:"schedule"`
+	config             UserConfig `firestore:"config"`
 }
 
 type Schedule struct {
