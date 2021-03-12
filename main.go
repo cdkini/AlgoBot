@@ -14,7 +14,7 @@ func main() {
 	http.HandleFunc("/", bot.Nope)
 	http.HandleFunc("/webhooks", bot.Handle)
 	http.HandleFunc("/cron", bot.Cron)
-	http.HandleFunc("/config", bot.Config)
+	http.HandleFunc("/config/", bot.Config)
 
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 

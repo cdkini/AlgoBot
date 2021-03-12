@@ -23,6 +23,7 @@ import (
 var botMessages = InitMessenger("src/bot/messages.json")
 
 const botEmailAddress = "mockinterview-bot@recurse.zulipchat.com"
+const gcloudBaseURL = "https://mock-interview-bot-307121.ue.r.appspot.com/"
 const zulipAPIURL = "https://recurse.zulipchat.com/api/v1/messages"
 
 func sanityCheck(ctx context.Context, client *firestore.Client, w http.ResponseWriter, r *http.Request) (incomingJSON, error) {
@@ -93,6 +94,14 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 	// the user has already been sanitized, so we can
 	// trust that cmd and cmdArgs only have valid stuff in them
 	switch cmd {
+	case "config":
+		if isSubscribed == false {
+			response = botMessages.NotSubscribed
+			break
+		}
+		// Provide user-specific URL for config
+		response = fmt.Sprintf("%s/config/%s", gcloudBaseURL, userID)
+		break
 	case "schedule":
 		if isSubscribed == false {
 			response = botMessages.NotSubscribed
@@ -296,21 +305,6 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func Config(w http.ResponseWriter, r *http.Request) {
-	switch r.Method {
-	case "GET":
-		http.ServeFile(w, r, "static/templates/config.html")
-	case "POST":
-		// Call ParseForm() to parse the raw query and update r.PostForm and r.Form.
-		if err := r.ParseForm(); err != nil {
-			fmt.Fprintf(w, "ParseForm() err: %v", err)
-			return
-		}
-		fmt.Fprintf(w, "Post from website! r.PostFrom = %v\n", r.PostForm)
-	default:
-		fmt.Fprintf(w, "Sorry, only GET and POST methods are supported.")
-	}
-}
 func parseCmd(cmdStr string) (string, []string, error) {
 	var err error
 	var cmdList = []string{

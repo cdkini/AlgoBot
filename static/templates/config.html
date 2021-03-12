@@ -9,7 +9,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="static/css/styles.css" />
+    <link rel="stylesheet" href="../static/css/styles.css" />
   </head>
   <form action="/config" method="POST">
     <h2 id="header">Mock Interview Bot Configuration</h2>
@@ -37,38 +37,38 @@
         <div class="custom-control custom-radio custom-control-inline">
           <input
             name="experience"
-            id="experience_0"
+            id="experience0"
             type="radio"
             aria-describedby="experienceHelpBlock"
             required="required"
             class="custom-control-input"
             value="easy"
           />
-          <label for="experience_0" class="custom-control-label">Easy</label>
+          <label for="experience0" class="custom-control-label">Easy</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
           <input
             name="experience"
-            id="experience_1"
+            id="experience1"
             type="radio"
             aria-describedby="experienceHelpBlock"
             required="required"
             class="custom-control-input"
             value="medium"
           />
-          <label for="experience_1" class="custom-control-label">Medium</label>
+          <label for="experience1" class="custom-control-label">Medium</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
           <input
             name="experience"
-            id="experience_2"
+            id="experience2"
             type="radio"
             aria-describedby="experienceHelpBlock"
             required="required"
             class="custom-control-input"
             value="hard"
           />
-          <label for="experience_2" class="custom-control-label">Hard</label>
+          <label for="experience2" class="custom-control-label">Hard</label>
         </div>
         <span id="experienceHelpBlock" class="form-text text-muted"
           >Used to make the best possible match (when a pairing session is set
@@ -82,15 +82,15 @@
         <div class="custom-controls-stacked">
           <div class="custom-control custom-radio">
             <input
-              name="question_list"
-              id="question_list_0"
+              name="questionList"
+              id="questionList0"
               type="radio"
-              aria-describedby="question_listHelpBlock"
+              aria-describedby="questionListHelpBlock"
               required="required"
               class="custom-control-input"
-              value="top_100_liked"
+              value="top100Liked"
             />
-            <label for="question_list_0" class="custom-control-label"
+            <label for="questionList0" class="custom-control-label"
               >Top 100 Liked Questions</label
             >
           </div>
@@ -98,15 +98,15 @@
         <div class="custom-controls-stacked">
           <div class="custom-control custom-radio">
             <input
-              name="question_list"
-              id="question_list_1"
+              name="questionList"
+              id="questionList1"
               type="radio"
-              aria-describedby="question_listHelpBlock"
+              aria-describedby="questionListHelpBlock"
               required="required"
               class="custom-control-input"
-              value="top_interview_questions"
+              value="topInterviewQuestions"
             />
-            <label for="question_list_1" class="custom-control-label"
+            <label for="questionList1" class="custom-control-label"
               >Top Interview Questions</label
             >
           </div>
@@ -114,15 +114,15 @@
         <div class="custom-controls-stacked">
           <div class="custom-control custom-radio">
             <input
-              name="question_list"
-              id="question_list_2"
+              name="questionList"
+              id="questionList2"
               type="radio"
-              aria-describedby="question_listHelpBlock"
+              aria-describedby="questionListHelpBlock"
               required="required"
               class="custom-control-input"
-              value="blind_75"
+              value="blind75"
             />
-            <label for="question_list_2" class="custom-control-label"
+            <label for="questionList2" class="custom-control-label"
               >Blind 75</label
             >
           </div>
@@ -130,15 +130,15 @@
         <div class="custom-controls-stacked">
           <div class="custom-control custom-radio">
             <input
-              name="question_list"
-              id="question_list_3"
+              name="questionList"
+              id="questionList3"
               type="radio"
-              aria-describedby="question_listHelpBlock"
+              aria-describedby="questionListHelpBlock"
               required="required"
               class="custom-control-input"
-              value="leetcode_patterns"
+              value="leetcodePatterns"
             />
-            <label for="question_list_3" class="custom-control-label"
+            <label for="questionList3" class="custom-control-label"
               >LeetCode Patterns</label
             >
           </div>
@@ -146,20 +146,20 @@
         <div class="custom-controls-stacked">
           <div class="custom-control custom-radio">
             <input
-              name="question_list"
-              id="question_list_4"
+              name="questionList"
+              id="questionList4"
               type="radio"
-              aria-describedby="question_listHelpBlock"
+              aria-describedby="questionListHelpBlock"
               required="required"
               class="custom-control-input"
               value="random"
             />
-            <label for="question_list_4" class="custom-control-label"
+            <label for="questionList4" class="custom-control-label"
               >Random / All Questions</label
             >
           </div>
         </div>
-        <span id="question_listHelpBlock" class="form-text text-muted"
+        <span id="questionListHelpBlock" class="form-text text-muted"
           >Please see github.com/recurse-mock-interview-bot/README.md for
           information on these psets</span
         >
@@ -171,33 +171,33 @@
       <div>
         <div class="custom-control custom-radio custom-control-inline">
           <input
-            name="topic_selection"
-            id="topic_selection_0"
+            name="topicSelection"
+            id="topicSelection0"
             type="radio"
             class="custom-control-input"
-            value="random_topic"
-            aria-describedby="topic_selectionHelpBlock"
+            value="randomTopic"
+            aria-describedby="topicSelectionHelpBlock"
             required="required"
           />
-          <label for="topic_selection_0" class="custom-control-label"
+          <label for="topicSelection0" class="custom-control-label"
             >All topics</label
           >
         </div>
         <div class="custom-control custom-radio custom-control-inline">
           <input
-            name="topic_selection"
-            id="topic_selection_1"
+            name="topicSelection"
+            id="topicSelection1"
             type="radio"
             class="custom-control-input"
-            value="manual_topic"
-            aria-describedby="topic_selectionHelpBlock"
+            value="manualTopic"
+            aria-describedby="topicSelectionHelpBlock"
             required="required"
           />
-          <label for="topic_selection_1" class="custom-control-label"
+          <label for="topicSelection1" class="custom-control-label"
             >Specific topics of my choosing</label
           >
         </div>
-        <span id="topic_selectionHelpBlock" class="form-text text-muted"
+        <span id="topicSelectionHelpBlock" class="form-text text-muted"
           >All topics more closely resembles a real interview but feel free to
           work on particular weak points</span
         >
@@ -213,13 +213,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_0"
+              id="topics0"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
               value="array"
             />
-            <label for="topics_0" class="custom-control-label"
+            <label for="topics0" class="custom-control-label"
               >Array (312)</label
             >
           </div>
@@ -228,13 +228,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_1"
+              id="topics1"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
               value="backtracking"
             />
-            <label for="topics_1" class="custom-control-label"
+            <label for="topics1" class="custom-control-label"
               >Backtracking (67)</label
             >
           </div>
@@ -243,13 +243,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_2"
+              id="topics2"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
-              value="binary_search"
+              value="binarySearch"
             />
-            <label for="topics_2" class="custom-control-label"
+            <label for="topics2" class="custom-control-label"
               >Binary Search (102)</label
             >
           </div>
@@ -258,13 +258,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_3"
+              id="topics3"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
-              value="bit_manipulation"
+              value="bitManipulation"
             />
-            <label for="topics_3" class="custom-control-label"
+            <label for="topics3" class="custom-control-label"
               >Bit Manipulation (57)</label
             >
           </div>
@@ -273,13 +273,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_4"
+              id="topics4"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
-              value="breadth-first_search"
+              value="breadth-firstSearch"
             />
-            <label for="topics_4" class="custom-control-label"
+            <label for="topics4" class="custom-control-label"
               >Breadth-first Search (89)</label
             >
           </div>
@@ -288,13 +288,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_5"
+              id="topics5"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
-              value="depth-first_search"
+              value="depth-firstSearch"
             />
-            <label for="topics_5" class="custom-control-label"
+            <label for="topics5" class="custom-control-label"
               >Depth-first Search (156)</label
             >
           </div>
@@ -303,13 +303,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_6"
+              id="topics6"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
               value="design"
             />
-            <label for="topics_6" class="custom-control-label"
+            <label for="topics6" class="custom-control-label"
               >Design (60)</label
             >
           </div>
@@ -318,13 +318,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_7"
+              id="topics7"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
-              value="divide_and_conquer"
+              value="divideAndConquer"
             />
-            <label for="topics_7" class="custom-control-label"
+            <label for="topics7" class="custom-control-label"
               >Divide and Conquer (21)</label
             >
           </div>
@@ -333,13 +333,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_8"
+              id="topics8"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
-              value="dynamic_programming"
+              value="dynamicProgramming"
             />
-            <label for="topics_8" class="custom-control-label"
+            <label for="topics8" class="custom-control-label"
               >Dynamic Programming (251)</label
             >
           </div>
@@ -348,28 +348,26 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_9"
+              id="topics9"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
               value="graph"
             />
-            <label for="topics_9" class="custom-control-label"
-              >Graph (56)</label
-            >
+            <label for="topics9" class="custom-control-label">Graph (56)</label>
           </div>
         </div>
         <div class="custom-controls-stacked">
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_10"
+              id="topics10"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
               value="greedy"
             />
-            <label for="topics_10" class="custom-control-label"
+            <label for="topics10" class="custom-control-label"
               >Greedy (144)</label
             >
           </div>
@@ -378,13 +376,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_11"
+              id="topics11"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
-              value="hash_table"
+              value="hashTable"
             />
-            <label for="topics_11" class="custom-control-label"
+            <label for="topics11" class="custom-control-label"
               >Hash Table (143)</label
             >
           </div>
@@ -393,28 +391,26 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_12"
+              id="topics12"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
               value="heap"
             />
-            <label for="topics_12" class="custom-control-label"
-              >Heap (41)</label
-            >
+            <label for="topics12" class="custom-control-label">Heap (41)</label>
           </div>
         </div>
         <div class="custom-controls-stacked">
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_13"
+              id="topics13"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
-              value="linked_list"
+              value="linkedList"
             />
-            <label for="topics_13" class="custom-control-label"
+            <label for="topics13" class="custom-control-label"
               >Linked List (43)</label
             >
           </div>
@@ -423,13 +419,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_14"
+              id="topics14"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
               value="math"
             />
-            <label for="topics_14" class="custom-control-label"
+            <label for="topics14" class="custom-control-label"
               >Math (202)</label
             >
           </div>
@@ -438,13 +434,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_15"
+              id="topics15"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
               value="recursion"
             />
-            <label for="topics_15" class="custom-control-label"
+            <label for="topics15" class="custom-control-label"
               >Recursion (38)</label
             >
           </div>
@@ -453,13 +449,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_16"
+              id="topics16"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
-              value="sliding_window"
+              value="slidingWindow"
             />
-            <label for="topics_16" class="custom-control-label"
+            <label for="topics16" class="custom-control-label"
               >Sliding Window (27)</label
             >
           </div>
@@ -468,28 +464,26 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_17"
+              id="topics17"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
               value="sort"
             />
-            <label for="topics_17" class="custom-control-label"
-              >Sort (77)</label
-            >
+            <label for="topics17" class="custom-control-label">Sort (77)</label>
           </div>
         </div>
         <div class="custom-controls-stacked">
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_18"
+              id="topics18"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
               value="stack"
             />
-            <label for="topics_18" class="custom-control-label"
+            <label for="topics18" class="custom-control-label"
               >Stack (64)</label
             >
           </div>
@@ -498,13 +492,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_19"
+              id="topics19"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
               value="string"
             />
-            <label for="topics_19" class="custom-control-label"
+            <label for="topics19" class="custom-control-label"
               >String (221)</label
             >
           </div>
@@ -513,13 +507,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_20"
+              id="topics20"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
               value="tree"
             />
-            <label for="topics_20" class="custom-control-label"
+            <label for="topics20" class="custom-control-label"
               >Tree (158)</label
             >
           </div>
@@ -528,28 +522,26 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_21"
+              id="topics21"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
               value="trie"
             />
-            <label for="topics_21" class="custom-control-label"
-              >Trie (20)</label
-            >
+            <label for="topics21" class="custom-control-label">Trie (20)</label>
           </div>
         </div>
         <div class="custom-controls-stacked">
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_22"
+              id="topics22"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
-              value="two_pointers"
+              value="twoPointers"
             />
-            <label for="topics_22" class="custom-control-label"
+            <label for="topics22" class="custom-control-label"
               >Two Pointers (73)</label
             >
           </div>
@@ -558,13 +550,13 @@
           <div class="custom-control custom-checkbox">
             <input
               name="topics"
-              id="topics_23"
+              id="topics23"
               type="checkbox"
               aria-describedby="topicsHelpBlock"
               class="custom-control-input"
-              value="union_find"
+              value="unionFind"
             />
-            <label for="topics_23" class="custom-control-label"
+            <label for="topics23" class="custom-control-label"
               >Union Find (38)</label
             >
           </div>
@@ -583,82 +575,82 @@
       <div>
         <div class="custom-control custom-checkbox custom-control-inline">
           <input
-            name="solo_days"
-            id="solo_days_0"
+            name="soloDays"
+            id="soloDays0"
             type="checkbox"
-            aria-describedby="solo_daysHelpBlock"
+            aria-describedby="soloDaysHelpBlock"
             class="custom-control-input"
             value="sun"
           />
-          <label for="solo_days_0" class="custom-control-label">Sun</label>
+          <label for="soloDays0" class="custom-control-label">Sun</label>
         </div>
         <div class="custom-control custom-checkbox custom-control-inline">
           <input
-            name="solo_days"
-            id="solo_days_1"
+            name="soloDays"
+            id="soloDays1"
             type="checkbox"
-            aria-describedby="solo_daysHelpBlock"
+            aria-describedby="soloDaysHelpBlock"
             class="custom-control-input"
             value="mon"
           />
-          <label for="solo_days_1" class="custom-control-label">Mon</label>
+          <label for="soloDays1" class="custom-control-label">Mon</label>
         </div>
         <div class="custom-control custom-checkbox custom-control-inline">
           <input
-            name="solo_days"
-            id="solo_days_2"
+            name="soloDays"
+            id="soloDays2"
             type="checkbox"
-            aria-describedby="solo_daysHelpBlock"
+            aria-describedby="soloDaysHelpBlock"
             class="custom-control-input"
             value="tue"
           />
-          <label for="solo_days_2" class="custom-control-label">Tue</label>
+          <label for="soloDays2" class="custom-control-label">Tue</label>
         </div>
         <div class="custom-control custom-checkbox custom-control-inline">
           <input
-            name="solo_days"
-            id="solo_days_3"
+            name="soloDays"
+            id="soloDays3"
             type="checkbox"
-            aria-describedby="solo_daysHelpBlock"
+            aria-describedby="soloDaysHelpBlock"
             class="custom-control-input"
             value="wed"
           />
-          <label for="solo_days_3" class="custom-control-label">Wed</label>
+          <label for="soloDays3" class="custom-control-label">Wed</label>
         </div>
         <div class="custom-control custom-checkbox custom-control-inline">
           <input
-            name="solo_days"
-            id="solo_days_4"
+            name="soloDays"
+            id="soloDays4"
             type="checkbox"
-            aria-describedby="solo_daysHelpBlock"
+            aria-describedby="soloDaysHelpBlock"
             class="custom-control-input"
             value="thu"
           />
-          <label for="solo_days_4" class="custom-control-label">Thu</label>
+          <label for="soloDays4" class="custom-control-label">Thu</label>
         </div>
         <div class="custom-control custom-checkbox custom-control-inline">
           <input
-            name="solo_days"
-            id="solo_days_5"
+            name="soloDays"
+            id="soloDays5"
             type="checkbox"
-            aria-describedby="solo_daysHelpBlock"
+            aria-describedby="soloDaysHelpBlock"
             class="custom-control-input"
             value="fri"
           />
-          <label for="solo_days_5" class="custom-control-label">Fri</label>
+          <label for="soloDays5" class="custom-control-label">Fri</label>
         </div>
         <div class="custom-control custom-checkbox custom-control-inline">
           <input
-            name="solo_days"
-            id="solo_days_6"
+            name="soloDays"
+            id="soloDays6"
             type="checkbox"
-            aria-describedby="solo_daysHelpBlock"
+            aria-describedby="soloDaysHelpBlock"
             class="custom-control-input"
             value="sat"
           />
-          <label for="solo_days_6" class="custom-control-label">Sat</label>
+          <label for="soloDays6" class="custom-control-label">Sat</label>
         </div>
-        <span id="solo_daysHelpBlock" class="form-text text-muted"
+        <span id="soloDaysHelpBlock" class="form-text text-muted"
           >Leave empty or use the <code>cancel solo</code> cmd to stop daily
           questions</span
         >
@@ -673,42 +665,38 @@
       <div>
         <div class="custom-control custom-checkbox custom-control-inline">
           <input
-            name="solo_difficulty"
-            id="solo_difficulty_0"
+            name="soloDifficulty"
+            id="soloDifficulty0"
             type="checkbox"
             aria-describedby="difficultyHelpBlock"
             class="custom-control-input"
             value="easy"
           />
-          <label for="solo_difficulty_0" class="custom-control-label"
-            >Easy</label
-          >
+          <label for="soloDifficulty0" class="custom-control-label">Easy</label>
         </div>
         <div class="custom-control custom-checkbox custom-control-inline">
           <input
-            name="solo_difficulty"
-            id="solo_difficulty_1"
+            name="soloDifficulty"
+            id="soloDifficulty1"
             type="checkbox"
             aria-describedby="difficultyHelpBlock"
             class="custom-control-input"
             value="medium"
           />
-          <label for="solo_difficulty_1" class="custom-control-label"
+          <label for="soloDifficulty1" class="custom-control-label"
             >Medium</label
           >
         </div>
         <div class="custom-control custom-checkbox custom-control-inline">
           <input
-            name="solo_difficulty"
-            id="solo_difficulty_2"
+            name="soloDifficulty"
+            id="soloDifficulty2"
             type="checkbox"
             aria-describedby="difficultyHelpBlock"
             class="custom-control-input"
             value="hard"
           />
-          <label for="solo_difficulty_2" class="custom-control-label"
-            >Hard</label
-          >
+          <label for="soloDifficulty2" class="custom-control-label">Hard</label>
         </div>
         <span id="difficultyHelpBlock" class="form-text text-muted"
           >You can pick more than one if you'd like some variability (will
@@ -724,33 +712,33 @@
       <div>
         <div class="custom-control custom-radio custom-control-inline">
           <input
-            name="question_selection"
-            id="question_selection_0"
+            name="questionSelection"
+            id="questionSelection0"
             type="radio"
-            aria-describedby="question_selectionHelpBlock"
+            aria-describedby="questionSelectionHelpBlock"
             class="custom-control-input"
-            value="random_question"
+            value="randomQuestion"
             required="required"
           />
-          <label for="question_selection_0" class="custom-control-label"
+          <label for="questionSelection0" class="custom-control-label"
             >Mock Interview Bot</label
           >
         </div>
         <div class="custom-control custom-radio custom-control-inline">
           <input
-            name="question_selection"
-            id="question_selection_1"
+            name="questionSelection"
+            id="questionSelection1"
             type="radio"
-            aria-describedby="question_selectionHelpBlock"
+            aria-describedby="questionSelectionHelpBlock"
             class="custom-control-input"
-            value="manual_question"
+            value="manualQuestion"
             required="required"
           />
-          <label for="question_selection_1" class="custom-control-label"
+          <label for="questionSelection1" class="custom-control-label"
             >Myself</label
           >
         </div>
-        <span id="question_selectionHelpBlock" class="form-text text-muted"
+        <span id="questionSelectionHelpBlock" class="form-text text-muted"
           >If not done through MIB, please communicate your question to your
           interviewer in advance</span
         >
@@ -765,40 +753,40 @@
       <div>
         <div class="custom-control custom-checkbox custom-control-inline">
           <input
-            name="pairing_difficulty"
-            id="pairing_difficulty_0"
+            name="pairingDifficulty"
+            id="pairingDifficulty0"
             type="checkbox"
             aria-describedby="difficultyHelpBlock"
             class="custom-control-input"
             value="easy"
           />
-          <label for="pairing_difficulty_0" class="custom-control-label"
+          <label for="pairingDifficulty0" class="custom-control-label"
             >Easy</label
           >
         </div>
         <div class="custom-control custom-checkbox custom-control-inline">
           <input
-            name="pairing_difficulty"
-            id="pairing_difficulty_1"
+            name="pairingDifficulty"
+            id="pairingDifficulty1"
             type="checkbox"
             aria-describedby="difficultyHelpBlock"
             class="custom-control-input"
             value="medium"
           />
-          <label for="pairing_difficulty_1" class="custom-control-label"
+          <label for="pairingDifficulty1" class="custom-control-label"
             >Medium</label
           >
         </div>
         <div class="custom-control custom-checkbox custom-control-inline">
           <input
-            name="pairing_difficulty"
-            id="pairing_difficulty_2"
+            name="pairingDifficulty"
+            id="pairingDifficulty2"
             type="checkbox"
             aria-describedby="difficultyHelpBlock"
             class="custom-control-input"
             value="hard"
           />
-          <label for="pairing_difficulty_2" class="custom-control-label"
+          <label for="pairingDifficulty2" class="custom-control-label"
             >Hard</label
           >
         </div>
@@ -814,42 +802,40 @@
         <div class="custom-control custom-radio custom-control-inline">
           <input
             name="environment"
-            id="environment_0"
+            id="environment0"
             type="radio"
             class="custom-control-input"
             value="leetcode"
             aria-describedby="environmentHelpBlock"
             required="required"
           />
-          <label for="environment_0" class="custom-control-label"
+          <label for="environment0" class="custom-control-label"
             >LeetCode</label
           >
         </div>
         <div class="custom-control custom-radio custom-control-inline">
           <input
             name="environment"
-            id="environment_1"
+            id="environment1"
             type="radio"
             class="custom-control-input"
             value="replit"
             aria-describedby="environmentHelpBlock"
             required="required"
           />
-          <label for="environment_1" class="custom-control-label"
-            >Repl.it</label
-          >
+          <label for="environment1" class="custom-control-label">Repl.it</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
           <input
             name="environment"
-            id="environment_2"
+            id="environment2"
             type="radio"
             class="custom-control-input"
-            value="google_docs"
+            value="googleDocs"
             aria-describedby="environmentHelpBlock"
             required="required"
           />
-          <label for="environment_2" class="custom-control-label"
+          <label for="environment2" class="custom-control-label"
             >Google Docs</label
           >
         </div>
@@ -874,7 +860,9 @@
       >
     </div>
     <div class="form-group">
-      <button type="submit" class="btn btn-primary">Save Settings</button>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">
+        Save Settings
+      </button>
     </div>
   </form>
   <body></body>
