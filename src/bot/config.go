@@ -12,6 +12,25 @@ import (
 	"google.golang.org/grpc/codes"
 )
 
+type Recurser struct {
+	id                 string
+	name               string
+	email              string
+	isSkippingTomorrow bool
+	schedule           Schedule
+	config             UserConfig
+}
+
+type Schedule struct {
+	sun bool
+	mon bool
+	tue bool
+	wed bool
+	thu bool
+	fri bool
+	sat bool
+}
+
 type UserConfig struct {
 	comments          string
 	environment       string
