@@ -15,6 +15,7 @@ import (
 	"time"
 
 	"cloud.google.com/go/firestore"
+	"github.com/fatih/structs"
 	"google.golang.org/api/iterator"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -26,31 +27,33 @@ const botEmailAddress = "mockinterview-bot@recurse.zulipchat.com"
 const gcloudBaseURL = "https://mock-interview-bot-307121.ue.r.appspot.com"
 const zulipAPIURL = "https://recurse.zulipchat.com/api/v1/messages"
 
+// sanityCheck simply validates Zulip JSON originating from incoming webhooks
 func sanityCheck(ctx context.Context, client *firestore.Client, w http.ResponseWriter, r *http.Request) (incomingJSON, error) {
 	var userReq incomingJSON
-	// Look at the incoming webhook and slurp up the JSON
-	// Error if the JSON from Zulip istelf is bad
+
 	err := json.NewDecoder(r.Body).Decode(&userReq)
 	if err != nil {
 		http.NotFound(w, r)
 		return userReq, err
 	}
 
-	// validate our zulip-bot token
-	// this was manually put into the database before deployment
+	// validate our zulip-bot token (manually put into the database before deployment)
 	doc, err := client.Collection("botauth").Doc("token").Get(ctx)
 	if err != nil {
 		log.Println("Something weird happened trying to read the auth token from the database")
 		return userReq, err
 	}
+
 	token := doc.Data()
 	if userReq.Token != token["value"] {
 		http.NotFound(w, r)
 		return userReq, errors.New("unauthorized interaction attempt")
 	}
+
 	return userReq, err
 }
 
+// TODO: Docstring here!
 func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs []string, userID string, userEmail string, userName string) (string, error) {
 	var response string
 	var err error
@@ -86,8 +89,8 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 		}
 		// Provide current settings as well as user-specific URL for config
 		var b strings.Builder
-		b.WriteString(fmt.Sprintf("You are %s\n", recurser.name))
-		b.WriteString(fmt.Sprintf("Config: %v\n", recurser.config))
+		b.WriteString(fmt.Sprintf("You are %s\n", recurser.Name))
+		b.WriteString(fmt.Sprintf("Config: %v\n", recurser.Config))
 		b.WriteString(fmt.Sprintf("%s/config/%s", gcloudBaseURL, userID))
 		response = b.String()
 		break
@@ -103,8 +106,8 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 
 		}
 
-		recurser.isPairingTomorrow = true
-		_, err = client.Collection("recursers").Doc(userID).Set(ctx, recurser, firestore.MergeAll)
+		recurser.IsPairingTomorrow = true
+		_, err = client.Collection("recursers").Doc(userID).Set(ctx, structs.Map(recurser), firestore.MergeAll)
 		if err != nil {
 			response = botMessages.WriteError
 			break
@@ -116,8 +119,8 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 			response = botMessages.NotSubscribed
 			break
 		}
-		recurser.isPairingTomorrow = false
-		_, err = client.Collection("recursers").Doc(userID).Set(ctx, recurser, firestore.MergeAll)
+		recurser.IsPairingTomorrow = false
+		_, err = client.Collection("recursers").Doc(userID).Set(ctx, structs.Map(recurser), firestore.MergeAll)
 		if err != nil {
 			response = botMessages.WriteError
 			break
@@ -131,7 +134,7 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 		}
 
 		recurser = newRecurser(userID, userName, userEmail)
-		_, err = client.Collection("recursers").Doc(userID).Set(ctx, recurser)
+		_, err = client.Collection("recursers").Doc(userID).Set(ctx, structs.Map(recurser), firestore.MergeAll)
 		if err != nil {
 			response = botMessages.WriteError
 			break
@@ -155,8 +158,8 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 			response = botMessages.NotSubscribed
 			break
 		}
-		recurser.isSkippingTomorrow = true
-		_, err = client.Collection("recursers").Doc(userID).Set(ctx, recurser, firestore.MergeAll)
+		recurser.IsSkippingTomorrow = true
+		_, err = client.Collection("recursers").Doc(userID).Set(ctx, structs.Map(recurser), firestore.MergeAll)
 		if err != nil {
 			response = botMessages.WriteError
 			break
@@ -168,8 +171,8 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 			response = botMessages.NotSubscribed
 			break
 		}
-		recurser.isSkippingTomorrow = false
-		_, err = client.Collection("recursers").Doc(userID).Set(ctx, recurser, firestore.MergeAll)
+		recurser.IsSkippingTomorrow = false
+		_, err = client.Collection("recursers").Doc(userID).Set(ctx, structs.Map(recurser), firestore.MergeAll)
 		if err != nil {
 			response = botMessages.WriteError
 			break
@@ -185,6 +188,7 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 	return response, err
 }
 
+// TODO: Docstring here!
 func Handle(w http.ResponseWriter, r *http.Request) {
 	responder := json.NewEncoder(w)
 	ctx := context.Background()
@@ -236,13 +240,14 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 func parseCmd(cmdStr string) (string, []string, error) {
 	var err error
 	var cmdList = []string{
+		"cancel",
 		"config",
-		"subscribe",
-		"unsubscribe",
 		"help",
 		"schedule",
 		"skip",
+		"subscribe",
 		"unskip",
+		"unsubscribe",
 	}
 
 	// convert the string to a slice
@@ -263,10 +268,6 @@ func parseCmd(cmdStr string) (string, []string, error) {
 
 	// if there's a valid command and if there's no arguments
 	case contains(cmdList, cmd[0]) && len(cmd) == 1:
-		if cmd[0] == "schedule" || cmd[0] == "skip" || cmd[0] == "unskip" {
-			err = errors.New("the user issued a command without args, but it required args")
-			return "help", nil, err
-		}
 		return cmd[0], nil, err
 
 	// if there's not a valid command

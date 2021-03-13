@@ -8,62 +8,60 @@ import (
 	"strings"
 
 	"cloud.google.com/go/firestore"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/codes"
+	"github.com/fatih/structs"
 )
 
 type Recurser struct {
-	id                 string     `firestore:"id"`
-	name               string     `firestore:"name"`
-	email              string     `firestore:"email"`
-	isSkippingTomorrow bool       `firestore:"isSkippingTomorrow"`
-	isPairingTomorrow  bool       `firestore:"isPairingTomorrow"`
-	config             UserConfig `firestore:"config"`
+	Id                 string     `json:"id,omitempty" firestore:"id,omitempty"`
+	Name               string     `json:"name,omitempty" firestore:"name,omitempty"`
+	Email              string     `json:"email,omitempty" firestore:"email,omitempty"`
+	IsSkippingTomorrow bool       `json:"isSkippingTomorrow,omitempty" firestore:"isSkippingTomorrow,omitempty"`
+	IsPairingTomorrow  bool       `json:"isPairingTomorrow,omitempty" firestore:"isPairingTomorrow,omitempty"`
+	Config             UserConfig `json:"config,omitempty" firestore:"config,omitempty"`
 }
 
 func newRecurser(id string, name string, email string) Recurser {
 	return Recurser{
-		id:                 id,
-		name:               name,
-		email:              email,
-		isSkippingTomorrow: false,
-		isPairingTomorrow:  false,
-		config:             defaultUserConfig(),
+		Id:                 id,
+		Name:               name,
+		Email:              email,
+		IsSkippingTomorrow: false,
+		IsPairingTomorrow:  false,
+		Config:             defaultUserConfig(),
 	}
 }
 
 func (r Recurser) isConfigured() bool {
-	return len(r.config.environment) > 0 &&
-		len(r.config.experience) > 0 &&
-		len(r.config.questionList) > 0 &&
-		len(r.config.topics) > 0 &&
-		len(r.config.soloDifficulty) > 0 &&
-		len(r.config.pairingDifficulty) > 0
+	return len(r.Config.Environment) > 0 &&
+		len(r.Config.Experience) > 0 &&
+		len(r.Config.QuestionList) > 0 &&
+		len(r.Config.SoloDifficulty) > 0 &&
+		len(r.Config.PairingDifficulty) > 0
 }
 
 type UserConfig struct {
-	comments          string
-	environment       string
-	experience        string
-	questionList      string
-	topics            []string
-	soloDays          []string
-	soloDifficulty    []string
-	pairingDifficulty []string
-	manualQuestion    bool
+	Comments          string   `json:"comments,omitempty" firestore:"comments,omitempty"`
+	Environment       string   `json:"environment,omitempty" firestore:"environment,omitempty"`
+	Experience        string   `json:"experience,omitempty" firestore:"experience,omitempty"`
+	QuestionList      string   `json:"questionList,omitempty" firestore:"questionList,omitempty"`
+	Topics            []string `json:"topics,omitempty" firestore:"topics,omitempty"`
+	SoloDays          []string `json:"solodays,omitempty" firestore:"solodays,omitempty"`
+	SoloDifficulty    []string `json:"solodifficulty,omitempty" firestore:"solodifficulty,omitempty"`
+	PairingDifficulty []string `json:"pairingDifficulty,omitempty" firestore:"pairingDifficulty,omitempty"`
+	ManualQuestion    bool     `json:"manualQuestion,omitempty" firestore:"manualQuestion,omitempty"`
 }
 
 func defaultUserConfig() UserConfig {
 	return UserConfig{
-		comments:          "N/A",
-		environment:       "leetcode",
-		experience:        "medium",
-		questionList:      "topInterviewQuestions",
-		topics:            []string{},
-		soloDays:          []string{"mon", "tue", "wed", "thu", "fri"},
-		soloDifficulty:    []string{"easy", "medium"},
-		pairingDifficulty: []string{"easy", "medium"},
-		manualQuestion:    false,
+		Comments:          "N/A",
+		Environment:       "leetcode",
+		Experience:        "medium",
+		QuestionList:      "topInterviewQuestions",
+		Topics:            []string{},
+		SoloDays:          []string{"mon", "tue", "wed", "thu", "fri"},
+		SoloDifficulty:    []string{"easy", "medium"},
+		PairingDifficulty: []string{"easy", "medium"},
+		ManualQuestion:    false,
 	}
 }
 
@@ -86,6 +84,7 @@ func handlePOST(w http.ResponseWriter, r *http.Request, id string) {
 		return
 	}
 
+	var recurser Recurser
 	ctx := context.Background()
 	client, err := firestore.NewClient(ctx, "mock-interview-bot-307121")
 	if err != nil {
@@ -107,12 +106,13 @@ func handlePOST(w http.ResponseWriter, r *http.Request, id string) {
 
 	// Retrieve current config / user profile
 	doc, err := client.Collection("recursers").Doc(id).Get(ctx)
-	if err != nil && grpc.Code(err) != codes.NotFound {
-		log.Panic(err)
+	if doc.Exists() {
+		if err = doc.DataTo(&recurser); err != nil {
+			log.Fatal(err)
+		}
 	}
+	recurser.Config = config
 
 	// Update to new config / user profile
-	recurser := doc.Data()
-	recurser["config"] = config
-	_, err = client.Collection("recursers").Doc(id).Set(ctx, recurser)
+	_, err = client.Collection("recursers").Doc(id).Set(ctx, structs.Map(recurser), firestore.MergeAll)
 }
