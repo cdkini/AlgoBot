@@ -31,6 +31,45 @@ func newRecurser(id string, name string, email string) Recurser {
 	}
 }
 
+func (r Recurser) stringifyUserConfig() string {
+	var b strings.Builder
+
+	b.WriteString(fmt.Sprintf("You are %s!\n", r.Name))
+	b.WriteString(fmt.Sprintf("Your experience level is %s.\n", r.Config.Experience))
+	b.WriteString(fmt.Sprintf("You are working through the %s pset.\n", r.Config.QuestionList))
+
+	if len(r.Config.Topics) == 0 {
+		b.WriteString("You have not selected specific topics to work on.\n")
+	} else {
+		b.WriteString(fmt.Sprintf("You are focusing on these topics: %s\n", r.Config.Topics))
+	}
+
+	if len(r.Config.SoloDays) == 0 {
+		b.WriteString("You are not scheduled for solo sessions.\n")
+	} else {
+		b.WriteString(fmt.Sprintf("You have solo sessions scheduled for these days: %s\n", r.Config.SoloDays))
+		b.WriteString(fmt.Sprintf("You will receive questions of this difficulty: %s\n", r.Config.SoloDifficulty))
+		if r.IsSkippingTomorrow {
+			b.WriteString("You are set to skip tomorrow's solo session.\n")
+		}
+	}
+
+	if !r.IsPairingTomorrow {
+		b.WriteString("You are not in the queue for a pairing session.\n")
+	} else {
+		b.WriteString(fmt.Sprintf("You will receive questions of this difficulty: %s\n", r.Config.PairingDifficulty))
+		b.WriteString(fmt.Sprintf("Your preferred environment is %s.\n", r.Config.Environment))
+		if r.Config.ManualQuestion {
+			b.WriteString("You will be choosing your own questions for your pairing sessions.\n")
+		} else {
+			b.WriteString("You will receive random questions for your pairing sessions.\n")
+		}
+	}
+
+	b.WriteString("\n")
+	return b.String()
+}
+
 func (r Recurser) isConfigured() bool {
 	return len(r.Config.Environment) > 0 &&
 		len(r.Config.Experience) > 0 &&

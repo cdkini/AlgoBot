@@ -88,11 +88,8 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 			break
 		}
 		// Provide current settings as well as user-specific URL for config
-		var b strings.Builder
-		b.WriteString(fmt.Sprintf("You are %s\n", recurser.Name))
-		b.WriteString(fmt.Sprintf("Config: %v\n", recurser.Config))
-		b.WriteString(fmt.Sprintf("%s/config/%s", gcloudBaseURL, userID))
-		response = b.String()
+		response = recurser.stringifyUserConfig()
+		response += fmt.Sprintf("Change your config here: %s/config/%s", gcloudBaseURL, userID)
 		break
 
 	case "schedule":
@@ -117,6 +114,10 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 	case "cancel":
 		if isSubscribed == false {
 			response = botMessages.NotSubscribed
+			break
+		}
+		if !recurser.IsPairingTomorrow {
+			response = "You are not signed up to pair!"
 			break
 		}
 		recurser.IsPairingTomorrow = false
@@ -164,7 +165,7 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 			response = botMessages.WriteError
 			break
 		}
-		response = `Tomorrow: cancelled. I feel you. **I will not match you** for pairing tomorrow <3`
+		response = `Tomorrow: cancelled. I feel you. **I will not contact you** with a question tomorrow <3`
 
 	case "unskip":
 		if isSubscribed == false {
@@ -177,7 +178,7 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 			response = botMessages.WriteError
 			break
 		}
-		response = "Tomorrow: uncancelled! Heckin *yes*! **I will match you** for pairing tomorrow :)"
+		response = "Tomorrow: uncancelled! Heckin *yes*! **I will contact you** with a question tomorrow :)"
 
 	case "help":
 		response = botMessages.Help
