@@ -8,16 +8,18 @@ import (
 	"strings"
 
 	"cloud.google.com/go/firestore"
+
 	"github.com/fatih/structs"
+	"github.com/gorilla/mux"
 )
 
 type Recurser struct {
-	Id                 string     `json:"id,omitempty" firestore:"id,omitempty"`
-	Name               string     `json:"name,omitempty" firestore:"name,omitempty"`
-	Email              string     `json:"email,omitempty" firestore:"email,omitempty"`
-	IsSkippingTomorrow bool       `json:"isSkippingTomorrow,omitempty" firestore:"isSkippingTomorrow,omitempty"`
-	IsPairingTomorrow  bool       `json:"isPairingTomorrow,omitempty" firestore:"isPairingTomorrow,omitempty"`
-	Config             UserConfig `json:"config,omitempty" firestore:"config,omitempty"`
+	Id                 string     `structs:"id,omitempty" firestore:"id,omitempty"`
+	Name               string     `structs:"name,omitempty" firestore:"name,omitempty"`
+	Email              string     `structs:"email,omitempty" firestore:"email,omitempty"`
+	IsSkippingTomorrow bool       `structs:"isSkippingTomorrow,omitempty" firestore:"isSkippingTomorrow,omitempty"`
+	IsPairingTomorrow  bool       `structs:"isPairingTomorrow,omitempty" firestore:"isPairingTomorrow,omitempty"`
+	Config             UserConfig `structs:"config,omitempty" firestore:"config,omitempty"`
 }
 
 func newRecurser(id string, name string, email string) Recurser {
@@ -57,6 +59,7 @@ func (r Recurser) stringifyUserConfig() string {
 	if !r.IsPairingTomorrow {
 		b.WriteString("You are not in the queue for a pairing session.\n")
 	} else {
+		b.WriteString("You are in the queue for a pairing session.\n")
 		b.WriteString(fmt.Sprintf("You will receive questions of this difficulty: %s\n", r.Config.PairingDifficulty))
 		b.WriteString(fmt.Sprintf("Your preferred environment is %s.\n", r.Config.Environment))
 		if r.Config.ManualQuestion {
@@ -79,15 +82,15 @@ func (r Recurser) isConfigured() bool {
 }
 
 type UserConfig struct {
-	Comments          string   `json:"comments,omitempty" firestore:"comments,omitempty"`
-	Environment       string   `json:"environment,omitempty" firestore:"environment,omitempty"`
-	Experience        string   `json:"experience,omitempty" firestore:"experience,omitempty"`
-	QuestionList      string   `json:"questionList,omitempty" firestore:"questionList,omitempty"`
-	Topics            []string `json:"topics,omitempty" firestore:"topics,omitempty"`
-	SoloDays          []string `json:"solodays,omitempty" firestore:"solodays,omitempty"`
-	SoloDifficulty    []string `json:"solodifficulty,omitempty" firestore:"solodifficulty,omitempty"`
-	PairingDifficulty []string `json:"pairingDifficulty,omitempty" firestore:"pairingDifficulty,omitempty"`
-	ManualQuestion    bool     `json:"manualQuestion,omitempty" firestore:"manualQuestion,omitempty"`
+	Comments          string   `structs:"comments,omitempty" firestore:"comments,omitempty"`
+	Environment       string   `structs:"environment,omitempty" firestore:"environment,omitempty"`
+	Experience        string   `structs:"experience,omitempty" firestore:"experience,omitempty"`
+	QuestionList      string   `structs:"questionList,omitempty" firestore:"questionList,omitempty"`
+	Topics            []string `structs:"topics,omitempty" firestore:"topics,omitempty"`
+	SoloDays          []string `structs:"soloDays,omitempty" firestore:"soloDays,omitempty"`
+	SoloDifficulty    []string `structs:"solodifficulty,omitempty" firestore:"soloDifficulty,omitempty"`
+	PairingDifficulty []string `structs:"pairingDifficulty,omitempty" firestore:"pairingDifficulty,omitempty"`
+	ManualQuestion    bool     `structs:"manualQuestion,omitempty" firestore:"manualQuestion,omitempty"`
 }
 
 func defaultUserConfig() UserConfig {
@@ -109,8 +112,8 @@ func Config(w http.ResponseWriter, r *http.Request) {
 	case "GET":
 		http.ServeFile(w, r, "static/templates/config.html")
 	case "POST":
-		id := strings.TrimPrefix(r.URL.Path, "/config/")
-		handlePOST(w, r, id)
+		vars := mux.Vars(r)
+		handlePOST(w, r, vars["id"])
 	default:
 		fmt.Fprintf(w, "Sorry, only GET and POST methods are supported.")
 	}
@@ -123,9 +126,12 @@ func handlePOST(w http.ResponseWriter, r *http.Request, id string) {
 		return
 	}
 
-	var recurser Recurser
+	// var recurser Recurser
 	ctx := context.Background()
-	client, err := firestore.NewClient(ctx, "mock-interview-bot-307121")
+	// ctx := r.Context()
+	var err error
+	client, err = firestore.NewClient(ctx, "mock-interview-bot-307121")
+	defer client.Close()
 	if err != nil {
 		log.Panic(err)
 	}
@@ -143,15 +149,12 @@ func handlePOST(w http.ResponseWriter, r *http.Request, id string) {
 		r.PostFormValue("manualQuestion") == "manualQuestion",
 	}
 
-	// Retrieve current config / user profile
-	doc, err := client.Collection("recursers").Doc(id).Get(ctx)
-	if doc.Exists() {
-		if err = doc.DataTo(&recurser); err != nil {
-			log.Fatal(err)
-		}
-	}
-	recurser.Config = config
+	// Retrieve current config / user profile and update
+	doc := fn0(id)
+	doc.Update(ctx, []firestore.Update{{Path: "config", Value: structs.Map(config)}})
+}
 
-	// Update to new config / user profile
-	_, err = client.Collection("recursers").Doc(id).Set(ctx, structs.Map(recurser), firestore.MergeAll)
+func fn0(id string) *firestore.DocumentRef {
+	doc := client.Collection("recursers").Doc(id)
+	return doc
 }

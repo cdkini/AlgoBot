@@ -7,16 +7,18 @@ import (
 	"os"
 
 	"github.com/cdkini/recurse-mock-interview-bot/src/bot"
+	"github.com/gorilla/mux"
 )
 
 // It's alive! The application starts here.
 func main() {
-	http.HandleFunc("/", bot.Nope)
-	http.HandleFunc("/webhooks", bot.Handle)
-	http.HandleFunc("/cron", bot.Cron)
-	http.HandleFunc("/config/", bot.Config)
+	r := mux.NewRouter()
+	r.HandleFunc("/", bot.Nope)
+	r.HandleFunc("/webhooks", bot.Handle)
+	r.HandleFunc("/cron", bot.Cron)
+	r.HandleFunc("/config/{id}", bot.Config)
 
-	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	r.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -25,5 +27,5 @@ func main() {
 	}
 
 	log.Printf("Listening on port %s", port)
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), r))
 }

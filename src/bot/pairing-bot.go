@@ -27,8 +27,10 @@ const botEmailAddress = "mockinterview-bot@recurse.zulipchat.com"
 const gcloudBaseURL = "https://mock-interview-bot-307121.ue.r.appspot.com"
 const zulipAPIURL = "https://recurse.zulipchat.com/api/v1/messages"
 
+var client *firestore.Client
+
 // sanityCheck simply validates Zulip JSON originating from incoming webhooks
-func sanityCheck(ctx context.Context, client *firestore.Client, w http.ResponseWriter, r *http.Request) (incomingJSON, error) {
+func sanityCheck(ctx context.Context, w http.ResponseWriter, r *http.Request) (incomingJSON, error) {
 	var userReq incomingJSON
 
 	err := json.NewDecoder(r.Body).Decode(&userReq)
@@ -54,7 +56,7 @@ func sanityCheck(ctx context.Context, client *firestore.Client, w http.ResponseW
 }
 
 // TODO: Docstring here!
-func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs []string, userID string, userEmail string, userName string) (string, error) {
+func dispatch(ctx context.Context, cmd string, cmdArgs []string, userID string, userEmail string, userName string) (string, error) {
 	var response string
 	var err error
 	var recurser Recurser
@@ -89,7 +91,7 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 		}
 		// Provide current settings as well as user-specific URL for config
 		response = recurser.stringifyUserConfig()
-		response += fmt.Sprintf("Change your config here: %s/config/%s", gcloudBaseURL, userID)
+		response += fmt.Sprintf("[Click here to make changes](%s/config/%s)", gcloudBaseURL, userID)
 		break
 
 	case "schedule":
@@ -193,12 +195,14 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 func Handle(w http.ResponseWriter, r *http.Request) {
 	responder := json.NewEncoder(w)
 	ctx := context.Background()
-	client, err := firestore.NewClient(ctx, "mock-interview-bot-307121")
+	var err error
+	client, err = firestore.NewClient(ctx, "mock-interview-bot-307121")
+	defer client.Close()
 	if err != nil {
 		log.Panic(err)
 	}
 	// sanity check the incoming request
-	userReq, err := sanityCheck(ctx, client, w, r)
+	userReq, err := sanityCheck(ctx, w, r)
 	if err != nil {
 		log.Println(err)
 		return
@@ -228,7 +232,7 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 	}
 	// the tofu and potatoes right here y'all
-	response, err := dispatch(ctx, client, cmd, cmdArgs, strconv.Itoa(userReq.Message.SenderID), userReq.Message.SenderEmail, userReq.Message.SenderFullName)
+	response, err := dispatch(ctx, cmd, cmdArgs, strconv.Itoa(userReq.Message.SenderID), userReq.Message.SenderEmail, userReq.Message.SenderFullName)
 	if err != nil {
 		log.Println(err)
 	}
@@ -294,7 +298,9 @@ func Cron(w http.ResponseWriter, r *http.Request) {
 
 	// setting up database connection
 	ctx := context.Background()
-	client, err := firestore.NewClient(ctx, "mock-interview-bot-307121")
+	var err error
+	client, err = firestore.NewClient(ctx, "mock-interview-bot-307121")
+	defer client.Close()
 	if err != nil {
 		log.Panic(err)
 	}
