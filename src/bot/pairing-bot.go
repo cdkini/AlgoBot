@@ -23,7 +23,7 @@ import (
 var botMessages = InitMessenger("src/bot/messages.json")
 
 const botEmailAddress = "mockinterview-bot@recurse.zulipchat.com"
-const gcloudBaseURL = "https://mock-interview-bot-307121.ue.r.appspot.com/"
+const gcloudBaseURL = "https://mock-interview-bot-307121.ue.r.appspot.com"
 const zulipAPIURL = "https://recurse.zulipchat.com/api/v1/messages"
 
 func sanityCheck(ctx context.Context, client *firestore.Client, w http.ResponseWriter, r *http.Request) (incomingJSON, error) {
@@ -54,68 +54,75 @@ func sanityCheck(ctx context.Context, client *firestore.Client, w http.ResponseW
 func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs []string, userID string, userEmail string, userName string) (string, error) {
 	var response string
 	var err error
-	recurser := Recurser{}
+	var recurser Recurser
 
-	// get the users "document" (database entry) out of firestore
-	// we temporarily keep it in 'doc'
+	// get the users "document" (database entry) out of firestore and temporarily keep it in 'doc'
 	doc, err := client.Collection("recursers").Doc(userID).Get(ctx)
+
 	// this says "if there's an error, and if that error was not document-not-found"
 	if err != nil && grpc.Code(err) != codes.NotFound {
 		response = botMessages.ReadError
 		return response, err
 	}
+
 	// if there's a db entry, that means they were already subscribed to pairing bot
-	// if there's not, they were not subscribed
 	isSubscribed := doc.Exists()
 
 	// if the user is in the database, get their current state in a struct
-	// also assign their zulip name to the name field, just in case it changed
-	// also assign their email, for the same reason
 	if isSubscribed {
 		if err = doc.DataTo(&recurser); err != nil {
 			log.Fatal(err)
 		}
 	}
-	// here's the actual actions. command input from
-	// the user has already been sanitized, so we can
-	// trust that cmd and cmdArgs only have valid stuff in them
+
+	// here's the actual actions. command input from the user has already been sanitized,
+	// so we can trust that cmd and cmdArgs only have valid stuff in them
 	switch cmd {
+
 	case "config":
 		if isSubscribed == false {
 			response = botMessages.NotSubscribed
 			break
 		}
-		// Provide user-specific URL for config
-		response = fmt.Sprintf("%s/config/%s", gcloudBaseURL, userID)
+		// Provide current settings as well as user-specific URL for config
+		var b strings.Builder
+		b.WriteString(fmt.Sprintf("You are %s\n", recurser.name))
+		b.WriteString(fmt.Sprintf("Config: %v\n", recurser.config))
+		b.WriteString(fmt.Sprintf("%s/config/%s", gcloudBaseURL, userID))
+		response = b.String()
 		break
+
 	case "schedule":
 		if isSubscribed == false {
 			response = botMessages.NotSubscribed
 			break
 		}
-		// create a new blank schedule
-		newSchedule := Schedule{}
-		// var newSchedule = map[string]interface{}{
-		// 	"monday":    false,
-		// 	"tuesday":   false,
-		// 	"wednesday": false,
-		// 	"thursday":  false,
-		// 	"friday":    false,
-		// 	"saturday":  false,
-		// 	"sunday":    false,
-		// }
-		// populate it with the new days they want to pair on
-		// for _, day := range cmdArgs {
-		// 	newSchedule[day] = true
-		// }
-		// put it in the database
-		recurser.schedule = newSchedule
+		if !recurser.isConfigured() {
+			response = botMessages.NotConfigured
+			break
+
+		}
+
+		recurser.isPairingTomorrow = true
 		_, err = client.Collection("recursers").Doc(userID).Set(ctx, recurser, firestore.MergeAll)
 		if err != nil {
 			response = botMessages.WriteError
 			break
 		}
-		response = "Awesome, your new schedule's been set! You can check it with `status`."
+		response = "You're all set for a mock interview session! You'll be contacted shortly with all the pertinent details!"
+
+	case "cancel":
+		if isSubscribed == false {
+			response = botMessages.NotSubscribed
+			break
+		}
+		recurser.isPairingTomorrow = false
+		_, err = client.Collection("recursers").Doc(userID).Set(ctx, recurser, firestore.MergeAll)
+		if err != nil {
+			response = botMessages.WriteError
+			break
+		}
+		response = `Tomorrow: cancelled. I feel you. **I will not match you** for pairing tomorrow <3`
 
 	case "subscribe":
 		if isSubscribed {
@@ -123,25 +130,7 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 			break
 		}
 
-		// recurser isn't really a type, because we're using maps
-		// and not struct. but we're using it *as* a type,
-		// and this is the closest thing to a definition that occurs
-		// recurser = map[string]interface{}{
-		// 	"id":                 userID,
-		// 	"name":               userName,
-		// 	"email":              userEmail,
-		// 	"isSkippingTomorrow": false,
-		// 	"schedule": map[string]interface{}{
-		// 		"monday":    true,
-		// 		"tuesday":   true,
-		// 		"wednesday": true,
-		// 		"thursday":  true,
-		// 		"friday":    true,
-		// 		"saturday":  false,
-		// 		"sunday":    false,
-		// 	},
-		// }
-		recurser = Recurser{}
+		recurser = newRecurser(userID, userName, userEmail)
 		_, err = client.Collection("recursers").Doc(userID).Set(ctx, recurser)
 		if err != nil {
 			response = botMessages.WriteError
@@ -186,55 +175,6 @@ func dispatch(ctx context.Context, client *firestore.Client, cmd string, cmdArgs
 			break
 		}
 		response = "Tomorrow: uncancelled! Heckin *yes*! **I will match you** for pairing tomorrow :)"
-
-	// case "status":
-	// 	if isSubscribed == false {
-	// 		response = botMessages.NotSubscribed
-	// 		break
-	// 	}
-	// 	// this particular days list is for sorting and printing the
-	// 	// schedule correctly, since it's stored in a map in all lowercase
-	// 	var daysList = []string{
-	// 		"Monday",
-	// 		"Tuesday",
-	// 		"Wednesday",
-	// 		"Thursday",
-	// 		"Friday",
-	// 		"Saturday",
-	// 		"Sunday"}
-
-	// 	// get their current name
-	// 	whoami := recurser.name
-
-	// 	// get skip status and prepare to write a sentence with it
-	// 	var skipStr string
-	// 	if recurser.isSkippingTomorrow {
-	// 		skipStr = " "
-	// 	} else {
-	// 		skipStr = " not "
-	// 	}
-
-	// 	// make a sorted list of their schedule
-	// 	var schedule []string
-	// 	for _, day := range daysList {
-	// 		// this line is a little wild, sorry. it looks so weird because we
-	// 		// have to do type assertion on both interface types
-	// 		if recurser["schedule"].(map[string]interface{})[strings.ToLower(day)].(bool) {
-	// 			schedule = append(schedule, day)
-	// 		}
-	// 	}
-	// 	// make a lil nice-lookin schedule string
-	// 	var scheduleStr string
-	// 	for i := range schedule[:len(schedule)-1] {
-	// 		scheduleStr += schedule[i] + "s, "
-	// 	}
-	// 	if len(schedule) > 1 {
-	// 		scheduleStr += "and " + schedule[len(schedule)-1] + "s"
-	// 	} else if len(schedule) == 1 {
-	// 		scheduleStr += schedule[0] + "s"
-	// 	}
-
-	// 	response = fmt.Sprintf("* You're %v\n* You're scheduled for pairing on **%v**\n* **You're%vset to skip** pairing tomorrow", whoami, scheduleStr, skipStr)
 
 	case "help":
 		response = botMessages.Help
@@ -296,22 +236,14 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 func parseCmd(cmdStr string) (string, []string, error) {
 	var err error
 	var cmdList = []string{
+		"config",
 		"subscribe",
 		"unsubscribe",
 		"help",
 		"schedule",
 		"skip",
 		"unskip",
-		"status"}
-
-	var daysList = []string{
-		"monday",
-		"tuesday",
-		"wednesday",
-		"thursday",
-		"friday",
-		"saturday",
-		"sunday"}
+	}
 
 	// convert the string to a slice
 	// after this, we have a value "cmd" of type []string
@@ -336,30 +268,6 @@ func parseCmd(cmdStr string) (string, []string, error) {
 			return "help", nil, err
 		}
 		return cmd[0], nil, err
-
-	// if there's a valid command and there's some arguments
-	case contains(cmdList, cmd[0]) && len(cmd) > 1:
-		switch {
-		case cmd[0] == "subscribe" || cmd[0] == "unsubscribe" || cmd[0] == "help" || cmd[0] == "status":
-			err = errors.New("the user issued a command with args, but it disallowed args")
-			return "help", nil, err
-		case cmd[0] == "skip" && len(cmd) != 2 && cmd[1] != "tomorrow":
-			err = errors.New("the user issued SKIP with malformed arguments")
-			return "help", nil, err
-		case cmd[0] == "unskip" && len(cmd) != 2 && cmd[1] != "tomorrow":
-			err = errors.New("the user issued UNSKIP with malformed arguments")
-			return "help", nil, err
-		case cmd[0] == "schedule":
-			for _, v := range cmd[1:] {
-				if contains(daysList, v) == false {
-					err = errors.New("the user issued SCHEDULE with malformed arguments")
-					return "help", nil, err
-				}
-			}
-			fallthrough
-		default:
-			return cmd[0], cmd[1:], err
-		}
 
 	// if there's not a valid command
 	default:

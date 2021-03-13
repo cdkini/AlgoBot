@@ -17,18 +17,28 @@ type Recurser struct {
 	name               string     `firestore:"name"`
 	email              string     `firestore:"email"`
 	isSkippingTomorrow bool       `firestore:"isSkippingTomorrow"`
-	schedule           Schedule   `firestore:"schedule"`
+	isPairingTomorrow  bool       `firestore:"isPairingTomorrow"`
 	config             UserConfig `firestore:"config"`
 }
 
-type Schedule struct {
-	sun bool
-	mon bool
-	tue bool
-	wed bool
-	thu bool
-	fri bool
-	sat bool
+func newRecurser(id string, name string, email string) Recurser {
+	return Recurser{
+		id:                 id,
+		name:               name,
+		email:              email,
+		isSkippingTomorrow: false,
+		isPairingTomorrow:  false,
+		config:             defaultUserConfig(),
+	}
+}
+
+func (r Recurser) isConfigured() bool {
+	return len(r.config.environment) > 0 &&
+		len(r.config.experience) > 0 &&
+		len(r.config.questionList) > 0 &&
+		len(r.config.topics) > 0 &&
+		len(r.config.soloDifficulty) > 0 &&
+		len(r.config.pairingDifficulty) > 0
 }
 
 type UserConfig struct {
@@ -41,6 +51,20 @@ type UserConfig struct {
 	soloDifficulty    []string
 	pairingDifficulty []string
 	manualQuestion    bool
+}
+
+func defaultUserConfig() UserConfig {
+	return UserConfig{
+		comments:          "N/A",
+		environment:       "leetcode",
+		experience:        "medium",
+		questionList:      "topInterviewQuestions",
+		topics:            []string{},
+		soloDays:          []string{"mon", "tue", "wed", "thu", "fri"},
+		soloDifficulty:    []string{"easy", "medium"},
+		pairingDifficulty: []string{"easy", "medium"},
+		manualQuestion:    false,
+	}
 }
 
 func Config(w http.ResponseWriter, r *http.Request) {

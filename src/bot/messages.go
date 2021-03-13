@@ -11,6 +11,7 @@ type Messenger struct {
 	Subscribe     string `json:"subscribe"`
 	Unsubscribe   string `json:"unsubscribe"`
 	NotSubscribed string `json:"notSubscribed"`
+	NotConfigured string `json:"notConfigured"`
 	OddOneOut     string `json:"oddOneOut"`
 	Matched       string `json:"matched"`
 	WriteError    string `json:"writeError"`
