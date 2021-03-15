@@ -13,8 +13,7 @@ import (
 // It's alive! The application starts here.
 func main() {
 	r := mux.NewRouter()
-	r.HandleFunc("/", bot.Nope)
-	r.HandleFunc("/webhooks", bot.Handle)
+	r.HandleFunc("/webhooks", bot.Webhook)
 	r.HandleFunc("/cron", bot.Cron)
 	r.HandleFunc("/config/{id}", bot.Config)
 
