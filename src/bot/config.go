@@ -36,7 +36,7 @@ func newRecurser(id string, name string, email string) Recurser {
 func (r Recurser) stringifyUserConfig() string {
 	var b strings.Builder
 
-	b.WriteString(fmt.Sprintf("You are %s!\n", r.Name))
+	b.WriteString(fmt.Sprintf("You are %s!\n\n", r.Name))
 	b.WriteString(fmt.Sprintf("Your experience level is %s.\n", r.Config.Experience))
 	b.WriteString(fmt.Sprintf("You are working through the %s pset.\n", r.Config.QuestionList))
 
@@ -74,6 +74,16 @@ func (r Recurser) stringifyUserConfig() string {
 }
 
 func (r Recurser) isConfigured() bool {
+	return r.hasSoloConfig() && r.hasPairingConfig()
+}
+
+func (r Recurser) hasSoloConfig() bool {
+	return len(r.Config.QuestionList) > 0 &&
+		len(r.Config.SoloDays) > 0 &&
+		len(r.Config.SoloDifficulty) > 0
+}
+
+func (r Recurser) hasPairingConfig() bool {
 	return len(r.Config.Environment) > 0 &&
 		len(r.Config.Experience) > 0 &&
 		len(r.Config.QuestionList) > 0 &&
@@ -150,11 +160,6 @@ func handlePOST(w http.ResponseWriter, r *http.Request, id string) {
 	}
 
 	// Retrieve current config / user profile and update
-	doc := fn0(id)
-	doc.Update(ctx, []firestore.Update{{Path: "config", Value: structs.Map(config)}})
-}
-
-func fn0(id string) *firestore.DocumentRef {
 	doc := client.Collection("recursers").Doc(id)
-	return doc
+	doc.Update(ctx, []firestore.Update{{Path: "config", Value: structs.Map(config)}})
 }
