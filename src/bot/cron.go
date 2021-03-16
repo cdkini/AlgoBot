@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"sync"
 	"time"
 
 	"cloud.google.com/go/firestore"
@@ -167,10 +168,11 @@ func messagePairs(client *firestore.Client, ctx context.Context) {
 	}
 
 	// shuffle our recursers. This will not error if the list is empty
-	pairs := determinePairs(recursersList)
+	optimalPath := determineBestPath(recursersList)
+	recursersList = optimalPath.order
 
 	// if for some reason there's no matches today, we're done
-	if len(pairs) == 0 {
+	if len(recursersList) == 0 {
 		log.Println("No one was signed up to pair today -- so there were no matches")
 		return
 	}
@@ -231,11 +233,91 @@ func messagePairs(client *firestore.Client, ctx context.Context) {
 	}
 }
 
-type Pair struct {
-	recurserOne Recurser
-	recurserTwo Recurser
+type Path struct {
+	order      []Recurser
+	validPairs int
 }
 
-func determinePairs(recursers []Recurser) []Pair {
-	return []Pair{}
+func determineBestPath(recursers []Recurser) Path {
+	bestPath := new(Path)
+	stack := make([]Path, 0)
+	for _, recurser := range recursers {
+		stack = append(stack, Path{[]Recurser{recurser}, 0})
+	}
+
+	wg := new(sync.WaitGroup)
+	bestPossibleScore := len(recursers) / 2
+
+	for i := range stack {
+		wg.Add(1)
+		go func(path Path) {
+			getNext(path, recursers, map[string]bool{path.order[0].Id: true}, bestPath, bestPossibleScore, wg)
+			defer wg.Done()
+		}(stack[i])
+	}
+	wg.Wait()
+
+	return *bestPath
 }
+
+func getNext(path Path, recursers []Recurser, seen map[string]bool, bestPath *Path, bestPossibleScore int, wg *sync.WaitGroup) {
+	if bestPath.validPairs == bestPossibleScore {
+		return
+	}
+
+	if len(path.order)%2 == 0 {
+		if isValidSoFar(path.order) {
+			path.validPairs++
+		}
+		// 	if !isWorthExploring(path, bestPossibleScore, bestPath.validPairs) {
+		// 		return
+		// 	}
+	}
+
+	if len(path.order) == len(recursers) && path.validPairs > bestPath.validPairs {
+		*bestPath = path
+		return
+	}
+
+	for _, recurser := range recursers {
+		if _, ok := seen[recurser.Id]; ok {
+			continue
+		}
+
+		pathCopy := path
+		pathCopy.order = make([]Recurser, len(path.order))
+		copy(pathCopy.order, path.order)
+		pathCopy.order = append(pathCopy.order, recurser)
+
+		seenCopy := make(map[string]bool, 0)
+		for k, v := range seen {
+			seenCopy[k] = v
+		}
+		seenCopy[recurser.Id] = true
+
+		wg.Add(1)
+		go func() {
+			getNext(pathCopy, recursers, seenCopy, bestPath, bestPossibleScore, wg)
+			defer wg.Done()
+		}()
+
+	}
+}
+
+func isValidSoFar(path []Recurser) bool {
+	recurserOne := path[len(path)-2]
+	recurserTwo := path[len(path)-1]
+
+	difficulties := map[string]int{
+		"easy":   0,
+		"medium": 1,
+		"hard":   2,
+	}
+
+	return min(recurserOne.Config.PairingDifficulty, difficulties) <= difficulties[recurserTwo.Config.Experience] &&
+		min(recurserTwo.Config.PairingDifficulty, difficulties) <= difficulties[recurserOne.Config.Experience]
+}
+
+// func isWorthExploring(path Path, bestPossibleScore int, bestScore int) bool {
+// 	return bestPossibleScore-len(path.order)+path.validPairs >= bestScore
+// }
