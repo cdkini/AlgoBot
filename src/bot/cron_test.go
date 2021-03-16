@@ -6,6 +6,102 @@ import (
 	"testing"
 )
 
+func TestIsValidSoFar(t *testing.T) {
+	table := []struct {
+		input []Recurser
+		want  bool
+	}{
+		{
+			input: []Recurser{
+				{Id: "A", Config: UserConfig{
+					Experience:        "hard",
+					PairingDifficulty: []string{"hard"},
+				}},
+				{Id: "B", Config: UserConfig{
+					Experience:        "easy",
+					PairingDifficulty: []string{"easy"},
+				}},
+			},
+			want: false,
+		},
+		{
+			input: []Recurser{
+				{Id: "A", Config: UserConfig{
+					Experience:        "medium",
+					PairingDifficulty: []string{"easy", "medium"},
+				}},
+				{Id: "B", Config: UserConfig{
+					Experience:        "medium",
+					PairingDifficulty: []string{"easy", "medium"},
+				}},
+			},
+			want: true,
+		},
+		{
+			input: []Recurser{
+				{Id: "A", Config: UserConfig{
+					Experience:        "medium",
+					PairingDifficulty: []string{"easy", "medium"},
+				}},
+				{Id: "B", Config: UserConfig{
+					Experience:        "easy",
+					PairingDifficulty: []string{"easy"},
+				}},
+			},
+			want: true,
+		},
+		{
+			input: []Recurser{
+				{Id: "A", Config: UserConfig{
+					Experience:        "hard",
+					PairingDifficulty: []string{"hard"},
+				}},
+				{Id: "B", Config: UserConfig{
+					Experience:        "medium",
+					PairingDifficulty: []string{"easy", "medium"},
+				}},
+				{Id: "C", Config: UserConfig{
+					Experience:        "medium",
+					PairingDifficulty: []string{"easy", "medium"},
+				}},
+			},
+			want: true,
+		},
+		{
+			input: []Recurser{
+				{Id: "A", Config: UserConfig{
+					Experience:        "hard",
+					PairingDifficulty: []string{"hard"},
+				}},
+				{Id: "B", Config: UserConfig{
+					Experience:        "medium",
+					PairingDifficulty: []string{"easy", "medium"},
+				}},
+				{Id: "C", Config: UserConfig{
+					Experience:        "medium",
+					PairingDifficulty: []string{"easy", "medium"},
+				}},
+				{Id: "D", Config: UserConfig{
+					Experience:        "hard",
+					PairingDifficulty: []string{"hard"},
+				}},
+			},
+			want: false,
+		},
+	}
+
+	for i, test := range table {
+		name := fmt.Sprintf("Test %v", i)
+		t.Run(name, func(t *testing.T) {
+			got := isValidSoFar(test.input)
+
+			if got != test.want {
+				t.Errorf("%s: Expected %v, got %v", name, test.want, got)
+			}
+		})
+	}
+}
+
 func TestDetermineBestPath(t *testing.T) {
 	table := []struct {
 		input       []Recurser

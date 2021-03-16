@@ -28,12 +28,12 @@ func min(arr []string, strVals map[string]int) int {
 // this shuffles our recursers.
 // TODO: source of randomness is time, but this runs at the
 // same time each day. Is that ok?
-func shuffle(slice []map[string]interface{}) []map[string]interface{} {
+func shuffle(slice []Recurser) {
 	r := rand.New(rand.NewSource(time.Now().Unix()))
-	ret := make([]map[string]interface{}, len(slice))
+	ret := make([]Recurser, len(slice))
 	perm := r.Perm(len(slice))
 	for i, randIndex := range perm {
 		ret[i] = slice[randIndex]
 	}
-	return ret
+	slice = ret
 }

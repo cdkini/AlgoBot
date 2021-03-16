@@ -102,7 +102,7 @@ func messageSolo(client *firestore.Client, ctx context.Context) {
 	}
 
 	// shuffle our recursers. This will not error if the list is empty
-	// recursersList = shuffle(recursersList)
+	recursersList = shuffle(recursersList)
 
 	// if for some reason there's no matches today, we're done
 	if len(recursersList) == 0 {
@@ -168,6 +168,7 @@ func messagePairs(client *firestore.Client, ctx context.Context) {
 	}
 
 	// shuffle our recursers. This will not error if the list is empty
+	shuffle(recursersList)
 	optimalPath := determineBestPath(recursersList)
 	recursersList = optimalPath.order
 
@@ -269,9 +270,6 @@ func getNext(path Path, recursers []Recurser, seen map[string]bool, bestPath *Pa
 		if isValidSoFar(path.order) {
 			path.validPairs++
 		}
-		// 	if !isWorthExploring(path, bestPossibleScore, bestPath.validPairs) {
-		// 		return
-		// 	}
 	}
 
 	if len(path.order) == len(recursers) && path.validPairs > bestPath.validPairs {
@@ -317,7 +315,3 @@ func isValidSoFar(path []Recurser) bool {
 	return min(recurserOne.Config.PairingDifficulty, difficulties) <= difficulties[recurserTwo.Config.Experience] &&
 		min(recurserTwo.Config.PairingDifficulty, difficulties) <= difficulties[recurserOne.Config.Experience]
 }
-
-// func isWorthExploring(path Path, bestPossibleScore int, bestScore int) bool {
-// 	return bestPossibleScore-len(path.order)+path.validPairs >= bestScore
-// }
