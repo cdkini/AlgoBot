@@ -98,7 +98,7 @@ type UserConfig struct {
 	QuestionList      string   `structs:"questionList,omitempty" firestore:"questionList,omitempty"`
 	Topics            []string `structs:"topics,omitempty" firestore:"topics,omitempty"`
 	SoloDays          []string `structs:"soloDays,omitempty" firestore:"soloDays,omitempty"`
-	SoloDifficulty    []string `structs:"solodifficulty,omitempty" firestore:"soloDifficulty,omitempty"`
+	SoloDifficulty    []string `structs:"soloDifficulty,omitempty" firestore:"soloDifficulty,omitempty"`
 	PairingDifficulty []string `structs:"pairingDifficulty,omitempty" firestore:"pairingDifficulty,omitempty"`
 	ManualQuestion    bool     `structs:"manualQuestion,omitempty" firestore:"manualQuestion,omitempty"`
 }

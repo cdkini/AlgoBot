@@ -2,8 +2,10 @@ package bot
 
 import (
 	"context"
+	"fmt"
 	"io/ioutil"
 	"log"
+	"math/rand"
 	"net/http"
 	"net/url"
 	"strings"
@@ -101,15 +103,6 @@ func messageSolo(client *firestore.Client, ctx context.Context) {
 		}
 	}
 
-	// shuffle our recursers. This will not error if the list is empty
-	recursersList = shuffle(recursersList)
-
-	// if for some reason there's no matches today, we're done
-	if len(recursersList) == 0 {
-		log.Println("No one signed up for a daily question")
-		return
-	}
-
 	// message the peeps!
 	doc, err := client.Collection("apiauth").Doc("key").Get(ctx)
 	if err != nil {
@@ -124,22 +117,74 @@ func messageSolo(client *firestore.Client, ctx context.Context) {
 		messageRequest := url.Values{}
 		messageRequest.Add("type", "private")
 		messageRequest.Add("to", recursersList[i].Email)
-		messageRequest.Add("content", botMessages.Matched)
+
+		question := selectQuestion(recursersList[i], client, ctx)
+		msg := fmtSoloMessage(question)
+		messageRequest.Add("content", msg)
+
 		req, err := http.NewRequest("POST", zulipAPIURL, strings.NewReader(messageRequest.Encode()))
 		req.SetBasicAuth(botEmailAddress, botPassword)
 		req.Header.Set("content-type", "application/x-www-form-urlencoded")
+
 		resp, err := zulipClient.Do(req)
 		if err != nil {
 			log.Panic(err)
 		}
 		defer resp.Body.Close()
+
 		respBodyText, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
 			log.Println(err)
 		}
+
 		log.Println(string(respBodyText))
-		log.Println("A match went out")
+		log.Println("A question went out")
 	}
+}
+
+func fmtSoloMessage(question map[string]interface{}) string {
+	var builder strings.Builder
+	builder.WriteString("Hey there! I've got your next question prepared and ready to go!\n")
+	builder.WriteString("The question was randomly selected based on your configuration and question history; use `config` to make modifications.\n\n")
+	builder.WriteString(fmt.Sprintf("Today's Question: [link](%s)\n\n", question["url"]))
+	builder.WriteString("Want to practice with other Recursers? Feel free to `schedule` a mock interview :)")
+	return builder.String()
+}
+
+func selectQuestion(recurser Recurser, client *firestore.Client, ctx context.Context) map[string]interface{} {
+	config := recurser.Config
+	rand.Seed(time.Now().Unix())
+
+	var topic string
+	var iter *firestore.DocumentIterator
+	difficulty := config.SoloDifficulty[rand.Intn(len(config.SoloDifficulty))]
+
+	if len(config.Topics) != 0 {
+		topic = config.Topics[rand.Intn(len(config.Topics))]
+		iter = client.Collection("questions").
+			Where("difficulty", "==", difficulty).
+			Documents(ctx)
+	} else {
+		iter = client.Collection("questions").
+			Where("difficulty", "==", difficulty).
+			Where("tags", "array-contains", topic).
+			Documents(ctx)
+	}
+
+	var documents []*firestore.DocumentSnapshot
+	for {
+		doc, err := iter.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			log.Panic(err)
+		}
+		documents = append(documents, doc)
+	}
+
+	selection := documents[rand.Intn(len(documents))]
+	return selection.Data()
 }
 
 func messagePairs(client *firestore.Client, ctx context.Context) {
