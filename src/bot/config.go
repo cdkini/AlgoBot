@@ -14,12 +14,12 @@ import (
 )
 
 type Recurser struct {
-	Id                 string     `structs:"id,omitempty" firestore:"id,omitempty"`
-	Name               string     `structs:"name,omitempty" firestore:"name,omitempty"`
-	Email              string     `structs:"email,omitempty" firestore:"email,omitempty"`
-	IsSkippingTomorrow bool       `structs:"isSkippingTomorrow,omitempty" firestore:"isSkippingTomorrow,omitempty"`
-	IsPairingTomorrow  bool       `structs:"isPairingTomorrow,omitempty" firestore:"isPairingTomorrow,omitempty"`
-	Config             UserConfig `structs:"config,omitempty" firestore:"config,omitempty"`
+	Id                 string     `structs:"id" firestore:"id"`
+	Name               string     `structs:"name" firestore:"name"`
+	Email              string     `structs:"email" firestore:"email"`
+	IsSkippingTomorrow bool       `structs:"isSkippingTomorrow" firestore:"isSkippingTomorrow"`
+	IsPairingTomorrow  bool       `structs:"isPairingTomorrow" firestore:"isPairingTomorrow"`
+	Config             UserConfig `structs:"config" firestore:"config"`
 }
 
 func newRecurser(id string, name string, email string) Recurser {
@@ -38,7 +38,7 @@ func (r Recurser) stringifyUserConfig() string {
 
 	b.WriteString(fmt.Sprintf("You are %s!\n\n", r.Name))
 	b.WriteString(fmt.Sprintf("Your experience level is %s.\n", r.Config.Experience))
-	b.WriteString(fmt.Sprintf("You are working through the %s pset.\n", r.Config.QuestionList))
+	b.WriteString(fmt.Sprintf("You are working through the %s pset.\n", r.Config.ProblemSet))
 
 	if len(r.Config.Topics) == 0 {
 		b.WriteString("You have not selected specific topics to work on.\n")
@@ -78,7 +78,7 @@ func (r Recurser) isConfigured() bool {
 }
 
 func (r Recurser) hasSoloConfig() bool {
-	return len(r.Config.QuestionList) > 0 &&
+	return len(r.Config.ProblemSet) > 0 &&
 		len(r.Config.SoloDays) > 0 &&
 		len(r.Config.SoloDifficulty) > 0
 }
@@ -86,21 +86,21 @@ func (r Recurser) hasSoloConfig() bool {
 func (r Recurser) hasPairingConfig() bool {
 	return len(r.Config.Environment) > 0 &&
 		len(r.Config.Experience) > 0 &&
-		len(r.Config.QuestionList) > 0 &&
+		len(r.Config.ProblemSet) > 0 &&
 		len(r.Config.SoloDifficulty) > 0 &&
 		len(r.Config.PairingDifficulty) > 0
 }
 
 type UserConfig struct {
-	Comments          string   `structs:"comments,omitempty" firestore:"comments,omitempty"`
-	Environment       string   `structs:"environment,omitempty" firestore:"environment,omitempty"`
-	Experience        string   `structs:"experience,omitempty" firestore:"experience,omitempty"`
-	QuestionList      string   `structs:"questionList,omitempty" firestore:"questionList,omitempty"`
-	Topics            []string `structs:"topics,omitempty" firestore:"topics,omitempty"`
-	SoloDays          []string `structs:"soloDays,omitempty" firestore:"soloDays,omitempty"`
-	SoloDifficulty    []string `structs:"soloDifficulty,omitempty" firestore:"soloDifficulty,omitempty"`
-	PairingDifficulty []string `structs:"pairingDifficulty,omitempty" firestore:"pairingDifficulty,omitempty"`
-	ManualQuestion    bool     `structs:"manualQuestion,omitempty" firestore:"manualQuestion,omitempty"`
+	Comments          string   `structs:"comments" firestore:"comments"`
+	Environment       string   `structs:"environment" firestore:"environment"`
+	Experience        string   `structs:"experience" firestore:"experience"`
+	ProblemSet        string   `structs:"problemSet" firestore:"problemSet"`
+	Topics            []string `structs:"topics" firestore:"topics"`
+	SoloDays          []string `structs:"soloDays" firestore:"soloDays"`
+	SoloDifficulty    []string `structs:"soloDifficulty" firestore:"soloDifficulty"`
+	PairingDifficulty []string `structs:"pairingDifficulty" firestore:"pairingDifficulty"`
+	ManualQuestion    bool     `structs:"manualQuestion" firestore:"manualQuestion"`
 }
 
 func defaultUserConfig() UserConfig {
@@ -108,7 +108,7 @@ func defaultUserConfig() UserConfig {
 		Comments:          "N/A",
 		Environment:       "leetcode",
 		Experience:        "medium",
-		QuestionList:      "topInterviewQuestions",
+		ProblemSet:        "topInterview",
 		Topics:            []string{},
 		SoloDays:          []string{"mon", "tue", "wed", "thu", "fri"},
 		SoloDifficulty:    []string{"easy", "medium"},
