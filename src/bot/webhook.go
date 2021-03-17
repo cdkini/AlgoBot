@@ -117,14 +117,14 @@ func sanityCheck(ctx context.Context, w http.ResponseWriter, r *http.Request) (i
 	}
 
 	// validate our zulip-bot token (manually put into the database before deployment)
-	doc, err := client.Collection("botauth").Doc("token").Get(ctx)
+	doc, err := client.Collection("auth").Doc("bot").Get(ctx)
 	if err != nil {
 		log.Println("Something weird happened trying to read the auth token from the database")
 		return userReq, err
 	}
 
-	token := doc.Data()
-	if userReq.Token != token["value"] {
+	token := doc.Data()["token"]
+	if userReq.Token != token {
 		http.NotFound(w, r)
 		return userReq, errors.New("unauthorized interaction attempt")
 	}
@@ -293,6 +293,21 @@ func subscribe(userID string, userName string, userEmail string, recurser Recurs
 	if err != nil {
 		return botMessages.WriteError
 	}
+
+	sessions := map[string]interface{}{
+		"sessions": []interface{}{},
+	}
+
+	_, err = client.Collection("soloSessions").Doc(userID).Create(ctx, sessions)
+	if err != nil {
+		return botMessages.WriteError
+	}
+
+	_, err = client.Collection("pairingSessions").Doc(userID).Create(ctx, sessions)
+	if err != nil {
+		return botMessages.WriteError
+	}
+
 	return botMessages.Subscribe
 }
 
@@ -300,7 +315,16 @@ func unsubscribe(userID string, recurser Recurser, isSubscribed bool, ctx contex
 	if isSubscribed == false {
 		return botMessages.NotSubscribed
 	}
+
 	_, err := client.Collection("recursers").Doc(userID).Delete(ctx)
+	if err != nil {
+		return botMessages.WriteError
+	}
+	_, err = client.Collection("soloSessions").Doc(userID).Delete(ctx)
+	if err != nil {
+		return botMessages.WriteError
+	}
+	_, err = client.Collection("pairingSessions").Doc(userID).Delete(ctx)
 	if err != nil {
 		return botMessages.WriteError
 	}
