@@ -1,40 +1,21 @@
 #!/usr/bin/env python3
 
-import os
 import requests
 
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 
+import tags, psets
 
-RAW_DATA = "https://leetcode.com/api/problems/algorithms/"
+
+API_BASE_URL = "https://leetcode.com/api/problems/algorithms/"
 PROBLEM_BASE_URL = "https://leetcode.com/problems/"
-TAGS = [
-    "Array",
-    "Backtracking",
-    "Binary Search",
-    "Bit Manipulation",
-    "Breadth-first Search",
-    "Depth-first Search",
-    "Design",
-    "Divide and Conquer",
-    "Dynamic Programming",
-    "Graph",
-    "Greedy",
-    "Hash Table",
-    "Heap",
-    "Linked List",
-    "Math",
-    "Recursion",
-    "Sliding Window",
-    "Sort",
-    "Stack",
-    "String",
-    "Tree",
-    "Trie",
-    "Two Pointers",
-    "Union Find"
+PSETS = [
+    "Top 100 Liked",
+    "Top Interview",
+    "Blind 75",
+    "LeetCode Patterns",
 ]
 
 
@@ -45,22 +26,30 @@ class Question:
         self.url = url
         self.difficulty = difficulty
         self.tags = []
+        self.psets = []
 
     def __repr__(self):
         return f"{self.id} - {self.name} ({self.difficulty})"
 
     def jsonify(self):
-        return {
-            'id': self.id,
-            'name': self.name,
-            'url': self.url,
-            'difficulty': self.difficulty,
-            'tags': self.tags 
-        }
+
+        def camel_case(item):
+            if isinstance(item, list):
+                return [camel_case(i) for i in item]
+            elif isinstance(item, str):
+                components = item.split(' ')
+                return components[0].lower() + ''.join(x.title() for x in components[1:])
+            else:
+                return item
+
+        for key, val in self.__dict__.items():
+            self.__dict__[key] = camel_case(val)
+
+        return self.__dict__
 
 
 def get_all_questions():
-    r = requests.get(RAW_DATA)
+    r = requests.get(API_BASE_URL)
     if r.status_code == 200:
         print("Successfully hit LeetCode API endpoint")
     return r.json()
@@ -89,21 +78,8 @@ def clean_raw_data(data):
 
 
 def classify_questions(questions):
-    for tag in TAGS:
-        path = _get_tag_path(tag)
-        with open(path) as f:
-            content = [c.strip() for c in f.readlines()]
-            for row in content:
-                if row.isnumeric() and int(row) in questions:
-                    questions[int(row)].tags.append(tag)
-
-    print(f"Successfully classified all questions under {len(TAGS)} tags")
-
-
-def _get_tag_path(tag):
-    arr = tag.split(" ")
-    joined = "-".join(word.lower() for word in arr)
-    return f"tags/{joined}.txt"
+    tags.add_tags(questions)
+    psets.add_psets(questions)
 
 
 def populate_firebase(questions):
