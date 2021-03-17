@@ -5,7 +5,7 @@
   "notSubscribed": "You're not subscribed to Mock Interview Bot <3",
   "notConfigured": "You have yet to set your configuration (use `config`)",
   "oddOneOut": "OK this is awkward.\nThere were an odd number of people in the match-set today, which means that one person couldn't get paired. Unfortunately, it was you -- I'm really sorry :(\nI promise it's not personal, it was very much random. Hopefully this doesn't happen again too soon. Enjoy your day! <3",
-  "matched": "Hi you two! You've been matched for pairing :)\n\nHave fun!",
+  "matched": "Hi you two! You've been matched for a mock interview :)\n\nI've separately messaged each of you about the question you should prepare as the interviewer.\n If this is your first time using AlgoBot for mock interviews, please read over the README.\n\n Best of luck and have fun!",
   "writeError": "Something went sideways while writing to the database. You should probably ping `@**Chetan Kini (he) (W2'21)**`",
   "readError": "Something went sideways while reading from the database. You should probably ping `@**Chetan Kini (he) (W2'21)**`"
 }
