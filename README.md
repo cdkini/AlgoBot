@@ -64,7 +64,7 @@ Note that these commands only work in a 1-on-1 chat with AlgoBot.
 
 The bread and butter of AlgoBot, solo sessions are the questions you receive each day as part of your structured study plan.
 Questions will be selected from either a problem set or at random based on your configuration. Feel free to treat these as seriously as you'd like;
-it's entirely up to you whether you treat them as serious interview prep, a fun exercise to work on with friends, or something in between.
+it's entirely up to you whether they act as serious interview prep, a fun exercise to work on with friends, or something in between.
 
 Upon using the `subscribe` cmd, your account will be assigned the following default configurations:
 - `Days`: Mon/Tue/Wed/Thu/Fri
@@ -75,7 +75,6 @@ Upon using the `subscribe` cmd, your account will be assigned the following defa
 These defaults can be viewed and altered at any time using the `config` option. 
 Note that questions are sent out at 9:00AM EST on the scheduled day so any changes or `skip` cmds will need to be made before then.
 
-
 <a name="mock-interviews"></a>
 ### 1.iii. Mock Interviews 
 
@@ -84,7 +83,7 @@ Questions will be selected from either a problem set or by you manually; if you 
 These sessions are meant to simulate real world interviews; treat them like phone screens and you'll find success!
 
 Upon using the `schedule` cmd, you will be placed in the queue with other Recursers interested in mock interviewing. You will be assigned the following defaults:
-- `Days`: You're in the queue until you are matched; upon matching, discuss possible availability your partner.
+- `Days`: You're in the queue until you are matched; upon matching, discuss your availability your partner.
 - `Experience`: Medium (you will prepare questions of medium difficulty and below as an interviewer). 
 - `Difficulty`: Easy / Medium (randomly selected between the two)
 - `Topics`: All / Random
@@ -95,9 +94,9 @@ These defaults can be viewed and altered at any time using the `config` option.
 Note that matches are made and sent out at 11:00PM EST each day so any changes or `cancel` cmds will need to be made before then.
 
 It is important to note that matches are made based on similarity of profiles to ensure equitable, rewarding interviews.
-Please take the time to review your configuration to ensure it matches your preferences and experience level.
+Please take the time to review your config to ensure it matches your preferences and experience level.
 
-If you do not get a match the first day, do not worry! You'll stay in the queue until you do. Upon matching, you'll be removed from the queue. 
+If you do not get a match the first day, do not worry as you'll stay in the queue until you do. Upon matching, you'll be removed from the queue. 
 If you want back-to-back interviews, you'll need to manually `schedule` all over again. Read the [FAQ](#faq-mock-interview-queue) for more details.
 
 <a name="daily-questions"></a>
@@ -117,10 +116,10 @@ The difficulty of these questions increases throughout the week (akin to somethi
 | Sun    | Hard        |
 
 
-Link to thread: [Daily Question](link)
+Link to thread: [Daily Question](https://recurse.zulipchat.com/#narrow/stream/256561-Daily-LeetCode/topic/AlgoBot.20Daily.20Question)
 
 Note that you do not require any special configuration or messaging of AlgoBot for these problems. 
-Simply go to the link, take a stab at the question, and post your solution in the thread to discuss with others.
+Simply go to the link, try your hand at the question, and post your solution in the thread to discuss with others.
 Remember to use spoiler tags to prevent ruining the solution for others!
 
 <hr>
@@ -131,19 +130,50 @@ Remember to use spoiler tags to prevent ruining the solution for others!
 <a name="stack"></a>
 ### 2.i. Stack
 
+* **Go**
+  - Deals with communication with Zulip and server.
+* **Python**
+  - Scrapes question banks and problem sets.
+* **HTML/CSS/JavaScript**
+  - Validates and displays user configuration / session history.
+* **Google Cloud App Engine**
+  - Configures serverless deployment and enables versioning.
+* **Google Cloud Firestore**
+  - NoSQL Document Database to store question data, user configurations, and session history.
+* **Google Cloud Cloud Build**
+  - CI/CD to keep server instance in alignment with master branch.
+  
 <a name="matching-algo"></a>
 ### 2.ii. Matching Algorithm
+
+Given that this is a bot meant to improve data structures and algorithms skills, I thought it would be prudent to discuss how matching for mock interviews is implemented.
+
+
+The algorithm behind the scenes takes inspiration from "The Stable Roommates Problem", a variation on "The Stable Marriage Problem". 
+Instead of using two separate groups and creating a bipartite graph, we consider the population of Recursers as one, uniform group.
+
+Steps:
+1.  Interviewer preferences are calculated for each individual in the pool
+    - Preference is calculated by how similar user configurations are and how likely an individual is to be able to conduct an interview for the user. Experience and comfort with DS&A come into play here.
+        - <i>Ex: Someone at an intermediate level prefer someone at the same or higher level to interview them as opposed to a beginner.</i>
+    - In the case of preference ties, we just random select a winner between the two.
 
 <a name="deployment"></a>
 ### 2.iii. Deployment 
 
-### About Pairing Bot's setup and deployment
- * Serverless. RC's instance is currently deployed on [App Engine](https://cloud.google.com/appengine/docs/standard/)
- * [Firestore database](https://cloud.google.com/firestore/docs/)
- * Deployed on pushes to the `main` branch with [Cloud Build](https://cloud.google.com/cloud-build/docs/)
- * The database must be prepopulated with two pieces of data:  an authentication token (which the bot uses to validate incoming webhook requests), and an api key (which the bot uses to send private messages to Zulip users)
- * Zulip has bot types. Pairing Bot is of type `outgoing webhook`
- * Pair programming matches are made, and the people who've been matched are notified, any time an HTTP GET request is issued to `/cron`
+Just a few details about the setup and deployment of AlgoBot:
+
+- Zulip has bot types. AlgoBot is of type `outgoing webhook`.
+  - This allows us to be notified when certain types of messages are sent in Zulip.
+  - Upon a trigger event occurring, a `POST` request is sent to the server and evaluated.
+    - The [official documentation](https://zulip.com/api/outgoing-webhooks) does a great job of clarfying all capabilities.
+- The database is prepopulated with:
+  - An auth token (which the bot uses to validate incoming webhook requests).
+  - An API key (which the bot uses to send private messages to Zulip users).
+    - Both can be found in your Zulip settings (go to `Settings` -> `Your Bots` -> `"Copy zuliprc"`).
+- All configuration of App Engine is done through `app.yaml`.
+  - Credentials for Google Cloud are either saved in a hidden JSON or are saved as environment variables. 
+  - `cron.yaml` and `cloudbuild.yaml` configure cronjobs and CI/CD, respectively.
 
 <hr>
 
