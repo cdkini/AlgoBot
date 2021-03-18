@@ -43,6 +43,8 @@ class Question:
                 return item
 
         for key, val in self.__dict__.items():
+            if key == "name":
+                continue
             self.__dict__[key] = camel_case(val)
 
         return self.__dict__
