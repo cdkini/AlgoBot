@@ -18,8 +18,8 @@ import (
 )
 
 const botEmailAddress = "mockinterview-bot@recurse.zulipchat.com"
-const gcloudBaseURL = "https://mock-interview-bot-307121.ue.r.appspot.com"
 const zulipAPIURL = "https://recurse.zulipchat.com/api/v1/messages"
+const gcloudServerURL = "https://mock-interview-bot-307121.ue.r.appspot.com"
 
 var botMessages = InitMessenger("src/bot/messages.json")
 var client *firestore.Client
@@ -71,12 +71,13 @@ func Webhook(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if userReq.Trigger != "private_message" {
-		err = responder.Encode(botResponse{"Hi! I'm AlgoBot!\nSend me a PM that says `subscribe` to get started :octopus::octopus::octopus:"})
+		err = responder.Encode(botResponse{"Hi! I'm AlgoBot!\n\nSend me a PM to get started :octopus::octopus::octopus:"})
 		if err != nil {
 			log.Println(err)
 		}
 		return
 	}
+
 	// if there aren't two 'recipients' (one sender and one receiver),
 	// then don't respond. this stops pairing bot from responding in the group
 	// chat she starts when she matches people
@@ -246,7 +247,8 @@ func config(userID string, recurser Recurser, isSubscribed bool) string {
 	// Provide current settings as well as user-specific URL for config
 	var response string
 	response = recurser.stringifyUserConfig()
-	response += fmt.Sprintf("[Click here to make changes](%s/config/%s)", gcloudBaseURL, userID)
+	response += fmt.Sprintf("[Click here to make changes](%s/config/%s)", gcloudServerURL, userID)
+
 	return response
 }
 
