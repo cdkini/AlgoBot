@@ -1,4 +1,4 @@
 cron:
-- description: "Daily match-making job"
+- description: "Daily questions and sessions"
   url: /cron
-  schedule: every day 04:00
+  schedule: every 2 hours from day 9:00 to 13:05

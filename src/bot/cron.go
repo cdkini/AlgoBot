@@ -30,11 +30,11 @@ func Cron(w http.ResponseWriter, r *http.Request) {
 	}
 
 	switch hour := time.Now().Hour(); hour {
-	case 8:
-		MessageSolo(client, ctx)
-	case 10:
+	case 9:
 		MessagePairs(client, ctx)
-	case 12:
+	case 11:
+		MessageSolo(client, ctx)
+	case 13:
 		PostDaily(client, ctx)
 	default:
 		log.Fatal("Something is up with cron; this shouldn't be running! Check out your YAML")
