@@ -47,7 +47,7 @@ func PostDaily(client *firestore.Client, ctx context.Context) {
 	builder.WriteString("Send me a DM to create a study schedule and practice mock interviews.")
 
 	msg := builder.String()
-	stream := "test"
+	stream := "Daily LeetCode"
 	topic := "AlgoBot Daily Question"
 
 	// Directly run curl as noted in the Zulip API docs

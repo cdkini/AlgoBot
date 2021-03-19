@@ -344,7 +344,7 @@ func skip(userID string, recurser Recurser, isSubscribed bool, ctx context.Conte
 		return botMessages.WriteError
 	}
 
-	return `Tomorrow: cancelled. I feel you. **I will not contact you** with a question tomorrow <3`
+	return `Tomorrow: skipped. I feel you. **I will not contact you** with a question tomorrow <3`
 }
 
 func unskip(userID string, recurser Recurser, isSubscribed bool, ctx context.Context) string {
@@ -358,5 +358,5 @@ func unskip(userID string, recurser Recurser, isSubscribed bool, ctx context.Con
 		return botMessages.WriteError
 	}
 
-	return "Tomorrow: uncancelled! Heckin *yes*! **I will contact you** with a question tomorrow :)"
+	return "Tomorrow: unskipped! Heckin *yes*! **I will contact you** with a question tomorrow :)"
 }
