@@ -43,7 +43,7 @@ func PostDaily(client *firestore.Client, ctx context.Context) {
 	builder.WriteString(fmt.Sprintf("**AlgoBot Daily Question (%s):**\n\n", today))
 	builder.WriteString(fmt.Sprintf("[%v. %s](%s) [%s]\n\n", question["id"], question["name"], question["url"], strings.Title(question["difficulty"].(string))))
 	builder.WriteString("Feel free to post your answers below (but take care to add spoilers!).\n")
-	builder.WriteString("Problems get more difficult as the week progresses. Check out [the schedule](link)!\n\n")
+	builder.WriteString("Problems get more difficult as the week progresses. Check out [the schedule](https://github.com/cdkini/AlgoBot/blob/master/README.md#daily-questions)!\n\n")
 	builder.WriteString("Send me a DM to create a study schedule and practice mock interviews.")
 
 	msg := builder.String()
@@ -102,7 +102,10 @@ func generateDailyQuestion(today string, ctx context.Context) map[string]interfa
 		documents = append(documents, doc)
 	}
 
-	selection := documents[rand.Intn(len(documents))]
+	s := rand.NewSource(time.Now().UnixNano())
+	r := rand.New(s)
+
+	selection := documents[r.Intn(len(documents))]
 	question := selection.Data()
 
 	return question
