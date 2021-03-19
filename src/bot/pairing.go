@@ -2,6 +2,7 @@ package bot
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -27,8 +28,15 @@ func MessagePairs(client *firestore.Client, ctx context.Context) {
 	// shuffle our recursers. This will not error if the list is empty
 	shuffle(recursersList)
 
-	// optimalPath := determineBestPath(recursersList)
-	// recursersList = optimalPath.order
+	optimalPath, err := determineBestPath(recursersList)
+	if err != nil {
+		log.Fatal("Pairing should not occur for invalid pools")
+	}
+
+	pairedList, notPairedList, err := determinePairs(optimalPath)
+	if err != nil {
+		log.Fatal("Could not match all valid pairs")
+	}
 
 	// message the peeps!
 	doc, err := client.Collection("auth").Doc("api").Get(ctx)
@@ -42,14 +50,13 @@ func MessagePairs(client *firestore.Client, ctx context.Context) {
 
 	// if there's an odd number today, message the last person in the list
 	// and tell them they don't get a match today, then knock them off the list
-	if len(recursersList)%2 != 0 {
-		recurser := recursersList[len(recursersList)-1]
-		recursersList = recursersList[:len(recursersList)-1]
-		log.Println("Someone was the odd-one-out today")
+	for i := 0; i < len(notPairedList); i++ {
+		recurser := notPairedList[i]
+		log.Println(fmt.Sprintf("%s was not paired today", recurser.Name))
 		messageRequest := url.Values{}
 		messageRequest.Add("type", "private")
 		messageRequest.Add("to", recurser.Email)
-		messageRequest.Add("content", botMessages.OddOneOut)
+		messageRequest.Add("content", botMessages.NotMatched)
 		req, err := http.NewRequest("POST", zulipAPIURL, strings.NewReader(messageRequest.Encode()))
 		req.SetBasicAuth(botEmailAddress, botPassword)
 		req.Header.Set("content-type", "application/x-www-form-urlencoded")
@@ -66,10 +73,10 @@ func MessagePairs(client *firestore.Client, ctx context.Context) {
 	}
 
 	// Send out messages notifying pairs that they've been matched
-	for i := 0; i < len(recursersList); i += 2 {
+	for i := 0; i < len(pairedList); i += 2 {
 		messageRequest := url.Values{}
 		messageRequest.Add("type", "private")
-		messageRequest.Add("to", recursersList[i].Email+", "+recursersList[i+1].Email)
+		messageRequest.Add("to", pairedList[i].Email+", "+pairedList[i+1].Email)
 		messageRequest.Add("content", botMessages.Matched)
 		req, err := http.NewRequest("POST", zulipAPIURL, strings.NewReader(messageRequest.Encode()))
 		req.SetBasicAuth(botEmailAddress, botPassword)
@@ -88,15 +95,15 @@ func MessagePairs(client *firestore.Client, ctx context.Context) {
 	}
 
 	// Send private messages to each individual about the question they should prepare for their partner
-	for i := range recursersList {
-		interviewer := recursersList[i]
+	for i := range pairedList {
+		interviewer := pairedList[i]
 		var interviewee Recurser
 
 		// Interviews go both ways so we need to ensure interviewers become interviewees and vice versa
 		if i%2 == 0 {
-			interviewee = recursersList[i+1]
+			interviewee = pairedList[i+1]
 		} else {
-			interviewee = recursersList[i-1]
+			interviewee = pairedList[i-1]
 		}
 
 		messageRequest := url.Values{}
@@ -162,13 +169,17 @@ type Path struct {
 	validPairs int
 }
 
-func determineBestPath(recursers []Recurser) Path {
-	bestPath := new(Path)
+func determineBestPath(recursers []Recurser) (Path, error) {
 	stack := make([]Path, 0)
 	for _, recurser := range recursers {
 		stack = append(stack, Path{[]Recurser{recurser}, 0})
 	}
 
+	if len(stack) == 0 {
+		return Path{}, errors.New("Empty pool for pairing")
+	}
+
+	bestPath := &Path{recursers, 0}
 	wg := new(sync.WaitGroup)
 	bestPossibleScore := len(recursers) / 2
 
@@ -181,22 +192,19 @@ func determineBestPath(recursers []Recurser) Path {
 	}
 	wg.Wait()
 
-	return *bestPath
+	return *bestPath, nil
 }
 
 func getNext(path Path, recursers []Recurser, seen map[string]bool, bestPath *Path, bestPossibleScore int, wg *sync.WaitGroup) {
-	if bestPath.validPairs == bestPossibleScore {
-		return
+	if len(path.order)%2 == 0 && isValidSoFar(path.order) {
+		path.validPairs++
 	}
 
-	if len(path.order)%2 == 0 {
-		if isValidSoFar(path.order) {
-			path.validPairs++
-		}
-	}
-
-	if len(path.order) == len(recursers) && path.validPairs > bestPath.validPairs {
+	if path.validPairs > bestPath.validPairs && len(path.order) == len(recursers) {
 		*bestPath = path
+	}
+
+	if bestPath.validPairs == bestPossibleScore || len(path.order) == len(recursers) {
 		return
 	}
 
@@ -221,14 +229,10 @@ func getNext(path Path, recursers []Recurser, seen map[string]bool, bestPath *Pa
 			getNext(pathCopy, recursers, seenCopy, bestPath, bestPossibleScore, wg)
 			defer wg.Done()
 		}()
-
 	}
 }
 
-func isValidSoFar(path []Recurser) bool {
-	recurserOne := path[len(path)-2]
-	recurserTwo := path[len(path)-1]
-
+func isValidMatch(recurserOne Recurser, recurserTwo Recurser) bool {
 	difficulties := map[string]int{
 		"easy":   0,
 		"medium": 1,
@@ -237,4 +241,38 @@ func isValidSoFar(path []Recurser) bool {
 
 	return min(recurserOne.Config.PairingDifficulty, difficulties) <= difficulties[recurserTwo.Config.Experience] &&
 		min(recurserTwo.Config.PairingDifficulty, difficulties) <= difficulties[recurserOne.Config.Experience]
+}
+
+func isValidSoFar(recursers []Recurser) bool {
+	recurserOne := recursers[len(recursers)-2]
+	recurserTwo := recursers[len(recursers)-1]
+	return isValidMatch(recurserOne, recurserTwo)
+}
+
+func determinePairs(path Path) ([]Recurser, []Recurser, error) {
+	count := path.validPairs
+	recursers := path.order
+	var paired []Recurser
+	var notPaired []Recurser
+
+	if len(recursers)%2 != 0 {
+		notPaired = append(notPaired, recursers[len(recursers)-1])
+		recursers = recursers[:len(recursers)-1]
+	}
+
+	for i := 1; i < len(recursers); i += 2 {
+		if isValidMatch(recursers[i-1], recursers[i]) {
+			paired = append(paired, recursers[i-1], recursers[i])
+			count -= 1
+		} else {
+			notPaired = append(notPaired, recursers[i-1], recursers[i])
+		}
+	}
+
+	var err error
+	if count != 0 {
+		err = errors.New("Did not find all valid pairs")
+	}
+
+	return paired, notPaired, err
 }
