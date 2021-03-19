@@ -287,7 +287,7 @@ func cancel(userID string, recurser Recurser, isSubscribed bool, ctx context.Con
 
 func subscribe(userID string, userName string, userEmail string, recurser Recurser, isSubscribed bool, ctx context.Context) string {
 	if isSubscribed {
-		return "You're already subscribed! Use `schedule` to set your schedule."
+		return "You're already subscribed!"
 	}
 
 	recurser = newRecurser(userID, userName, userEmail)
