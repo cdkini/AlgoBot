@@ -1,4 +1,4 @@
-module github.com/cdkini/recurse-mock-interview-bot
+module github.com/cdkini/algobot
 
 go 1.14
 
