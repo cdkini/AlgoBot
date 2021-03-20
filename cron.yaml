@@ -1,4 +1,10 @@
 cron:
-- description: "Daily questions and sessions"
+- description: "Pairing sessions"
   url: /cron
-  schedule: every 2 hours from day 9:00 to 13:05
+  schedule: every day 09:00
+- description: "Solo sessions"
+  url: /cron
+  schedule: every day 11:00
+- description: "Daily questions"
+  url: /cron
+  schedule: every day 13:00
