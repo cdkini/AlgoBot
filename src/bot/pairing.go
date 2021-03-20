@@ -232,17 +232,6 @@ func getNext(path Path, recursers []Recurser, seen map[string]bool, bestPath *Pa
 	}
 }
 
-func isValidMatch(recurserOne Recurser, recurserTwo Recurser) bool {
-	difficulties := map[string]int{
-		"easy":   0,
-		"medium": 1,
-		"hard":   2,
-	}
-
-	return min(recurserOne.Config.PairingDifficulty, difficulties) <= difficulties[recurserTwo.Config.Experience] &&
-		min(recurserTwo.Config.PairingDifficulty, difficulties) <= difficulties[recurserOne.Config.Experience]
-}
-
 func isValidSoFar(recursers []Recurser) bool {
 	recurserOne := recursers[len(recursers)-2]
 	recurserTwo := recursers[len(recursers)-1]

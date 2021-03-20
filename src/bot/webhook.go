@@ -17,9 +17,9 @@ import (
 	"google.golang.org/grpc/codes"
 )
 
-const botEmailAddress = "mockinterview-bot@recurse.zulipchat.com"
+const botEmailAddress = "algo-bot@recurse.zulipchat.com"
 const zulipAPIURL = "https://recurse.zulipchat.com/api/v1/messages"
-const gcloudServerURL = "https://mock-interview-bot-307121.ue.r.appspot.com"
+const gcloudServerURL = "https://algobot-308118.ue.r.appspot.com"
 
 var botMessages = InitMessenger("src/bot/messages.json")
 var client *firestore.Client
@@ -56,7 +56,7 @@ func Webhook(w http.ResponseWriter, r *http.Request) {
 	ctx := context.Background()
 
 	var err error
-	client, err = firestore.NewClient(ctx, "mock-interview-bot-307121")
+	client, err = firestore.NewClient(ctx, "algobot-308118")
 	defer client.Close()
 
 	if err != nil {
@@ -266,7 +266,24 @@ func schedule(userID string, recurser Recurser, isSubscribed bool, ctx context.C
 		return botMessages.WriteError
 	}
 
-	return "You're all set for a mock interview session! You'll be contacted shortly with all the pertinent details!"
+	response := "You're all set for a mock interview session! You'll be contacted shortly with all the pertinent details!\n\n"
+	response += getQueueStatus(recurser, ctx)
+
+	return response
+}
+
+func getQueueStatus(recurser Recurser, ctx context.Context) string {
+	iter := client.Collection("recursers").Where("isPairingTomorrow", "==", true).Documents(ctx)
+	recursersList := iterToRecurserList(iter)
+	possibleMatches := 0
+
+	for _, r := range recursersList {
+		if isValidMatch(r, recurser) {
+			possibleMatches += 1
+		}
+	}
+
+	return fmt.Sprintf("Of the %v other Recursers in the queue, %v are a valid match!", len(recursersList)-1, possibleMatches-1)
 }
 
 func cancel(userID string, recurser Recurser, isSubscribed bool, ctx context.Context) string {

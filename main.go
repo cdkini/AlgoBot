@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/cdkini/recurse-mock-interview-bot/src/bot"
+	"github.com/cdkini/algobot/src/bot"
 	"github.com/gorilla/mux"
 )
 

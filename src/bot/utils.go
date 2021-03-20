@@ -108,3 +108,14 @@ func iterToRecurserList(iter *firestore.DocumentIterator) []Recurser {
 
 	return recursersList
 }
+
+func isValidMatch(recurserOne Recurser, recurserTwo Recurser) bool {
+	difficulties := map[string]int{
+		"easy":   0,
+		"medium": 1,
+		"hard":   2,
+	}
+
+	return min(recurserOne.Config.PairingDifficulty, difficulties) <= difficulties[recurserTwo.Config.Experience] &&
+		min(recurserTwo.Config.PairingDifficulty, difficulties) <= difficulties[recurserOne.Config.Experience]
+}

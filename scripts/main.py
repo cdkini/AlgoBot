@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# /usr/bin/env python3
 
 import requests
 
@@ -100,14 +100,14 @@ def _init_gcloud():
      
 
 def main():
-    try:
-        raw = get_all_questions()
-        clean = clean_raw_data(raw)
-        classify_questions(clean)
-        populate_firebase(clean)
-        print("SUCCESS: Database successfully populated with LeetCode data")
-    except:
-        print("FAILURE: An exception occurred somewhere")
+    # try:
+    raw = get_all_questions()
+    clean = clean_raw_data(raw)
+    classify_questions(clean)
+    populate_firebase(clean)
+        # print("SUCCESS: Database successfully populated with LeetCode data")
+    # except:
+        # print("FAILURE: An exception occurred somewhere")
 
 
 if __name__ == "__main__":
