@@ -66,7 +66,7 @@ func MessageSolo(client *firestore.Client, ctx context.Context) {
 			log.Println(err)
 		} else {
 			log.Println(string(respBodyText))
-			log.Println("A question went out")
+			log.Println(fmt.Sprintf("A question went out to %s", interviewee.Name))
 		}
 
 		session := map[string]interface{}{
@@ -79,7 +79,7 @@ func MessageSolo(client *firestore.Client, ctx context.Context) {
 		if err != nil {
 			log.Println(err)
 		} else {
-			log.Println("A session was recorded")
+			log.Println(fmt.Sprintf("A session was recorded for %s", interviewee.Name))
 		}
 	}
 

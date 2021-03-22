@@ -35,7 +35,7 @@ func MessagePairs(client *firestore.Client, ctx context.Context) {
 
 	pairedList, notPairedList, err := determinePairs(optimalPath)
 	if err != nil {
-		log.Fatal("Could not match all valid pairs")
+		log.Println("Could not match all valid pairs")
 	}
 
 	// message the peeps!
@@ -91,7 +91,7 @@ func MessagePairs(client *firestore.Client, ctx context.Context) {
 			log.Println(err)
 		}
 		log.Println(string(respBodyText))
-		log.Println("A match went out")
+		log.Println(fmt.Sprintf("A match went out: %s & %s", pairedList[i].Name, pairedList[i+1].Name))
 	}
 
 	// Send private messages to each individual about the question they should prepare for their partner
@@ -129,11 +129,12 @@ func MessagePairs(client *firestore.Client, ctx context.Context) {
 			log.Println(err)
 		} else {
 			log.Println(string(respBodyText))
-			log.Println("A question went out")
+			log.Println(fmt.Sprintf("Interview instructions went out to %s", interviewer.Name))
 		}
 
 		session := map[string]interface{}{
 			"interviewer": interviewer.Id,
+			"interviewee": interviewee.Id,
 			"question":    question["id"],
 			"timeStamp":   time.Now(),
 		}
@@ -143,13 +144,18 @@ func MessagePairs(client *firestore.Client, ctx context.Context) {
 		if err != nil {
 			log.Println(err)
 		} else {
-			log.Println("A session was recorded")
+			log.Println(fmt.Sprintf("A session was recorded: %s & %s", interviewer.Name, interviewee.Name))
 		}
 
 		// Upon having an interview, kick out of queue
 		// We require manual sign-ups to prevent people from forgetting and ruining someone else's prep
-		doc = client.Collection("recursers").Doc(interviewee.Id)
-		doc.Update(ctx, []firestore.Update{{Path: "isPairingTomorrow", Value: false}})
+		doc = client.Collection("recursers").Doc(interviewer.Id)
+		_, err = doc.Update(ctx, []firestore.Update{{Path: "isPairingTomorrow", Value: false}})
+		if err != nil {
+			log.Println(err)
+		} else {
+			log.Println(fmt.Sprintf("%s was kicked from pairing queue", interviewer.Name))
+		}
 	}
 }
 
@@ -160,7 +166,7 @@ func fmtInterviewerMessage(question map[string]interface{}, interviewee Recurser
 	builder.WriteString("Try to learn multiple solutions, starting from brute force and ending with the optimal algorithm.\n\n")
 	builder.WriteString(fmt.Sprintf("Please conduct the interview on %s.\n\n", interviewee.Config.Environment))
 	builder.WriteString(fmt.Sprintf("Here are some additional notes from your interviewee: %s\n\n", interviewee.Config.Comments))
-	builder.WriteString("Whether you're a pro at interviews or are just getting started, please read over [the guidelines](http://github.com/cdkini) before your session! Thanks :)")
+	builder.WriteString(fmt.Sprintf("Whether you're a pro at interviews or are just getting started, please read over [the guidelines](%s#before-mock-interview) before your session! Thanks :)", githubURL))
 	return builder.String()
 }
 

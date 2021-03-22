@@ -9,6 +9,8 @@ import (
 	"cloud.google.com/go/firestore"
 )
 
+const githubURL = "https://github.com/cdkini/AlgoBot"
+
 // Cron makes matches for pairing, and messages those people to notify them of their match
 // it runs once per day at 8am (it's triggered with app engine's Cron service)
 func Cron(w http.ResponseWriter, r *http.Request) {
