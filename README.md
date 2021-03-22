@@ -26,7 +26,9 @@ This project would not have been possible without the hard work put in by Maren 
     2. [Deployment](#deployment)
 3. [Contributing](#contributing)
     1. [Pull Requests](#pull-requests)
-4. [Mock Interviews](#mock-interviews)
+4. [Before Your Mock Interview](#before-mock-interview)
+    1. [What should I prepare for as the interviewer?](#as-interviewer)
+    2. [What should I prepare for as the interviewee?](#as-interviewee)
 5. [FAQ](#faq)
     1. [Why do I need to add myself back to the mock interview queue after each session?](#faq-mock-interview-queue)
     2. [I'm a beginner to these types of problems. Can I still pair?](#faq-beginner)
@@ -73,7 +75,7 @@ Upon using the `subscribe` cmd, your account will be assigned the following defa
 - `Problem Set`: Top Interview Questions (LeetCode)
 
 These defaults can be viewed and altered at any time using the `config` option. 
-Note that questions are sent out at 9:00AM EST on the scheduled day so any changes or `skip` cmds will need to be made before then.
+Note that questions are sent out at `07:00AM EST` on the scheduled day so any changes or `skip` cmds will need to be made before then.
 
 <a name="mock-interviews"></a>
 ### 1.iii. Mock Interviews 
@@ -91,7 +93,7 @@ Upon using the `schedule` cmd, you will be placed in the queue with other Recurs
 - `Environment`: LeetCode
 
 These defaults can be viewed and altered at any time using the `config` option. 
-Note that matches are made and sent out at 11:00PM EST each day so any changes or `cancel` cmds will need to be made before then.
+Note that matches are made and sent out at `05:00AM EST` each day so any changes or `cancel` cmds will need to be made before then.
 
 It is important to note that matches are made based on similarity of profiles to ensure equitable, rewarding interviews.
 Please take the time to review your config to ensure it matches your preferences and experience level.
@@ -116,7 +118,7 @@ The difficulty of these questions increases throughout the week (akin to somethi
 | Sun    | Hard        |
 
 
-Link to thread: [Daily Question](https://recurse.zulipchat.com/#narrow/stream/256561-Daily-LeetCode/topic/AlgoBot.20Daily.20Question)
+Link to thread: [Daily Question](https://recurse.zulipchat.com/#narrow/stream/256561-Daily-LeetCode/topic/AlgoBot.20Daily.20Question) (updated daily at `09:00AM EST`)
 
 Note that you do not require any special configuration or messaging of AlgoBot for these problems. 
 Simply go to the link, try your hand at the question, and post your solution in the thread to discuss with others.
@@ -152,11 +154,19 @@ Given that this is a bot meant to improve data structures and algorithms skills,
 The algorithm behind the scenes takes inspiration from "The Stable Roommates Problem", a variation on "The Stable Marriage Problem". 
 Instead of using two separate groups and creating a bipartite graph, we consider the population of Recursers as one, uniform group.
 
-Steps:
-1.  Interviewer preferences are calculated for each individual in the pool
-    - Preference is calculated by how similar user configurations are and how likely an individual is to be able to conduct an interview for the user. Experience and comfort with DS&A come into play here.
-        - <i>Ex: Someone at an intermediate level prefer someone at the same or higher level to interview them as opposed to a beginner.</i>
-    - In the case of preference ties, we just random select a winner between the two.
+Akin to other stable matching algorithms,  use preference lists for each individual; interview preference is calculated by how similar user configurations are and how likely an individual is to be able to conduct a productive interview for the user. 
+
+Experience and comfort with DS&A come into play here.
+Someone at an intermediate level prefer someone at the same or higher level to interview them as opposed to a beginner.</i>
+In the case of preference ties, we just randomly select a winner between the two.
+
+The rest of the algorithm follows the process laid out by Robert W. Irving in his paper, ["An Efficient Algorithm for the 'Stable Roommates' Problem"](https://uvacs2102.github.io/docs/roomates.pdf).
+
+I'm still trying to improve upon the algorithm moving forward. For one, I'd like to add weighting based on time spent in the queue, ensuring that individuals that have not been matched for some time are given higher priority.
+Additionally, Irving throws out the results if no stable matching is present. I'd like to still match any stable pairs to ensure atleast a portion of the group is matched.
+
+These modifications are constantly in development and will be introduced to the algorithm over time!
+
 
 <a name="deployment"></a>
 ### 2.iii. Deployment 
@@ -222,20 +232,53 @@ The workflow below has proven to be useful with other projects but please let me
 
 <hr>
 
-<a name="mock-interviews"></a>
-## 4. Mock Interviews 
+<a name="before-mock-interview"></a>
+## 4. Before Your Mock Interview
 
 <a name="as-interviewer"></a>
 ### 4.i. What should I expect or prepare for as the interviewer?
 
-Upon getting matched, your responsibility as the interviewer is to prepare 
+Upon getting matched, your responsibility as the interviewer is to prepare your assigned question.
 
-If your interviewee seems to be stuck or going in the wrong direction, 
+Please take the time to really learn the question. The best way to go about this is to tackle the problem yourself!
+  - Implement the brute force solution and work towards improving it. 
+  - Learn multiple solutions and understand the time and space complexity of each.
+  - Read the official LeetCode solution (if available), the top solutions in the Discussions section, and/or watch YouTube walkthroughs.
+    - I'd recommend Nick White, Kevin Naughton Jr., and Back To Back SWE for good video resources.
+
+If your interviewee seems to be stuck or going in the wrong direction, try to carefully guide them on the right path.
+As your interviewee implements their solution, ask for clarifications and elaborations on their thought process.
+
+The style of interviewer you are is dependent on what your partner is looking for so when in doubt, just communicate and see exactly
+what they are looking for out of the experience.
+
+Nobody is expecting you to be a phenomenal interviewer so don't feel overly pressured by this role! By practicing and understanding the question beforehand,
+you've done your homework and become a valuable resource to another individual tackling the problem for the first time. 
+
+Explaining and guiding someone through a problem reinforces your own knowledge so its a win-win!
 
 <a name="as-interviewee"></a>
 ### 4.ii. What should I expect or prepare for as the interviewee?
 
-If your interviewee seems to be stuck or going in the wrong direction, 
+As the interviewee, your only job is to treat the experience seriously. While you'd ideally like to code up the optimal solution, remember that <b>communication is key</b>!
+
+Here are some of the things you should discuss or do as you work through the problem:
+- Ask clarifying questions about the problem
+  - Even if it's straightforward, take the time to show that you're thinking about all aspects of the problem!
+- Walk through an example to reinforce and show your understanding of the task at hand.
+- Discuss your initial thoughts; if you see a naive solution, bring it up and identify any bottlenecks.
+- Before actually coding, discuss your algorithm at a high level and ensure it makes sense to the interviewer.
+- When actually coding, remember to talk out what you're doing!
+  - Try your best to use clean variable names and DRY code. 
+  - Remember that readability always counts more than some flashy trick or syntactic sugar.
+- Upon finishing your implementation, walk through it and ensure that it makes sense.
+- Run your solution through some test inputs to ensure validity.
+- Discuss the space and time complexity using Big O and/or Big Theta notation.
+- Review ways you would test your algorithm, ensuring that you've covered all edge cases and branching paths.
+  - If you have time, feel free to actually write them out. Otherwise, a high level discussion suffices.
+
+While this list comprises the vast majority of what you should be doing as the interviewee, please discuss any other requirements or 
+goals with your interviewer beforehand! This is your experience so you should have a say as to how it's conducted!
 
 <hr>
 
