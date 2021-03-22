@@ -71,7 +71,9 @@ func Webhook(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if userReq.Trigger != "private_message" {
-		err = responder.Encode(botResponse{"Hi! I'm AlgoBot!\n\nSend me a PM to get started :octopus::octopus::octopus:"})
+		err = responder.Encode(botResponse{
+			`Hi! I'm AlgoBot!\n\nSend me a PM to get started :octopus::octopus::octopus:\n
+            Why don't you also check out [the daily question](https://recurse.zulipchat.com/#narrow/stream/256561-Daily-LeetCode/topic/AlgoBot.20Daily.20Question)?`})
 		if err != nil {
 			log.Println(err)
 		}
